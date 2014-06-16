@@ -13,7 +13,7 @@
   "keywords": [
     "cortexjs-www"
   ],
-  "engines": { 
+  "engines": {
     "node": ">=0.11.0"
   },
   "author": "cortexjs",
@@ -24,5 +24,14 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "dependencies": {
+    "elasticsearch": "^2.2.0",
+    "config": "^0.4.36",
+    "follow": "^0.11.2",
+    "passport": "^0.2.0",
+    "express": "^4.4.3",
+    "passport-github": "^0.1.5",
+    "couch-db": "^1.1.0"
   }
 }
