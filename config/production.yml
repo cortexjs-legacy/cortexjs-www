@@ -1,0 +1,3 @@
+Server:
+  cluster: true
+  port: 8080

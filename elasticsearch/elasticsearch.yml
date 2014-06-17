@@ -141,7 +141,7 @@ cluster.name: elasticsearch_cortexjs_www
 # Path to directory containing configuration (this file and logging.yml):
 #
 path.conf: ./elasticsearch/
-f
+
 # Path to directory where to store index data allocated for this node.
 #
 path.data: ./elasticsearch/data
@@ -211,7 +211,7 @@ network.host: 127.0.0.1
 
 # Set a custom port for the node to node communication (9300 by default):
 #
-# transport.tcp.port: 9300
+transport.tcp.port: 9300
 
 # Enable compression for all communication between nodes (disabled by default):
 #
