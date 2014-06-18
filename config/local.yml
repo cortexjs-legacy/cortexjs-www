@@ -4,6 +4,7 @@ App:
 Server:
   cluster: false
   port: 8080
+  secret: "cortexjs-www-session"
 
 Logger:
   level: warn
