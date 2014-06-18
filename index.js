@@ -37,6 +37,8 @@ module.exports = function() {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  require('./lib').entitled(app);
+
   app.use(require('./lib').routes);
 
   app.use(serveStatic('public/build', {}));
