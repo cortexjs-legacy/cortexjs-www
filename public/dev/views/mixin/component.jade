@@ -1,3 +1,29 @@
+mixin nav(user)
+	.nav
+		.bg
+		.overlay
+			.main-panel
+				a.home(href="/")
+				.search-box
+					input(type="text")
+					i.icon-close
+			.util-panel
+				a.doc
+				a.get-started GET STARTED
+				if user
+					a.user(href="/user/#{name}")
+						img.avatar(src="#{user.avatarMedium}")
+				else	
+					a.login
+						img.avatar(src="#{user.avatarMedium}")
+		ul.dropdown.hide
+			li 
+				a MY BIA CARD
+			li
+				a SETTINGS
+			li
+				a LOG OUT
+
 mixin user()
 	section.user.card
 		img.avatar(src="./img/avatar.jpg")

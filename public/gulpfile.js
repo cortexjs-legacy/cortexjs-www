@@ -31,7 +31,7 @@ gulp.task('img', function() {
 
 
 gulp.task('watch', function() {
-	gulp.watch(["./dev/views/**/*.jade"], ['jade']);
+	// gulp.watch(["./dev/views/**/*.jade"], ['jade']);
 	gulp.watch(["./dev/css/**/*.styl"], ['stylus']);
 });
 

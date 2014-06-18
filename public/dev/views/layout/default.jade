@@ -1,28 +1,8 @@
 include ../mixin/static
 
-html(ng-app="app")  
+html 
 	head
 		block head
 
-	body(ng-controller="Controller")
-		.nav
-			.bg
-			.overlay
-				.main-panel
-					a.home(href="/")
-					.search-box
-						input(type="text")
-						i.icon-close
-				.util-panel
-					a.doc
-					a.get-started GET STARTED
-					a.user.login
-						img.avatar(src="./img/avatar.jpg")
-			ul.dropdown.hide
-				li 
-					a MY BIA CARD
-				li
-					a SETTINGS
-				li
-					a LOG OUT
+	body
 		block content

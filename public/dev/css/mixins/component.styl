@@ -199,6 +199,160 @@ readme()
 		clearfix()
 		padding:0px 40px 30px 40px
 
+.nav
+	width:100%
+	height:nav_height
+	box-shadow:nav_shadow 
+	position:relative
+	z-index:100
+	.bg
+		position:absolute
+		width:100%
+		height:nav_height
+		z-index:10
+	.overlay
+		position:absolute
+		width:100%
+		height:nav_height
+		z-index:20
+		padding-right:283px
+		.main-panel
+			background-color:nav_bg
+			height:nav_height
+			.home
+				margin-left:5px
+				float:left
+				width:nav_height
+				height:nav_height
+				position:relative
+				cursor:pointer
+				image:'../img/logo.png'
+				&:hover
+					image:'../img/logo-hover.png'
+			.search-box
+				position:relative
+				float:right
+				padding:10px 20px 10px 0px
+				input[type=text] 
+					height:40px
+					background-color:#ffffff
+					border:none
+					border-radius:20px
+					width:300px
+					padding:0px 36px 0px 36px
+					font-size:18px
+					color:#a8a8a8
+
+				&:before
+					content:""
+					position: absolute
+					image:'../img/icon-search.png'
+					width:26px
+					height:26px
+					top:17px
+					left:8px
+				.icon-close
+					position: absolute
+					image:'../img/icon-close.png'
+					width:26px
+					height:26px
+					top:17px
+					right:28px
+		.util-panel
+			position:absolute
+			right:0px
+			top:0px
+			.doc
+				background-color:nav_bg
+				height:nav_height
+				margin-left:1px
+				width:nav_height
+				float:left
+				&:before
+					content:""
+					image:"../img/doc.png"
+					width:26px
+					height:26px
+					position:absolute
+					top:18px
+					left:18px
+			.get-started
+				margin-left:1px
+				line-height:nav_height
+				text-align:center
+				width:160px
+				font-size:16px
+				color:#ffffff
+				float:left
+				background-color:green
+			.user
+				margin-left:1px
+				float:right
+				height:nav_height
+				width:nav_height
+				img.avatar
+					width:100%
+					height:100%
+			.login
+				margin-left:1px
+				float:right
+				height:nav_height
+				width:nav_height
+				background-color:#222222
+	.dropdown
+		position:absolute
+		right:0px
+		top:nav_height
+		color:#646464
+		padding:5px
+		a
+			float:right
+			position:relative
+			display:block
+			box-sizing:content-box
+			font-size:13px
+			font-weight:300
+			width:150px
+			line-height:40px
+			padding:0px 20px
+			margin-bottom:5px
+			background-color:#313131
+			height:40px
+			&:hover
+				border-left:5px solid green 
+				background-color:#232323
+
+nav_short()
+	.nav
+		.get-started
+			display:none
+	@media (min-width: 0px)
+		.nav
+			.overlay
+				padding-right:0px
+				.util-panel
+					display:none
+	@media (min-width: 700px)
+		.nav
+			.overlay
+				padding-right:122
+				.util-panel
+					display:block
+
+@media (min-width: 0px)
+	.nav
+		.overlay
+			padding-right:0px
+			.util-panel
+				display:none
+		
+@media (min-width: 700px)
+	.nav
+		.overlay
+			padding-right:283px
+			.util-panel
+				display:block
+
 
 
 
