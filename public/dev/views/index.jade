@@ -13,47 +13,28 @@ block content
 		.slogan The package cloud for browsers, connecting creative people
 	.main-content
 		.info-panel
-			.head TITLE
+			.head RECENTLY UPDATED
 			.body
 				table
-					tr
-						td async
-						td ~0.2.9
-					tr
-						td async
-						td ~0.2.9
-					tr
-						td async
-						td ~0.2.9
+					each pkg in recentlyUpdated
+						tr
+							td #{pkg.name}
+							td #{pkg.version}
 		.info-panel
-			.head TITLE
+			.head MOST DEPENDED UPON
 			.body
 				table
-					tr
-						td async
-						td ~0.2.9
-					tr
-						td async
-						td ~0.2.9
-					tr
-						td async
-						td ~0.2.9
+					each pkg in mostDependedUpon
+						tr
+							td #{pkg.name}
+							td #{pkg.version}
 		.info-panel
-			.head TITLE
+			.head MOST STARED
 			.body
 				table
-					tr
-						td async
-						td ~0.2.9
-					tr
-						td async
-						td ~0.2.9
-					tr
-						td async
-						td ~0.2.9
-
-
-
-
-
+					each pkg in mostStared
+						tr
+							td #{pkg.name}
+							td #{pkg.version}
+					
 

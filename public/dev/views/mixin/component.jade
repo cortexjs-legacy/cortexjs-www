@@ -11,7 +11,7 @@ mixin nav(user)
 				a.doc
 				a.get-started GET STARTED
 				if user
-					a.user(href="/user/#{name}")
+					a.user(href="/user/#{user.name}")
 						img.avatar(src="#{user.avatarMedium}")
 				else	
 					a.login
