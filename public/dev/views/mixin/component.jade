@@ -24,11 +24,11 @@ mixin nav(user)
 			li
 				a LOG OUT
 
-mixin user()
+mixin user(user,pkgs)
 	section.user.card
-		img.avatar(src="./img/avatar.jpg")
-		.username substack
-		.user-packages 400 packages
+		img.avatar(src="#{user.avatarMedium}")
+		.username #{user.name}
+		.user-packages #{pkgs.length} packages
 
 mixin user-info()
 	section.user-info.card
@@ -45,25 +45,25 @@ mixin user-info()
 					td FULL NAME
 					td James Halliday
 
-mixin package-info()
-	a.package-info.card
-		img.avatar(src="./img/avatar.jpg")
+mixin package-info(pkg)
+	a.package-info.card(href="/package/#{pkg.name}" target="_blank")
+		img.avatar(src="#{pkg.author.avatarMedium}")
 		.content
 			.top
-				.package-name commonjs-walker
-				.version 2.3.0
+				.package-name #{pkg.name}
+				.version #{pkg.version}
 			.bottom
-				p.description bla bla bla blabl abl ablab labla blabl 
+				p.description #{pkg.description} 
 				.stat
 
-mixin package-info-no-avatar()
-	a.package-info.card
+mixin package-info-no-avatar(pkg)
+	a.package-info.card(href="/package/#{pkg.name}" target="_blank")
 		.content
 			.top
-				.package-name commonjs-walker
-				.version 2.3.0
+				.package-name #{pkg.name}
+				.version #{pkg.version}
 			.bottom
-				p.description bla bla bla blabl abl ablab labla blabl 
+				p.description #{pkg.description} 
 				.stat
 
 mixin package-stat(pkg)

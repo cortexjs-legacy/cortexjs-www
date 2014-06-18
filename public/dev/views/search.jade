@@ -7,17 +7,13 @@ block head
 	+css("./css/search.css")
 
 block content  
+	+nav(user)
 	section.container
 		.top-area
-			span.info 10 pacakges about
-				b  commonjs
+			span.info #{result.length} pacakges about
+				b  #{keyword}
 		.packages
-			+package-info()
-			+package-info()
-			+package-info()
-			+package-info()
-			+package-info()
-			+package-info()
-
+			each pkg in result
+				+package-info(pkg)
 
 

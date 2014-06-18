@@ -4,18 +4,14 @@ extends layout/default.jade
 
 block head  
 	title cortex
-	+css("./css/user.css")
+	+css("/css/user.css")
 
 block content  
+	+nav(user)
 	section.container
 		.user-area
-			+user()
+			+user(user,pkgs)
 			+user-info()
 		.packages
-			+package-info-no-avatar()
-			+package-info-no-avatar()
-			+package-info-no-avatar()
-			+package-info-no-avatar()
-			+package-info-no-avatar()
-			+package-info-no-avatar()
-			+package-info-no-avatar()
+			each pkg in pkgs
+				+package-info-no-avatar(pkg)
