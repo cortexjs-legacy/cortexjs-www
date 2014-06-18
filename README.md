@@ -4,15 +4,21 @@
 
 ## Install
 
+First, clone the repository from github:
+
 ```bash
-$ npm install cortexjs-www --save
+git clone git@github.com/cortexjs/cortexjs-www
+```
+
+Run following command to start local server:
+
+```bash
+npm start
 ```
 
 ## Usage
 
-```js
-var cortexjs_www = require('cortexjs-www');
-```
+
 
 ## Licence
 
