@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build-public": "cd public; gulp build",
-    "start-local": "npm run build-public;./scripts/start.sh local",
+    "start": "npm run build-public;./scripts/start.sh local",
+    "start-prod": "./scripts/start.sh prod",
     "test": "make test"
   },
   "repository": {

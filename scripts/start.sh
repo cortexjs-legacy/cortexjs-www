@@ -20,7 +20,7 @@ if [ "${env}" = 'local' ] ;then
 elif [ "${env}" = 'dev' ] ;then
     export NODE_ENV=development 
     "$projetPath/bin/server.js" | ./node_modules/.bin/bunyan
-elif [ "${env}" = 'product' ] ;then
+elif [ "${env}" = 'prod' ] ;then
     export NODE_ENV=production
     "$projectPath/bin/server.js" | ./node_modules/.bin/bunyan
 else
