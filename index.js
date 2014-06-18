@@ -2,20 +2,21 @@ var express = require('express');
 var logger = require('logger')('app');
 var util = require('util');
 var serveStatic = require('serve-static');
+var path = require('path');
 var _ = require('underscore');
 
 var config = require('config');
 
 module.exports = function() {
   var app = express();
-
+  app.set('views', path.join(__dirname,'public/dev/views'));
+  app.set('view engine', 'jade');
 
   app.use(require('express-bunyan-logger')(_.defaults(config.Logger, {
     name: config.App.name
   })));
 
-  app.use(serveStatic('public/build', {'index': ['index.html']}));
-
+  app.use(serveStatic('public/build', {}));
 
   app.use(require('./lib').routes);
 
