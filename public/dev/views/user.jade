@@ -1,0 +1,21 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+block head  
+	title cortex
+	+css("./css/user.css")
+
+block content  
+	section.container
+		.user-area
+			+user()
+			+user-info()
+		.packages
+			+package-info-no-avatar()
+			+package-info-no-avatar()
+			+package-info-no-avatar()
+			+package-info-no-avatar()
+			+package-info-no-avatar()
+			+package-info-no-avatar()
+			+package-info-no-avatar()

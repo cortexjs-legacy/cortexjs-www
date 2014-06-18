@@ -18,7 +18,7 @@ module.exports = function() {
   var _listen = app.listen;
 
   app.listen = function(port) {
-    if (util.isNumber(port)) {
+    if (typeof port ==='number') {
       logger.info(app.get('name') || 'server' + ' is listening on port: ' + port + '...');
     } else {
       logger.info(app.get('name') || 'server' + ' started');

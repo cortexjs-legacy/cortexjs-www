@@ -1,0 +1,209 @@
+center()
+	margin-left:auto
+	margin-right:auto
+
+cycle(n)
+	width: n
+	height: n
+	border-radius: 50%
+
+$panel
+	background-color:#ffffff
+	.head
+		height:70px
+		line-height:70px
+		padding:0px 20px
+		color:#dcdfe5
+		border-bottom:1px solid #d0d7dd
+	.body
+		background-color:#ffffff
+		
+user(width)
+	position:relative
+	width:width
+	height:350px
+	background-color:#ffffff
+	text-align:center
+	padding-top:40px
+	box-shadow:card_shadow
+	img.avatar
+		cycle(150px)
+	.username
+		margin-top:25px
+		width:100%
+		font-size:24px
+		center()
+	.user-packages
+		position:absolute
+		right:0px
+		bottom:30px
+		height:30px
+		padding:0px 10px
+		line-height:30px
+		font-size:12px
+		background-color:#e98065
+		color:#ffffff
+
+user-info(width)
+	@extends $panel
+	width:width
+	height:350px
+	background-color:#ffffff
+	box-shadow:card_shadow
+	.body 
+		table
+			width:100%
+
+package-info(width)
+	width:width
+	height:100px
+	background-color:#ffffff
+	box-shadow:card_shadow
+	cursor:pointer
+	clearfix()
+	img.avatar
+		float:left
+		width:100px
+		height:100px
+	.content
+		float:left
+		.top
+			height:50%
+			clearfix()
+			line-height:50px
+			.package-name
+				display:inline
+				padding:0px 15px
+				font-size:18px
+				font-weight:300
+				float:left
+				color:#6d6d6d
+				overflow: hidden
+				white-space: nowrap
+				width:80%
+			.version
+				font-weight:300
+				width:20%
+				float:right
+				text-align:right
+				color:#c6c6c6
+				font-size:17px
+				padding-right:20px
+		.bottom
+			color:#c6c6c6
+			height:50%
+			.description
+				display:block
+				padding-left:15px
+				float:left
+				font-size:15px
+				line-height:20px
+				width:70%
+				height:100%
+				text-overflow: ellipsis
+			.stat
+				float:right
+				width:50px
+				height:100%
+
+
+package-stat(width)
+	width:width
+	height:150px
+	background-color:#ffffff
+	box-shadow:card_shadow
+	.top
+		height:100px
+		img.avatar
+			float:left
+			margin:22.5px
+			cycle(55px)
+		.txt
+			float:left
+			line-height:100px
+			color:#919bad
+	.bottom
+		color:#a6a6a6
+		background-color:#f0f1f5
+		height:50px	
+		.item
+			position:relative
+			float:left
+			font-size:14px
+			line-height:50px
+			padding:0px 20px
+			border-right:1px solid #d1d8de		
+			&:last-child
+				border-right:none	
+			i
+				position:absolute
+				top:12px
+			span
+				padding-left:30px
+
+
+maintainers(width)
+	width:width
+	@extends $panel
+	box-shadow:card_shadow
+	.body
+		padding:10px
+		background-color:#f0f1f5
+		.avatar
+			cursor:pointer
+			cycle(50px)
+			margin:10px
+
+command(width)
+	width:width
+	background-color:#ffffff
+	height:50px
+	line-height:50px
+	font-size:14px
+	box-shadow:card_shadow
+	.title
+		float:left
+		text-align:center
+		color:#a7afbe
+		background-color:#ffffff
+		width:100px
+	.content
+		padding-left:100px
+		background-color:#1f1f20
+		.txt
+			color:#828a9a
+			padding-left:20px
+
+badge(bg)
+	display:inline-block
+	height:50px
+	line-height:50px
+	background-color:bg
+	color:#ffffff
+	font-size:16px
+	padding:0px 20px
+
+readme(width)
+	width:width
+	background-color:#ffffff
+	position:relative
+	box-shadow:card_shadow
+	&:before
+		content:""
+		position:absolute
+		background-color: #e98065
+		width:6px
+		height:24px
+		top:7px
+		left:-6px
+	.title
+		height:40px
+		line-height:40px
+		padding-left:20px
+		color:#d8d8d8
+	.content
+		padding:20px
+
+
+
+

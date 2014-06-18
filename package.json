@@ -25,7 +25,11 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "gulp": "^3.6.0",
+    "gulp-stylus": "~1.0.0",
+    "gulp-jade": "^0.4.2",
+    "nib": "~1.0.2"
   },
   "dependencies": {
     "elasticsearch": "^2.2.0",

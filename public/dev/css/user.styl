@@ -1,0 +1,64 @@
+global-reset()
+
+@import "common/*"
+@import "mixins/*"
+
+.container
+	width:95%
+	center()
+	.user-area
+		margin-top:20px
+		center()
+		clearfix()
+		.card
+			float:left
+	.packages
+		center()
+		clearfix()
+		margin-bottom:50px
+		.package-info
+			float:left
+
+@media (min-width: 0px)
+	.container
+		width:100%
+		.user-area
+			.user
+				user(100%)
+			.user-info
+				user-info(100%)
+			.card
+				margin:2% 0%
+		.packages
+			.package-info
+				package-info(100%)
+				margin:2% 0%
+				float:left
+				.content
+					width:100%
+
+@media (min-width: 700px)
+	.container
+		width:95%
+		.user-area
+			.user
+				user(48%)
+			.user-info
+				user-info(48%)
+			.card
+				margin:1%
+		.packages
+			.package-info
+				package-info(48%)
+				margin:1%
+				float:left
+
+@media (min-width: 1100px)
+	.container
+		width:95%
+		.packages
+			.package-info
+				package-info(31.3%)
+				margin:1%
+				float:left
+	
