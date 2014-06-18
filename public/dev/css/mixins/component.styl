@@ -54,7 +54,7 @@ user-info(width)
 		table
 			width:100%
 
-package-info(width)
+package-info(width,avatar=true)
 	width:width
 	height:100px
 	background-color:#ffffff
@@ -66,7 +66,8 @@ package-info(width)
 		width:100px
 		height:100px
 	.content
-		float:left
+		if avatar
+			padding-left:100px
 		.top
 			height:50%
 			clearfix()
