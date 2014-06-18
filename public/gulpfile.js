@@ -32,3 +32,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['stylus', 'jade', 'watch']);
+gulp.task('build', ['stylus', 'jade']);

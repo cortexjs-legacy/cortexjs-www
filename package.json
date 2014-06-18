@@ -5,7 +5,8 @@
   "description": "cortexjs-www",
   "main": "index.js",
   "scripts": {
-    "start-local": "./scripts/start.sh local",
+    "build-public": "cd public; gulp build",
+    "start-local": "npm run build-public;./scripts/start.sh local",
     "test": "make test"
   },
   "repository": {
