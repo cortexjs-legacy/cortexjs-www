@@ -1,6 +1,7 @@
 var express = require('express');
 var logger = require('logger')('app');
 var util = require('util');
+var serveStatic = require('serve-static');
 var _ = require('underscore');
 
 var config = require('config');
@@ -13,6 +14,7 @@ module.exports = function() {
     name: config.App.name
   })));
 
+  app.use(serveStatic('public/build', {'index': ['index.html']}));
 
 
   app.use(require('./lib').routes);
