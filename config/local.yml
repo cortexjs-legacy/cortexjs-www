@@ -6,7 +6,7 @@ Server:
   port: 8080
 
 Logger:
-  level: info
+  level: warn
   stdout: true
 
 Auth:

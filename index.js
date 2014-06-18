@@ -15,6 +15,8 @@ module.exports = function() {
 
 
 
+  app.use(require('./lib').routes);
+
   var _listen = app.listen;
 
   app.listen = function(port) {
