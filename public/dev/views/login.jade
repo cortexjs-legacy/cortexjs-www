@@ -1,0 +1,16 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+
+block head  
+  title cortex
+
+block content  
+  if user
+    +nav(user)
+
+  section.container
+    input(name="name")
+    input(name="password", type="password")
+    a(href="/auth/github") Login with Github

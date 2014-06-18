@@ -16,6 +16,4 @@ Auth:
   callbackUrl: "http://localhost:8010/auth/github/callback"
 
 Couch:
-  address: "http://127.0.0.1:15984"
-  user: "admin"
-  passwd: "admin"
+  address: "http://localhost:15984"
