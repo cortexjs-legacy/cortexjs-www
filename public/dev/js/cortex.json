@@ -1,0 +1,30 @@
+{
+  "name": "cortexjs-www",
+  "version": "0.1.0",
+  "description": "website cortexjs.org ",
+  "main": "index.js",
+  "repository": "git://github.com/cortexjs/cortexjs-www.git",
+  "keywords": [
+    "cortex"
+  ],
+  "entries":["entries/*.js"],
+  "license": "MIT",
+  "author": {
+    "name": "ltebean",
+    "email": "yucong1118@gmail.com"
+  },
+  "bugs": {
+    "url": "http://github.com/cortexjs/cortexjs-www/issues"
+  },
+  "homepage": "http://github.com/cortexjs/cortexjs-www",
+  "engines": {
+    "neuron": "*"
+  },
+  "devDependencies": {
+    "assert": "*"
+  },
+  "dependencies": {
+    "neuron": "~5.1.0",
+    "zepto": "~1.1.3"
+  }
+}
