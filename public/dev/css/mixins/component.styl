@@ -18,9 +18,8 @@ $panel
 	.body
 		background-color:#ffffff
 		
-user(width)
+user()
 	position:relative
-	width:width
 	height:350px
 	background-color:#ffffff
 	text-align:center
@@ -44,9 +43,8 @@ user(width)
 		background-color:#e98065
 		color:#ffffff
 
-user-info(width)
+user-info()
 	@extends $panel
-	width:width
 	height:350px
 	background-color:#ffffff
 	box-shadow:card_shadow
@@ -54,8 +52,7 @@ user-info(width)
 		table
 			width:100%
 
-package-info(width,avatar=true)
-	width:width
+package-info(avatar=true)
 	height:100px
 	background-color:#ffffff
 	box-shadow:card_shadow
@@ -108,8 +105,7 @@ package-info(width,avatar=true)
 				height:100%
 
 
-package-stat(width)
-	width:width
+package-stat()
 	height:150px
 	background-color:#ffffff
 	box-shadow:card_shadow
@@ -143,8 +139,7 @@ package-stat(width)
 				padding-left:30px
 
 
-maintainers(width)
-	width:width
+maintainers()
 	@extends $panel
 	box-shadow:card_shadow
 	.body
@@ -155,8 +150,7 @@ maintainers(width)
 			cycle(50px)
 			margin:10px
 
-command(width)
-	width:width
+command()
 	background-color:#ffffff
 	height:50px
 	line-height:50px
@@ -184,8 +178,7 @@ badge(bg)
 	font-size:16px
 	padding:0px 20px
 
-readme(width)
-	width:width
+readme()
 	background-color:#ffffff
 	position:relative
 	box-shadow:card_shadow
