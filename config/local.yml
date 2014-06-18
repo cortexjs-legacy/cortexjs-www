@@ -1,0 +1,15 @@
+App:
+  name: cortexjs-www
+
+Server:
+  cluster: false
+  port: 8080
+
+Logger:
+  level: info
+  stdout: true
+
+Auth:
+  clientId: "b058836b6bdd02928e98"
+  clientSecret: "28a4fe357cc57db6209a8eb3f315488472649633"
+  callbackUrl: "http://localhost:8080/auth/github/callback"

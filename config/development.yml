@@ -1,3 +1,6 @@
 Server:
   cluster: false
   port: 8080
+
+Logger:
+  level: info

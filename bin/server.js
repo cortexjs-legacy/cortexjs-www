@@ -7,10 +7,10 @@ var ctxs = require('../');
 var env = process.env.NODE_ENV || 'development';
 
 
+
 var cmd = process.argv[1];
 
 var argv = require('minimist')(process.argv.slice(2));
-
 
 if (argv.h || argv.help) {
     console.log('Usage ' + cmd + ' [-p|--port <port>] [--cluster]');

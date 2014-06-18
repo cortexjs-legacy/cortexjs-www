@@ -1,3 +1,12 @@
 Server:
   cluster: true
-  port: 8080
+  port: 8887
+
+
+Logger:
+  level: info
+  streams: 
+    -type: rotating-file
+    -path: "/tmp/cortexjs-www/cortexjs.#{process.pid}.log"
+    -period: "1d"
+    -count: 5
