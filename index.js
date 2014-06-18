@@ -14,6 +14,9 @@ module.exports = function() {
   var app = express();
   app.set('views', path.join(__dirname, 'public/dev/views'));
   app.set('view engine', 'jade');
+  
+  app.locals.moment = require('moment');
+  app.locals.marked = require('marked');
 
 
   app.use(require('express-bunyan-logger')(_.defaults(config.Logger, {

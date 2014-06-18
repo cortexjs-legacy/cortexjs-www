@@ -4,22 +4,23 @@ extends layout/default.jade
 
 block head  
 	title cortex
-	+css("./css/package.css")
+	+css("/css/package.css")
+	+css("/css/lib/readme.css")
 
 block content  
 	section.container
 		.top-area
-			span.info commonjs-walker
+			span.info #{pkg.name}
 			select.versions
-				option 1.1.2
-				option 1.2.3
-			span.info-box MIT
+				each detail, version in pkg.versions
+					option #{version}
+			span.info-box #{pkg.license}
 		.detail
 			.row
 				.col
-					+package-stat
-					+command("install","npm install commonjs-walker --save")
-					+maintainers()
+					+package-stat(pkg)
+					+command("install","npm install "+ pkg.name +" --save")
+					+maintainers(pkg.maintainers)
 				.col
 					.dependency-info.card
 						.tabs
@@ -31,35 +32,14 @@ block content
 								tr
 									th FULL NAME
 									th REQUIREMENT
-									th LATEST
-								tr
-									td async
-									td ~0.2.9
-									td 1.2.0
-								tr
-									td async
-									td ~0.2.9
-									td 1.2.0
-								tr
-									td async
-									td ~0.2.9
-									td 1.2.0
-								tr
-									td async
-									td ~0.2.9
-									td 1.2.0
-								tr
-									td async
-									td ~0.2.9
-									td 1.2.0
-								tr
-									td async
-									td ~0.2.9
-									td 1.2.0
+								each version, dependency in pkg.dependencies
+									tr
+										td #{dependency}
+										td #{version}
 
 			.row
 				section.readme.card
 					.title README
-					.content hahaha
+					.content.markdown !{pkg.readme}
 
 

@@ -40,36 +40,31 @@ mixin package-info-no-avatar()
 				p.description bla bla bla blabl abl ablab labla blabl 
 				.stat
 
-mixin package-stat()
+mixin package-stat(pkg)
 	section.package-stat.card
 		.top
-			a
-				img.avatar(src="./img/avatar.jpg")
-			.txt spud updated 4 days ago
+			a(href="/user/#{pkg.author.name}" target="_blank")
+				img.avatar(src="#{pkg.author.avatarMedium}")
+			.txt #{pkg.author.name} updated at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
 		.bottom
-			.item 
-				i(class="icon-like") 
-				span 299
-			.item
+			//- a.item
+			//- 	i(class="icon-like") 
+			//- 	span 299
+			a.item(href="#{pkg.homepage}" target="_blank")
 				i(class="icon-home") 
 				span Repo
-			.item
+			a.item(href="#{pkg.bugs.url}" target="_blank")
 				i(class="icon-issue")
 				span Issues
 
-mixin maintainers()
+mixin maintainers(maintainers)
 	section.maintainers.card
 		.head MAINTAINERS
 		.body
-			a
-				img.avatar(src="./img/avatar.jpg")
-			a
-				img.avatar(src="./img/avatar.jpg")
-			a
-				img.avatar(src="./img/avatar.jpg")
-			a
-				img.avatar(src="./img/avatar.jpg")
-
+			each maintainer in maintainers
+				a(href="/user/#{maintainer.name}" target="_blank")
+					img.avatar(src="#{maintainer.avatarMedium}")
+				
 mixin command(title,content)
 	section.command.card
 		.title #{title}

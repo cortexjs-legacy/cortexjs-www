@@ -15,8 +15,6 @@ font_family = "Helvetica Neue", arial, sans-serif
 * 
 	box-sizing:border-box
 
-
-
 body
 	font-family: font_family
 	font-weight:100
@@ -24,6 +22,7 @@ body
 	image:"../img/bg.png"
 a
 	cursor:pointer
+	text-decoration: none
 
 input
 	appearance:none
@@ -237,6 +236,23 @@ $icon
 			&:hover
 				border-left:5px solid green 
 				background-color:#232323
+
+nav_short()
+	.nav
+		.get-started
+			display:none
+	@media (min-width: 0px)
+		.nav
+			.overlay
+				padding-right:0px
+				.util-panel
+					display:none
+	@media (min-width: 700px)
+		.nav
+			.overlay
+				padding-right:122px
+				.util-panel
+					display:block
 
 @media (min-width: 0px)
 	.nav

@@ -35,5 +35,5 @@ gulp.task('watch', function() {
 	gulp.watch(["./dev/css/**/*.styl"], ['stylus']);
 });
 
-gulp.task('default', ['stylus', 'jade', 'img' ,'watch']);
-gulp.task('build', ['stylus', 'jade','img']);
+gulp.task('default', ['stylus',  'img' ,'watch']);
+gulp.task('build', ['stylus','img']);

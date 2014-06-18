@@ -9,7 +9,7 @@ html(ng-app="app")
 			.bg
 			.overlay
 				.main-panel
-					a.home
+					a.home(href="/")
 					.search-box
 						input(type="text")
 						i.icon-close
@@ -18,12 +18,11 @@ html(ng-app="app")
 					a.get-started GET STARTED
 					a.user.login
 						img.avatar(src="./img/avatar.jpg")
-			ul.dropdown
+			ul.dropdown.hide
 				li 
 					a MY BIA CARD
 				li
 					a SETTINGS
 				li
 					a LOG OUT
-
 		block content
