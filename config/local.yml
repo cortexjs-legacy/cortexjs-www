@@ -13,4 +13,9 @@ Logger:
 Auth:
   clientID: "b058836b6bdd02928e98"
   clientSecret: "28a4fe357cc57db6209a8eb3f315488472649633"
-  callbackUrl: "http://localhost:8080/auth/github/callback"
+  callbackUrl: "http://localhost:8010/auth/github/callback"
+
+Couch:
+  address: "http://127.0.0.1:15984"
+  user: "admin"
+  passwd: "admin"
