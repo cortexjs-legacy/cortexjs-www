@@ -28,17 +28,15 @@ var createDB = module.exports = function(options) {
 
   couch.registry.extend({
     findPackage: function(name, range, callback) {
-      if (typeof version == 'function') {
-        callback = version;
-        version = undefined;
+      if (typeof range == 'function') {
+        callback = range;
+        range = undefined;
       }
 
       var url = rewriteAddress + '/' + name + (range ? ('/' + range) : '');
-      if (!version) {
-        this._get(url, function(err, body) {
-          callback(err, body);
-        });
-      }
+      this._get(url, function(err, body) {
+        callback(err, body);
+      });
     },
     browseByAuthor: function(author, callback) {
       this.view('app/browseAuthors').query().groupLevel(5).betweenKeys([author], [author, {}]).exec(function(err, rows) {

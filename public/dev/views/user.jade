@@ -10,8 +10,8 @@ block content
 	+nav(user)
 	section.container
 		.user-area
-			+user(user,pkgs)
-			+user-info()
+			+user(profile, pkgs)
+			+user-info(profile)
 		.packages
 			each pkg in pkgs
 				+package-info-no-avatar(pkg)
