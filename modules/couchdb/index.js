@@ -27,20 +27,36 @@ var createDB = module.exports = function(options) {
   couch.bind('registry');
 
   couch.registry.extend({
-    findPackage: function(name, version, callback) {
+    findPackage: function(name, range, callback) {
       if (typeof version == 'function') {
         callback = version;
         version = undefined;
       }
 
-      var url = rewriteAddress + '/' + name + version ? ('/' + version) : '';
+      var url = rewriteAddress + '/' + name + (range ? ('/' + range) : '');
       if (!version) {
-        this.request({
-          url: url
-        }, function(err, res, body) {
-          console.log(body);
+        this._get(url, function(err, body) {
+          callback(err, body);
         });
       }
+    },
+    browseByAuthor: function(author, callback) {
+      this.view('app/browseAuthors').query().groupLevel(5).betweenKeys([author], [author, {}]).exec(function(err, rows) {
+        if (err) return callback(err);
+        var pkgs = [];
+        if (rows && rows.length) {
+          pkgs = rows.map(function(row) {
+            return {
+              name: row.key[1],
+              description: row.key[2],
+              latest: row.key[4],
+              modified: row.key[3]
+            };
+          });
+        }
+
+        callback(err, pkgs);
+      });
     }
   });
 
