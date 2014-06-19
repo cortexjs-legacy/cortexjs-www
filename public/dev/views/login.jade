@@ -2,15 +2,17 @@ include ./mixin/component
 
 extends layout/default.jade
 
-
 block head  
   title cortex
+  +css('/css/login.css')
 
 block content  
-  if user
-    +nav(user)
+  +nav(user)
 
   section.container
-    input(name="name")
-    input(name="password", type="password")
-    a(href="/auth/github") Login with Github
+    form(method="POST", action="login-directly")
+      input(name="name", placeholder="Username")
+      input(name="password", type="password", placeholder="Password")
+      button(type="submit") Login
+
+    a(href="/auth/github") Login/Signup with Github

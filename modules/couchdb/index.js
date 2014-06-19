@@ -12,6 +12,15 @@ var createDB = module.exports = function(options) {
       var id = 'org.couchdb.user:' + username;
       this.doc(id).exists(callback);
     },
+    verifyUser: function(username, password, callback) {
+      var id = 'org.couchdb.user:' + username;
+      this.doc(id, {
+        auth: {
+          user: username,
+          pass: password
+        }
+      }).open(callback);
+    },
     createUser: function(profile, callback) {
 
     }

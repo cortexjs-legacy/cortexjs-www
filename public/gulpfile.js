@@ -41,5 +41,6 @@ gulp.task('watch', function() {
 	gulp.watch(["./dev/js/neurons/**/*"], ['cortex']);
 });
 
-gulp.task('default', ['jade', 'stylus', 'img', 'cortex', 'watch']);
-gulp.task('build', ['jade', 'stylus', 'img', 'cortex']);
+
+gulp.task('default', ['stylus', 'img', 'cortex', 'watch']);
+gulp.task('build', ['stylus', 'img', 'cortex']);
