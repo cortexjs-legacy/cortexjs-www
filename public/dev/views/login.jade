@@ -7,10 +7,12 @@ block head
   +css('/css/login.css')
 
 block content  
-  +nav(user)
-
+  +nav()
   section.container
-    form(method="POST", action="login-directly")
+    if message
+      .message #{message}
+      
+    form(method="POST", action="/login-directly")
       input(name="name", placeholder="Username")
       input(name="password", type="password", placeholder="Password")
       button(type="submit") Login

@@ -33,9 +33,5 @@ var createDB = module.exports = function(options) {
   });
 };
 
-module.exports.couchdbAttach = function() {
-  return function(req, res, next) {
-    req.couchdb = createDB();
-    next();
-  };
-};
+
+module.exports.regDB = createDB();

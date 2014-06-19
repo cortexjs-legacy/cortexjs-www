@@ -17,3 +17,6 @@ Auth:
 
 Couch:
   address: "http://localhost:15984"
+
+Error:
+  showStack: true

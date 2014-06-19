@@ -1,0 +1,14 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+
+block head  
+  title cortex
+  +css('/css/error.css')
+
+block content  
+  +nav()
+  section.container
+      .statusCode #{statusCode}
+      .message #{error}
