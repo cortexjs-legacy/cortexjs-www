@@ -49,7 +49,7 @@ var createDB = module.exports = function(options) {
             return {
               name: row.key[1],
               description: row.key[2],
-              latest: row.key[4],
+              version: row.key[4],
               modified: row.key[3]
             };
           });
