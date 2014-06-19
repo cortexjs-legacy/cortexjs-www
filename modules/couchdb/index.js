@@ -1,6 +1,7 @@
 var couchdb = require('couch-db');
 var config = require('config').Couch;
 
+var rewriteAddress = require('url').resolve(config.address, config.rewrite);
 
 var createDB = module.exports = function(options) {
   var couch = couchdb(config.address, options);
@@ -26,7 +27,21 @@ var createDB = module.exports = function(options) {
   couch.bind('registry');
 
   couch.registry.extend({
+    findPackage: function(name, version, callback) {
+      if (typeof version == 'function') {
+        callback = version;
+        version = undefined;
+      }
 
+      var url = rewriteAddress + '/' + name + version ? ('/' + version) : '';
+      if (!version) {
+        this.request({
+          url: url
+        }, function(err, res, body) {
+          console.log(body);
+        });
+      }
+    }
   });
 
   return couch;
