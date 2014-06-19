@@ -9,12 +9,12 @@ process.on("uncaughtException", function(err) {
 
 gulp.task('stylus', function() {
 	var stylusOptions = {
-        use: [nib()],
-        "import" : ["nib"]
-    };
+		use: [nib()],
+		"import": ["nib"]
+	};
 	gulp.src(["./dev/css/**/*.styl"])
 		.pipe(stylus(stylusOptions))
-		.on('error',console.log)
+		.on('error', console.log)
 		.pipe(gulp.dest('./build/css'));
 });
 
@@ -41,5 +41,5 @@ gulp.task('watch', function() {
 	gulp.watch(["./dev/js/neurons/**/*"], ['cortex']);
 });
 
-gulp.task('default', ['stylus', 'img' ,'cortex', 'watch']);
-gulp.task('build', ['stylus','img','cortex']);
+gulp.task('default', ['jade', 'stylus', 'img', 'cortex', 'watch']);
+gulp.task('build', ['jade', 'stylus', 'img', 'cortex']);

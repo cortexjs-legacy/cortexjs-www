@@ -19,12 +19,17 @@ module.exports = function() {
   app.locals.marked = require('marked');
 
 
+  // add logger
   app.use(require('express-bunyan-logger')(_.defaults(config.Logger, {
     name: config.App.name
   })));
 
 
+  // attach couchdb
+  app.use(require('couchdb').couchdbAttach());
+
   app.use(require('cookie-parser')(config.Server.secret));
+
 
   app.use(bodyParser.urlencoded())
   app.use(bodyParser.json())
@@ -33,9 +38,6 @@ module.exports = function() {
     secret: config.Server.secret
   }));
 
-
-  app.use(passport.initialize());
-  app.use(passport.session());
 
   require('./lib').entitled(app);
 
