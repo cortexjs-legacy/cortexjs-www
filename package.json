@@ -58,6 +58,8 @@
     "request": "^2.36.0",
     "serve-static": "^1.2.3",
     "underscore": "^1.6.0",
-    "yaml": "^0.2.3"
+    "yaml": "^0.2.3",
+    "lru-cache": "^2.5.0",
+    "gravatar": "^1.0.6"
   }
 }

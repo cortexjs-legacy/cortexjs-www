@@ -34,6 +34,8 @@ module.exports = function() {
     secret: config.Server.secret
   }));
 
+  // attach couch to sessio
+  app.use(require('couchdb').attach);
 
   require('./lib').entitled(app);
 
