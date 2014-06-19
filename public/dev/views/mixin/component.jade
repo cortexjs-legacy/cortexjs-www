@@ -34,15 +34,19 @@ mixin user-info()
 		.head USER INFORMATION
 		.body
 			table
+				if user.displayName
+					tr
+						td Full Name
+						td #{user.displayName}
 				tr
-					td FULL NAME
-					td James Halliday
-				tr
-					td FULL NAME
-					td James Halliday
-				tr
-					td FULL NAME
-					td James Halliday
+					td Email
+					td
+						a #{user.email}
+				if user.github
+					tr
+						td Github
+						td
+							a(href="#{user.github}") #{user.github}
 
 mixin package-info(pkg)
 	a.package-info.card(href="/package/#{pkg.name}" target="_blank")

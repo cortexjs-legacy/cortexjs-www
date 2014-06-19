@@ -17,7 +17,7 @@ module.exports = function() {
 
   app.locals.moment = require('moment');
   app.locals.marked = require('marked');
-
+  app.locals.pretty = config.Server.pretty || false;
 
   // add logger
   app.use(require('express-bunyan-logger')(_.defaults(config.Logger, {
