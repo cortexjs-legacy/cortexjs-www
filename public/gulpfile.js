@@ -38,7 +38,7 @@ gulp.task('cortex', function() {
 gulp.task('watch', function() {
 	// gulp.watch(["./dev/views/**/*.jade"], ['jade']);
 	gulp.watch(["./dev/css/**/*.styl"], ['stylus']);
-	gulp.watch(["./dev/js/**/*"], ['cortex']);
+	gulp.watch(["./dev/js/neurons/**/*"], ['cortex']);
 });
 
 gulp.task('default', ['stylus', 'img' ,'cortex', 'watch']);

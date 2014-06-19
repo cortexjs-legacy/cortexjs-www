@@ -7,7 +7,9 @@
   "keywords": [
     "cortex"
   ],
-  "entries":["entries/*.js"],
+  "entries": [
+    "entries/*.js"
+  ],
   "license": "MIT",
   "author": {
     "name": "ltebean",

@@ -15,3 +15,7 @@ block content
 		.packages
 			each pkg in pkgs
 				+package-info-no-avatar(pkg)
+	script.
+		facade({
+			mod: 'cortexjs-www/entries/search'
+		});
