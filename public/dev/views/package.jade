@@ -25,13 +25,31 @@ block content
 				.col
 					.dependency-info.card
 						.tabs
-							a.tab.active DEPENDENCIES
-							a.tab DEV
-							a.tab DEPENDENTS
-						.content
+							a.tab.active(data-target="dependency") DEPENDENCIES
+							a.tab(data-target="dev") DEV
+							a.tab(data-target="dependents") DEPENDENTS
+						.content.tab-pane.active(data-content="dependency")
 							table
 								tr
 									th FULL NAME
+									th REQUIREMENT
+								each version, dependency in pkg.dependencies
+									tr
+										td #{dependency}
+										td #{version}
+						.content.tab-pane(data-content="dev")
+							table
+								tr
+									th FU NAME
+									th REQUIREMENT
+								each version, dependency in pkg.dependencies
+									tr
+										td #{dependency}
+										td #{version}
+						.content.tab-pane(data-content="dependents")
+							table
+								tr
+									th FULL NA
 									th REQUIREMENT
 								each version, dependency in pkg.dependencies
 									tr
