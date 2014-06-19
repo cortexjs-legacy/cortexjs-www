@@ -20,9 +20,6 @@ var createDB = module.exports = function(options) {
           pass: password
         }
       }).open(callback);
-    },
-    createUser: function(profile, callback) {
-
     }
   });
 
@@ -31,7 +28,17 @@ var createDB = module.exports = function(options) {
   couch.registry.extend({
 
   });
+
+  return couch;
 };
+
+
+module.exports.attach = function attach(req, res, next) {
+  req.couch = createDB();
+
+  next();
+};
+
 
 
 module.exports.regDB = createDB();
