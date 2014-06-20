@@ -16,8 +16,8 @@ block content
 				each version in pkg.versions
 					option #{version}
 			if pkg.license
-				span.info-box 
-					a(href="#{pkg.license.url}") #{pkg.license.name}
+				a(href="#{pkg.license.url}").info-box 
+					span #{pkg.license.name}
 		.detail
 			.row
 				.col
@@ -37,9 +37,10 @@ block content
 									th REQUIREMENT
 								each version, dependency in pkg.dependencies
 									tr
-										td #{dependency}
-										td #{version}
-
+										td 
+											a(href="/package/#{dependency}") #{dependency}
+										td 
+											a(href="/package/#{dependency}/#{version}") #{version}
 			.row
 				section.readme.card
 					.title README

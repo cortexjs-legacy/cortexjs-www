@@ -20,6 +20,10 @@ Couch:
   address: "http://localhost:15984"
   rewrite: "/registry/_design/app/_rewrite"
 
+Elasticsearch:
+  address: "localhost:9200"
+  index: "cortex"
+
 
 Error:
   showStack: true

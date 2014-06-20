@@ -1,5 +1,5 @@
-var Package = require('../lib/models/package');
+var Package = require('../../lib/models/package');
 
-describe('package model', function() {
+describe('model/package', function() {
 
 });

@@ -1,5 +1,5 @@
 describe('coucdb', function() {
-  var db = require('../modules/couchdb').regDB;
+  var db = require('../lib/couchdb').regDB;
 
   describe('packages', function() {
 

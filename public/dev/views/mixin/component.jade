@@ -11,7 +11,7 @@ mixin nav(user)
 				a.doc
 				a.get-started GET STARTED
 				if user
-					a.user(href="/user/#{user.name}")
+					a.user(href="/~#{user.name}")
 						img.avatar(src="#{user.avatarMedium}")
 				else	
 					a.login
@@ -56,7 +56,6 @@ mixin user-info(user)
 						td Location
 						td #{user.location}
 
-
 mixin package-info(pkg)
 	a.package-info.card(href="/package/#{pkg.name}" target="_blank")
 		img.avatar(src="#{pkg.author.avatarMedium}")
@@ -81,26 +80,24 @@ mixin package-info-no-avatar(pkg)
 mixin package-stat(pkg)
 	section.package-stat.card
 		.top
-			a(href="/user/#{pkg.author.name}" target="_blank")
+			a(href="/~#{pkg.author.name}" target="_blank")
 				img.avatar(src="#{pkg.author.avatarMedium}")
 			.txt Last updated by #{pkg.author.name} at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
 		.bottom
-			//- a.item
-			//- 	i(class="icon-like") 
-			//- 	span 299
 			a.item(href="#{pkg.homepage}" target="_blank")
 				i(class="icon-home") 
 				span Repo
-			a.item(href="#{pkg.bugs.url}" target="_blank")
-				i(class="icon-issue")
-				span Issues
+			if pkg.bugs
+				a.item(href="#{pkg.bugs.url}" target="_blank")
+					i(class="icon-issue")
+					span Issues
 
 mixin maintainers(maintainers)
 	section.maintainers.card
 		.head MAINTAINERS
 		.body
 			each maintainer in maintainers
-				a(href="/user/#{maintainer.name}" target="_blank")
+				a(href="/~#{maintainer.name}" target="_blank")
 					img.avatar(src="#{maintainer.avatarMedium}")
 				
 mixin command(title,content)
