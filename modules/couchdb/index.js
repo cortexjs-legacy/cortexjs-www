@@ -1,6 +1,8 @@
 var couchdb = require('couch-db');
 var config = require('config').Couch;
 
+var logger = require('logger')('couchdb');
+
 var rewriteAddress = require('url').resolve(config.address, config.rewrite);
 
 var createDB = module.exports = function(options) {
@@ -55,6 +57,31 @@ var createDB = module.exports = function(options) {
 
         callback(err, pkgs);
       });
+    },
+    dependents: function(name, limit, cb) {
+      if (typeof limit == 'function') {
+        cb = limit;
+        limit = undefined;
+      }
+
+      this.view('app/dependedUpon').query().startkey([name]).endkey([name, {}])
+        .limit(limit || 100).groupLevel(3)
+        .exec(function(err, data) {
+          if (!data) {
+            logger.warn('no dependents?', name, data, limit);
+            data = [];
+          } else {
+            data = data.map(function(row) {
+              return {
+                name: row.key[1],
+                description: row.key[2],
+                url: '/package/' + row.key[1]
+              };
+            });
+          }
+
+          cb(err, data);
+        });
     }
   });
 

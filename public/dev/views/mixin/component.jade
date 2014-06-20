@@ -83,7 +83,7 @@ mixin package-stat(pkg)
 		.top
 			a(href="/user/#{pkg.author.name}" target="_blank")
 				img.avatar(src="#{pkg.author.avatarMedium}")
-			.txt #{pkg.author.name} updated at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
+			.txt Last updated by #{pkg.author.name} at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
 		.bottom
 			//- a.item
 			//- 	i(class="icon-like") 

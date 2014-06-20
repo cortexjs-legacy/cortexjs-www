@@ -13,14 +13,16 @@ block content
 		.top-area
 			span.info #{pkg.name}
 			select.versions
-				each detail, version in pkg.versions
+				each version in pkg.versions
 					option #{version}
-			span.info-box #{pkg.license}
+			if pkg.license
+				span.info-box 
+					a(href="#{pkg.license.url}") #{pkg.license.name}
 		.detail
 			.row
 				.col
 					+package-stat(pkg)
-					+command("install","npm install "+ pkg.name +" --save")
+					+command("install","cortex install "+ pkg.name +" --save")
 					+maintainers(pkg.maintainers)
 				.col
 					.dependency-info.card
