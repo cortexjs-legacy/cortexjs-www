@@ -25,10 +25,10 @@ block content
 				.col
 					.dependency-info.card
 						.tabs
-							a.tab.active(data-target="dependency") DEPENDENCIES
-							a.tab(data-target="dev") DEV
-							a.tab(data-target="dependents") DEPENDENTS
-						.content.tab-pane.active(data-content="dependency")
+							a.tab.active DEPENDENCIES
+							a.tab DEV
+							a.tab DEPENDENTS
+						.content.tab-pane.active
 							table
 								tr
 									th FULL NAME
@@ -37,24 +37,22 @@ block content
 									tr
 										td #{dependency}
 										td #{version}
-						.content.tab-pane(data-content="dev")
+						.content.tab-pane
 							table
 								tr
-									th FU NAME
+									th FULL NAME
 									th REQUIREMENT
-								each version, dependency in pkg.dependencies
+								each version, dependency in pkg.devDependencies
 									tr
 										td #{dependency}
 										td #{version}
-						.content.tab-pane(data-content="dependents")
+						.content.tab-pane
 							table
 								tr
-									th FULL NA
-									th REQUIREMENT
-								each version, dependency in pkg.dependencies
+									th FULL NAME
+								each dependency in pkg.dependents
 									tr
-										td #{dependency}
-										td #{version}
+										td #{dependency.name}
 
 			.row
 				section.readme.card

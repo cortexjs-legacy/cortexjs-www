@@ -82,9 +82,10 @@ mixin package-stat(pkg)
 			a.item(href="#{pkg.homepage}" target="_blank")
 				i(class="icon-home") 
 				span Repo
-			a.item(href="#{pkg.bugs.url}" target="_blank")
-				i(class="icon-issue")
-				span Issues
+			if pkg.bugs
+				a.item(href="#{pkg.bugs.url}" target="_blank")
+					i(class="icon-issue")
+					span Issues
 
 mixin maintainers(maintainers)
 	section.maintainers.card

@@ -1,31 +1,28 @@
-var $=require('zepto');
+var $ = require('zepto');
 
-module.exports = function tabs(selector) {
-	var container = $(selector);
+function tabs(selector) {
+	var container=$(selector)
 	var tabs = container.find('.tab');
 	var panes = container.find('.tab-pane');
 
-	tabs.each(function(tab) {
-		tab.on('click', function(e) {
-			var target = e.target.getAttribute('data-target');
-			activate(target);
+	tabs.each(function(i, tab) {
+		$(tab).attr('data-tab-index', i);
+		$(tab).on('click', function(e) {
+			var index = $(this).attr('data-tab-index');
+			activate(tabs, index);
+			activate(panes, index);
 		});
 	})
 
-	function activate(target) {
-		tabs.each(function(i,tab) {
-			if (tab.getAttribute('data-target') != target) {
-				removeClass(tab, 'active')
+	function activate(tabs, index) {
+		tabs.each(function(i, tab) {
+			if (i != index) {
+				$(tab).removeClass('active');
 			} else {
-				addClass(tab, 'active')
-			}
-		});
-		panes.each(function(i,pane) {
-			if (pane.getAttribute('data-content') != target) {
-				removeClass(pane, 'active')
-			} else {
-				addClass(pane, 'active')
+				$(tab).addClass('active');
 			}
 		});
 	}
 }
+
+module.exports=tabs
