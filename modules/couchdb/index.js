@@ -62,12 +62,11 @@ var createDB = module.exports = function(options) {
 };
 
 
+
 module.exports.attach = function attach(req, res, next) {
   req.couch = createDB();
 
   next();
 };
-
-
 
 module.exports.regDB = createDB();
