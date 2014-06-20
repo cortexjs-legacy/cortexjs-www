@@ -13,14 +13,16 @@ block content
 		.top-area
 			span.info #{pkg.name}
 			select.versions
-				each detail, version in pkg.versions
+				each version in pkg.versions
 					option #{version}
-			span.info-box #{pkg.license}
+			if pkg.license
+				a(href="#{pkg.license.url}").info-box 
+					span #{pkg.license.name}
 		.detail
 			.row
 				.col
 					+package-stat(pkg)
-					+command("install","npm install "+ pkg.name +" --save")
+					+command("install","cortex install "+ pkg.name +" --save")
 					+maintainers(pkg.maintainers)
 				.col
 					.dependency-info.card
@@ -35,8 +37,10 @@ block content
 									th REQUIREMENT
 								each version, dependency in pkg.dependencies
 									tr
-										td #{dependency}
-										td #{version}
+										td
+											a(href="/package/#{dependency}") #{dependency}
+										td 
+											a(href="/package/#{dependency}/#{version}") #{version}
 						.content.tab-pane
 							table
 								tr
@@ -44,15 +48,18 @@ block content
 									th REQUIREMENT
 								each version, dependency in pkg.devDependencies
 									tr
-										td #{dependency}
-										td #{version}
+										td 
+											a(href="/package/#{dependency}") #{dependency}
+										td 
+											a(href="/package/#{dependency}/#{version}") #{version}
 						.content.tab-pane
 							table
 								tr
 									th FULL NAME
 								each dependency in pkg.dependents
 									tr
-										td #{dependency.name}
+										td 
+											a(href="/package/#{dependency}") #{dependency}
 
 			.row
 				section.readme.card

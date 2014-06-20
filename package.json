@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "cortexjs-www",
   "main": "index.js",
+  "engineStrict": true,
   "scripts": {
     "build-public": "cd public; gulp build",
     "start": "./scripts/start.sh local",
@@ -18,7 +19,7 @@
     "cortexjs-www"
   ],
   "engines": {
-    "node": ">=0.11.0"
+    "node": ">=0.10.0 <0.11.0"
   },
   "author": "cortexjs",
   "license": "MIT",
@@ -60,6 +61,7 @@
     "underscore": "^1.6.0",
     "yaml": "^0.2.3",
     "lru-cache": "^2.5.0",
-    "gravatar": "^1.0.6"
+    "gravatar": "^1.0.6",
+    "sanitizer": "^0.1.1"
   }
 }

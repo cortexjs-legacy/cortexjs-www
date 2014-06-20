@@ -1,5 +1,5 @@
 var express = require('express');
-var logger = require('logger')('app');
+var logger = require('./lib/logger')('app');
 var util = require('util');
 var passport = require('passport');
 var serveStatic = require('serve-static');
@@ -34,8 +34,6 @@ module.exports = function() {
     secret: config.Server.secret
   }));
 
-  // attach couch to sessio
-  app.use(require('couchdb').attach);
 
   require('./lib').entitled(app);
 

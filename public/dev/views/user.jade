@@ -10,8 +10,11 @@ block content
 	+nav(user)
 	section.container
 		.user-area
-			+user(user,pkgs)
-			+user-info()
+			+user(profile, pkgs)
+			+user-info(profile)
+			if profile.gPass
+				+command("login","cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}")
+
 		.packages
 			each pkg in pkgs
 				+package-info-no-avatar(pkg)
