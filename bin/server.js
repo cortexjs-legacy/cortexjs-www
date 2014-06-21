@@ -60,6 +60,7 @@ if (argv.cluster || require('config').Server.cluster) {
 
     d.on('error', function(e) {
         console.error('server encounter error: ', e);
+        console.error(e.stack);
     });
 
     d.run(function() {
