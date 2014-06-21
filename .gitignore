@@ -1,4 +1,6 @@
 config/production.yaml
+neurons/
+
 
 # Numerous always-ignore extensions
 *.bak
