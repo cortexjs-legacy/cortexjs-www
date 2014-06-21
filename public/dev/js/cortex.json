@@ -26,7 +26,6 @@
     "assert": "*"
   },
   "dependencies": {
-    "neuron": "~5.1.0",
     "zepto": "~1.1.3"
   }
 }
