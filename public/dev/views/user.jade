@@ -13,7 +13,10 @@ block content
 			+user(profile, pkgs)
 			+user-info(profile)
 			if profile.gPass
-				+command("login","cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}")
+				section.command.card
+					.title Cli Login
+					.content 
+						.txt cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}
 
 		.packages
 			each pkg in pkgs

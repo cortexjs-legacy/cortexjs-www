@@ -18,24 +18,27 @@ block content
 				table
 					each pkg in recentlyUpdated
 						tr
-							td #{pkg.name}
-							td #{pkg.version}
+							td 
+								a(href="/package/#{pkg.name}") #{pkg.name}
+							td #{pkg.updated}
 		.info-panel
 			.head MOST DEPENDED UPON
 			.body
 				table
 					each pkg in mostDependedUpon
 						tr
-							td #{pkg.name}
-							td #{pkg.version}
+							td 
+								a(href="/package/#{pkg.name}") #{pkg.name}
+							td #{pkg.count}
 		.info-panel
-			.head MOST STARED
+			.head MOST PROLIFIC USERS
 			.body
 				table
-					each pkg in mostStared
+					each user in prolifics
 						tr
-							td #{pkg.name}
-							td #{pkg.version}
+							td
+								a(href="/~#{user.name}") #{user.name}
+							td #{user.count}
 	script.
 		facade({
 			mod: 'cortexjs-www/entries/index'
