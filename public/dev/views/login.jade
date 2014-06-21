@@ -12,10 +12,10 @@ block content
     if message
       .message #{message}
       
-    form(method="POST", action="/login-directly")
-      input(name="username", placeholder="Username")
-      input(name="password", type="password", placeholder="Password")
-      button(type="submit") Sigin
-      button(type="reset") Reset
+    form.login(method="POST", action="/login-directly")
+      input.name(name="username", placeholder="Username")
+      input.pass(name="password", type="password", placeholder="Password")
+      button.signin(type="submit") Sigin
+      button.reset(type="reset") Reset
 
-    a(href="/auth/github") Signin/Signup with Github
+    a.github(href="/auth/github") Signin/Signup with Github

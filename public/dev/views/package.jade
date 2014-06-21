@@ -13,7 +13,7 @@ block content
 		.top-area
 			span.info #{pkg.name}
 			select.versions
-				each version in pkg.versions
+				each version in pkg.allVersions
 					option #{version}
 			if pkg.license
 				a(href="#{pkg.license.url}").info-box 

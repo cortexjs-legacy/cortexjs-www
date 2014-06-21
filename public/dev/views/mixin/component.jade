@@ -4,7 +4,7 @@ mixin nav(user)
 		.overlay
 			.main-panel
 				a.home(href="/")
-				.search-box
+				form.search-box(action="/search")
 					input(type="text")
 					i.icon-close
 			.util-panel
