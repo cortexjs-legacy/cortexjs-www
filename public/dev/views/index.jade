@@ -29,16 +29,16 @@ block content
 						tr
 							td 
 								a(href="/package/#{pkg.name}") #{pkg.name}
-							td #{pkg.count}
+							td #{pkg.count} packages
 		.info-panel
-			.head MOST PROLIFIC USERS
+			.head PROLIFIC USERS RECENTLY
 			.body
 				table
 					each user in prolifics
 						tr
 							td
 								a(href="/~#{user.name}") #{user.name}
-							td #{user.count}
+							td #{user.count} packages
 	script.
 		facade({
 			mod: 'cortexjs-www/entries/index'

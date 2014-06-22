@@ -4,9 +4,10 @@ mixin nav(user)
 		.overlay
 			.main-panel
 				a.home(href="/")
-				form.search-box(action="/search")
-					input(type="text")
+				form.search-box(method="GET", action="/search")
+					input(type="text", name="q")
 					i.icon-close
+					input(type="submit", style="display:none")
 			.util-panel
 				a.doc
 				a.get-started GET STARTED
@@ -82,7 +83,7 @@ mixin package-stat(pkg)
 		.top
 			a(href="/~#{pkg.author.name}" target="_blank")
 				img.avatar(src="#{pkg.author.avatarMedium}")
-			.txt Updated by #{pkg.author.name} at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
+			.txt. Last updated by #{pkg.author.name} at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
 		.bottom
 			a.item(href="#{pkg.homepage}" target="_blank")
 				i(class="icon-home") 

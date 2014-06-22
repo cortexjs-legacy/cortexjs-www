@@ -56,10 +56,12 @@ block content
 							table
 								tr
 									th FULL NAME
+									th DESCRIPTION
 								each dependency in pkg.dependents
 									tr
 										td 
-											a(href="/package/#{dependency}") #{dependency}
+											a(href="/package/#{dependency.name}") #{dependency.name}
+										td.ellipsis #{dependency.description}
 
 			.row
 				section.readme.card
