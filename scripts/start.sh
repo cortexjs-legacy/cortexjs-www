@@ -12,12 +12,9 @@ projectPath=`cd ${execDir};cd ..;pwd`
 
 env=$1
 
-if [ "${env}" = 'local' ] ;then
-    export NODE_ENV=local
-    "$projectPath/bin/server.js" --port 8010 | ./node_modules/.bin/bunyan
-elif [ "${env}" = 'dev' ] ;then
+if [ "${env}" = 'dev' ] ;then
     export NODE_ENV=development 
-    "$projetPath/bin/server.js" | ./node_modules/.bin/bunyan
+    "$projectPath/bin/server.js" --port 8010 | ./node_modules/.bin/bunyan
 elif [ "${env}" = 'prod' ] ;then
     export NODE_ENV=production
     "$projectPath/bin/server.js" | ./node_modules/.bin/bunyan

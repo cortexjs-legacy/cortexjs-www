@@ -7,7 +7,7 @@
   "engineStrict": true,
   "scripts": {
     "build-public": "cd public; gulp build",
-    "start": "./scripts/start.sh local",
+    "start": "./scripts/start.sh dev",
     "start-prod": "./scripts/start.sh prod",
     "test": "make test"
   },
