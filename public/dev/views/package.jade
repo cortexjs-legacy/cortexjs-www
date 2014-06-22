@@ -12,9 +12,12 @@ block content
 	section.container
 		.top-area
 			span.info #{pkg.name}
-			select.versions
+			select.versions(onchange="window.location = '/package/#{pkg.name}/'+this.options[this.selectedIndex].value")
 				each version in pkg.allVersions
-					option #{version}
+					if version == pkg.version
+						option(selected="true", value="#{version}") #{version}
+					else
+						option(value="#{version}") #{version}
 			if pkg.license
 				a(href="#{pkg.license.url}").info-box 
 					span #{pkg.license.name}
@@ -41,6 +44,18 @@ block content
 											a(href="/package/#{dependency}") #{dependency}
 										td 
 											a(href="/package/#{dependency}/#{version}") #{version}
+						if pkg.asyncDependencies && pkg.asyncDependencies.length
+							.content.tab-pane
+								table
+									tr
+										th FULL NAME
+										th REQUIREMENT
+										each version, dependency in pkg.asyncDependencies
+											tr
+												td 
+													a(href="/package/#{dependency}") #{dependency}
+												td 
+													a(href="/package/#{dependency}/#{version}") #{version}
 						.content.tab-pane
 							table
 								tr
