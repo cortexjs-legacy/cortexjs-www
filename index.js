@@ -12,6 +12,8 @@ var config = require('config');
 
 
 module.exports = function() {
+
+
   var app = express();
   app.set('views', path.join(__dirname, 'public/dev/views'));
   app.set('view engine', 'jade');
