@@ -8,7 +8,7 @@ Server:
   pretty: true
 
 Logger:
-  level: error
+  level: warn
   stdout: true
 
 Auth:
