@@ -22,7 +22,7 @@ Redis:
   session: 2
 
 Couch:
-  address: "http://couch.ctx.io"
+  address: "http://localhost:15984"
   rewrite: "/registry/_design/app/_rewrite"
 
 Elasticsearch:
