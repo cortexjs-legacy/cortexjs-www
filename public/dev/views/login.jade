@@ -11,11 +11,16 @@ block content
   section.container
     if message
       .message #{message}
-      
-    form.login(method="POST", action="/login-directly")
-      input.name(name="username", placeholder="Username")
-      input.pass(name="password", type="password", placeholder="Password")
-      button.signin(type="submit") Sigin
-      button.reset(type="reset") Reset
-
-    a.github(href="/auth/github") Signin/Signup with Github
+    else
+      .message LOGIN
+    .login
+      form(method="POST", action="/login-directly")
+        .row
+          input.name(name="username", placeholder="Username")
+        .row
+          input.pass(name="password", type="password", placeholder="Password")
+        .row
+          button.signin(type="submit") Sigin
+          button.reset(type="reset") Reset
+        .row.github
+          a(href="/auth/github") Signin/Signup with Github

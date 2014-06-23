@@ -7,29 +7,41 @@ nav_short()
 
 .container
   center()
-  width:60%
+  width:40%
+  height:400px
   margin-top:50px
-  background-color:#ffffff
   box-shadow:card_shadow 
+  background-color:#ffffff
   text-align:center
-  .login
-    input[name=username] 
-      height:40px
-      background-color:#ffffff
-      border:solid 1px #333
-      width:300px
-      padding:0px 36px 0px 36px
-      font-size:18px
-      color:#a8a8a8
-
-  .status-code
-    font-size:36px
-    height:80px
-    line-height:80px
-    border-bottom:1px solid #d0d7dd
   .message
     font-size:22px
-    color:grey
-    background-color:#efefef
-    height:60px
-    line-height:60px
+    height:80px
+    line-height:100px
+  .login
+    clearfix()
+    .row
+      width:50%
+      margin:20px 20px
+      center()
+      clearfix()
+    input 
+      color:grey
+      width:100%
+      height:40px
+      background-color:#ffffff
+      border:solid 1px grey
+      padding:0px 10px
+      font-size:16px
+    button
+      badge(red)
+      border:none
+      width:48%
+    button.signin
+      float:left
+    button.reset
+      float:right
+    .github
+      padding-top:20px
+      font-size:18px
+      a
+        color:#555555
