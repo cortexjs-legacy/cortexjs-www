@@ -1,0 +1,24 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+block head  
+	title cortex
+	+css("/css/collections.css")
+
+block content  
+	+nav(user)
+	section.container
+		.top-area
+			a.tag.active(data-name="all") all
+			each tag in tags
+				a.tag(data-name="tag") #{tag}
+		.packages
+			each pkg in pkgs
+				+package-info(pkg)
+	script.
+		facade({
+			mod: 'cortexjs-www/entries/search'
+		});
+
+

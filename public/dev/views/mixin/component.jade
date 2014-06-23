@@ -57,7 +57,7 @@ mixin user-info(user)
 						td #{user.location}
 
 mixin package-info(pkg)
-	a.package-info.card(href="/package/#{pkg.name}" target="_blank")
+	a.package-info.card(href="/package/#{pkg.name}" target="_blank" data-name="#{pkg.name}")
 		img.avatar(src="#{pkg.author.avatarMedium}")
 		.content
 			.top
@@ -67,7 +67,7 @@ mixin package-info(pkg)
 				p.description #{pkg.description} 
 
 mixin package-info-no-avatar(pkg)
-	a.package-info.card(href="/package/#{pkg.name}" target="_blank")
+	a.package-info.card(href="/package/#{pkg.name}" target="_blank" data-name="#{pkg.name}")
 		.content
 			.top
 				.package-name #{pkg.name}

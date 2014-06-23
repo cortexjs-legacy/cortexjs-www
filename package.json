@@ -63,6 +63,7 @@
     "lru-cache": "^2.5.0",
     "gravatar": "^1.0.6",
     "sanitizer": "^0.1.1",
-    "redis": "~0.10.3"
+    "redis": "~0.10.3",
+    "taggie": "^0.1.1"
   }
 }
