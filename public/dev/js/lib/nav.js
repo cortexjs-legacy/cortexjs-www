@@ -1,35 +1,74 @@
 var $ = require('zepto')
 
-function init(){
-	var nav=$('.nav');
-	var searchInput=nav.find('.search-box input');
-	var clearBtn=nav.find('.search-box .icon-close');
-	var user=nav.find('.user');
-	var dropdown=nav.find('ul.dropdown');
+function init() {
+	var nav = $('.nav');
+	var searchInput = nav.find('.search-box input');
+	var clearBtn = nav.find('.search-box .icon-close');
+	var user = nav.find('.user');
+	var dropdown = nav.find('ul.dropdown');
 
-	searchInput.on('keydown',function(event){
-		if(event.which!=13) return;
-		location.href='/search?keyword=' + searchInput.val();
+	searchInput.on('keydown', function(event) {
+		if (event.which != 13) return;
+		var input = searchInput.val().trim();
+		if (!input) {
+			return;
+		}
+		if (input.indexOf(':') == -1) {
+			searchByQuery(input);
+		} else {
+			searchByCriteria(input);
+		}
 	});
 
-	clearBtn.on('click',function(){
+	clearBtn.on('click', function() {
 		searchInput.val('');
 	});
 
-	user.on('mouseenter',function(){
+	user.on('mouseenter', function() {
 		dropdown.removeClass('hide');
 	});
 
-	user.on('mouseleave',function(event){
+	user.on('mouseleave', function(event) {
 		console.log(event)
-		if(event.y<60){
+		if (event.y < 60) {
 			dropdown.addClass('hide')
 		}
 	});
 
-	dropdown.on('mouseleave',function(event){
+	dropdown.on('mouseleave', function(event) {
 		dropdown.addClass('hide');
 	});
 }
 
-exports.init=init;
+function searchByQuery(input) {
+	var queryString = toQueryString({
+		q: input
+	});
+	location.href='./search?'+queryString;
+}
+
+function searchByCriteria(input) {
+	var queryObject = {};
+	var field = input.split('\|');
+	for (var i = field.length - 1; i >= 0; i--) {
+		var query = field[i].split(':').map(function(slice) {
+			return slice.trim();
+		});
+		//['keyword':'ajax']
+		queryObject[query[0]] = query[1];
+	};
+	location.href='./search?'+toQueryString(queryObject);
+
+}
+
+function toQueryString(obj) {
+	var parts = [];
+	for (var i in obj) {
+		if (obj.hasOwnProperty(i)) {
+			parts.push(encodeURIComponent(i) + "=" + encodeURIComponent(obj[i]));
+		}
+	}
+	return parts.join("&");
+}
+
+exports.init = init;
