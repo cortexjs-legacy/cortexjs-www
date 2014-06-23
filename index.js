@@ -47,7 +47,7 @@ module.exports = function() {
   }
 
   app.use(session({
-    // store: new RedisStore(redisOpt),
+    store: new RedisStore(redisOpt),
     secret: config.Server.secret
   }));
 
