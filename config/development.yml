@@ -4,7 +4,7 @@ App:
 Server:
   cluster: false
   port: 8080
-  secret: "cortexjs-www-session"
+  secret: "secret-cortexjs-www"
   pretty: true
 
 Logger:
@@ -15,6 +15,11 @@ Auth:
   clientID: "b058836b6bdd02928e98"
   clientSecret: "28a4fe357cc57db6209a8eb3f315488472649633"
   callbackUrl: "http://localhost:8010/auth/github/callback"
+
+Redis:
+  address: '127.0.0.1'
+  port: 6379
+  session: 2
 
 Couch:
   address: "http://localhost:15984"

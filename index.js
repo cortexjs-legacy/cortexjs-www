@@ -5,6 +5,9 @@ var passport = require('passport');
 var serveStatic = require('serve-static');
 var path = require('path');
 var bodyParser = require('body-parser')
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+
 
 var _ = require('underscore');
 
@@ -30,10 +33,21 @@ module.exports = function() {
 
   app.use(require('cookie-parser')(config.Server.secret));
 
+
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded());
   app.use(require('method-override')());
-  app.use(require('express-session')({
+
+
+  var redisOpt = {};
+  if (config.Redis) {
+    redisOpt.db = config.Redis.session || 0;
+    redisOpt.host = config.Redis.address || "127.0.0.1";
+    redisOpt.port = config.Redis.port || 6379;
+  }
+
+  app.use(session({
+    store: new RedisStore(redisOpt),
     secret: config.Server.secret
   }));
 
