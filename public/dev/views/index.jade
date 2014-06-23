@@ -19,7 +19,7 @@ block content
 					each pkg in recentlyUpdated
 						tr
 							td 
-								a(href="/package/#{pkg.name}") #{pkg.name}
+								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
 							td #{pkg.updated}
 		.info-panel
 			.head MOST DEPENDED UPON
@@ -28,7 +28,7 @@ block content
 					each pkg in mostDependedUpon
 						tr
 							td 
-								a(href="/package/#{pkg.name}") #{pkg.name}
+								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
 							td #{pkg.count} packages
 		.info-panel
 			.head PROLIFIC USERS RECENTLY
@@ -37,7 +37,7 @@ block content
 					each user in prolifics
 						tr
 							td
-								a(href="/~#{user.name}") #{user.name}
+								a(href="/~#{user.name}" target="_blank") #{user.name}
 							td #{user.count} packages
 	script.
 		facade({

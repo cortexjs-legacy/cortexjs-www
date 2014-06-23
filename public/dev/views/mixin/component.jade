@@ -4,7 +4,7 @@ mixin nav(user)
 		.overlay
 			.main-panel
 				a.home(href="/")
-				form.search-box(method="GET", action="/search")
+				.search-box
 					input(type="text", name="q")
 					i.icon-close
 					input(type="submit", style="display:none")
@@ -15,7 +15,7 @@ mixin nav(user)
 					a.user(href="/~#{user.name}")
 						img.avatar(src="#{user.avatarMedium}")
 				else	
-					a.login
+					a.login(href="/login")
 		ul.dropdown.hide
 			li 
 				a MY BIA CARD
@@ -66,7 +66,6 @@ mixin package-info(pkg)
 				.version #{pkg.version}
 			.bottom
 				p.description #{pkg.description} 
-				.stat
 
 mixin package-info-no-avatar(pkg)
 	a.package-info.card(href="/package/#{pkg.name}" target="_blank")
@@ -76,7 +75,6 @@ mixin package-info-no-avatar(pkg)
 				.version #{pkg.version}
 			.bottom
 				p.description #{pkg.description} 
-				.stat
 
 mixin package-stat(pkg)
 	section.package-stat.card
