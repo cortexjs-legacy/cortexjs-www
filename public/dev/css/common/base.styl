@@ -62,12 +62,17 @@ table
 	background-color:#ffffff
 	padding 0px
 	font-size:14px
+	thead
+		tr
+			background-color:#e9eaee
+	tbody
+		tr
+			&:nth-child(odd)
+				background-color:#f0f1f5
+			&:nth-child(even)
+				background-color:#e9eaee
 	tr
 		height:40px
-		&:nth-child(odd)
-			background-color:#f0f1f5
-		&:nth-child(even)
-			background-color:#e9eaee
 		th
 			border-top:1px solid #d0d7dd
 			border-bottom:1px solid #d0d7dd

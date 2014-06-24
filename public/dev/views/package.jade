@@ -47,8 +47,8 @@ block content
 									tr
 										th FULL NAME
 										th REQUIREMENT
-								each version, dependency in pkg.dependencies
-									tbody
+								tbody
+									each version, dependency in pkg.dependencies
 										tr
 											td
 												a(href="/package/#{dependency}") #{dependency}
@@ -61,8 +61,8 @@ block content
 										tr
 											th FULL NAME
 											th REQUIREMENT
-									each version, dependency in pkg.asyncDependencies
-										tbody
+									tbody
+										each version, dependency in pkg.asyncDependencies
 											tr
 												td 
 													a(href="/package/#{dependency}") #{dependency}
@@ -74,8 +74,8 @@ block content
 									tr
 										th FULL NAME
 										th REQUIREMENT
-								each version, dependency in pkg.devDependencies
-									tbody
+								tbody
+									each version, dependency in pkg.devDependencies
 										tr
 											td 
 												a(href="/package/#{dependency}") #{dependency}
@@ -87,8 +87,8 @@ block content
 									tr
 										th(style="width:30%") FULL NAME
 										th DESCRIPTION
-								each dependency in pkg.dependents
-									tbody
+								tbody
+									each dependency in pkg.dependents
 										tr
 											td 
 												a(href="/package/#{dependency.name}") #{dependency.name}
