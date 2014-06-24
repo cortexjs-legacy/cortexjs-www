@@ -1,0 +1,55 @@
+global-reset()
+
+@import "common/*"
+@import "mixins/*"
+
+nav_short()
+
+a
+	color:blue
+
+.container
+	center()
+	clearfix()
+	margin-top:30px
+	width:90%
+	.area
+		margin:1%
+
+.main
+	float:left
+	width:68%
+	background-color:#ffffff
+	padding:0px 25px
+	box-shadow:card_shadow
+
+.aside
+	float:left
+	width:28%
+	background-color:#ffffff
+	.user
+		user()
+
+.event
+	border-bottom:1px solid #efefef
+	padding:16px 0px
+	clearfix()
+	&:last-child
+		border-bottom:none
+	.user
+		float:left
+		.avatar
+			cycle(50px)
+	.action
+		float:left
+		margin-left:10px
+		line-height:50px
+		font-size:16px
+	.date
+		float:right
+		color:grey
+		font-size:14px
+
+
+
+	

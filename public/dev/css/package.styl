@@ -25,6 +25,7 @@ nav_short()
 			display:inline-block
 			clearfix()
 			.tag, .add-tag
+				font-size:14px
 				margin-right:10px
 				background-color:red
 				height:30px
@@ -58,8 +59,6 @@ nav_short()
 		center()
 		.card
 			margin-bottom:26px
-		.row
-			clearfix()
 		.package-stat
 			package-stat()
 			.txt
@@ -95,58 +94,54 @@ nav_short()
 						background-color:#ffffff
 				.active
 					background-color:#ffffff
-			.content
-				display:none
-				overflow-x:hidden
-				overflow-y: auto
-				height:342px
+			.tab-panes
+				height:320px;
 				background-color:#ffffff
 				box-shadow:card_shadow
-				table
-					table-layout: fixed
-					width:100%
-					td
-						a
-							color: #777
-			.active
-				display:block
+				.content
+					display:none
+					overflow-x:hidden
+					overflow-y: auto
+					height:280px
+					background-color:#ffffff
+					table
+						table-layout: fixed
+						width:100%
+						td
+							a
+								color: #777
+				.active
+					display:block
 		.readme
 			center()
 			readme()
 
 
 @media (min-width: 0px)
-	.row
-		padding:0 0%
-	.col
-		float:none
-		width:100%
-	.card 
-		width:100%
 	.container
 		.detail
 			width:100%
-			.readme
-				width:100%
-				margin:0
-				.content
-					padding:0px 20px 20px 20px
+	.main-col
+		width:100%
+		margin:0%
+	.aside-col
+		width:100%
+		margin:0%
 
 @media (min-width: 860px)
-	.row
-		padding:0 1%
-	.col
-		float:left
-		width:48%
-		margin:0% 1%
 	.container
 		.detail
 			width:95%
-			.readme
-				width:98%
-				center()
-				.content
-					padding:0px 40px 30px 40px
+	.main-col
+		float:left
+		width:66%
+		margin:0% 1%
+	.aside-col
+		float:left
+		width:30%
+		margin:0% 1%
+	
+			
 
 
 

@@ -1,0 +1,61 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+block head  
+	title cortex
+	+css("/css/timeline.css")
+
+block content  
+	+nav(user)
+	section.container
+		.main.area
+			.event
+				a.user(href="/~#{user.name}")
+					img.avatar(src="#{user.avatarMedium}")
+				.action 
+					span update a package 
+					a mbox
+				.date 1 hour ago
+			.event
+				a.user(href="/~#{user.name}")
+					img.avatar(src="#{user.avatarMedium}")
+				.action 
+					a spud
+					span  follows you
+				.date 2 hour ago
+			.event
+				a.user(href="/~#{user.name}")
+					img.avatar(src="#{user.avatarMedium}")
+				.action 
+					span update a package 
+					a mbox
+				.date 1 hour ago
+			.event
+				a.user(href="/~#{user.name}")
+					img.avatar(src="#{user.avatarMedium}")
+				.action 
+					a spud
+					span  follows you
+				.date 2 hour ago
+			.event
+				a.user(href="/~#{user.name}")
+					img.avatar(src="#{user.avatarMedium}")
+				.action 
+					span update a package 
+					a mbox
+				.date 1 hour ago
+			.event
+				a.user(href="/~#{user.name}")
+					img.avatar(src="#{user.avatarMedium}")
+				.action 
+					a spud
+					span  follows you
+				.date 2 hour ago
+		.aside.area
+	script.
+		facade({
+			mod: 'cortexjs-www/entries/collections'
+		});
+
+

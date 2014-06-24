@@ -1,5 +1,5 @@
 .markdown
-  font-weight:300
+  line-height:1.5
   a
     color #4183C4
     &.absent
@@ -13,16 +13,11 @@
       top 0
       left 0
       bottom 0
-  p,
-  li
-    a
-      border-bottom: 1px solid #bcd7e4
-      &:hover
-        border-color: #4183C4
 
   h1, h2, h3, h4, h5, h6
     margin 20px 0 10px
     padding 0
+    font-weight bold
     -webkit-font-smoothing antialiased
     cursor text
     position relative
@@ -80,6 +75,19 @@
     color #cccccc
     height 4px
     padding 0
+
+  body
+    & > h2
+      &:first-child
+        margin-top 0
+        padding-top 0
+    & > h1
+      &:first-child
+        margin-top 0
+        padding-top 0
+        & + h2
+          margin-top 0
+          padding-top 0
 
   body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child
     margin-top 0

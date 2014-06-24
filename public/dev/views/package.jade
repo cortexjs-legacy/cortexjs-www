@@ -30,22 +30,23 @@ block content
 				a.add-tag `
 				input.tag-input(type="text" class="hide")
 		.detail
-			.row
-				.col
-					+package-stat(pkg)
-					+command("install","cortex install "+ pkg.name +" --save")
-					+maintainers(pkg.maintainers)
-				.col
-					.dependency-info.card
-						.tabs
-							a.tab.active DEPENDENCIES
-							a.tab DEV
-							a.tab DEPENDENTS
+			.main-col
+				+package-stat(pkg)
+				section.readme.card
+					.title README
+					.content.markdown !{pkg.readme}
+			.aside-col
+				.dependency-info.card
+					.tabs
+						a.tab.active DEPS
+						a.tab DEV
+						a.tab DEPENDENTS
+					.tab-panes
 						.content.tab-pane.active
 							table
 								thead
 									tr
-										th FULL NAME
+										th NAME
 										th REQUIREMENT
 								tbody
 									each version, dependency in pkg.dependencies
@@ -59,7 +60,7 @@ block content
 								table
 									thead
 										tr
-											th FULL NAME
+											th NAME
 											th REQUIREMENT
 									tbody
 										each version, dependency in pkg.asyncDependencies
@@ -72,7 +73,7 @@ block content
 							table
 								thead
 									tr
-										th FULL NAME
+										th NAME
 										th REQUIREMENT
 								tbody
 									each version, dependency in pkg.devDependencies
@@ -85,7 +86,7 @@ block content
 							table
 								thead
 									tr
-										th(style="width:30%") FULL NAME
+										th NAME
 										th DESCRIPTION
 								tbody
 									each dependency in pkg.dependents
@@ -93,11 +94,8 @@ block content
 											td 
 												a(href="/package/#{dependency.name}") #{dependency.name}
 											td.ellipsis #{dependency.description}
+				+maintainers(pkg.maintainers)
 
-			.row
-				section.readme.card
-					.title README
-					.content.markdown !{pkg.readme}
 	script.
 		facade({
 			mod: 'cortexjs-www/entries/package'
