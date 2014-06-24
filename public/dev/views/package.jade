@@ -35,22 +35,26 @@ block content
 							a.tab DEPENDENTS
 						.content.tab-pane.active
 							table
-								tr
-									th FULL NAME
-									th REQUIREMENT
-								each version, dependency in pkg.dependencies
-									tr
-										td
-											a(href="/package/#{dependency}") #{dependency}
-										td 
-											a(href="/package/#{dependency}/#{version}") #{version}
-						if pkg.asyncDependencies && pkg.asyncDependencies.length
-							.content.tab-pane
-								table
+								thead
 									tr
 										th FULL NAME
 										th REQUIREMENT
-										each version, dependency in pkg.asyncDependencies
+								each version, dependency in pkg.dependencies
+									tbody
+										tr
+											td
+												a(href="/package/#{dependency}") #{dependency}
+											td 
+												a(href="/package/#{dependency}/#{version}") #{version}
+						if pkg.asyncDependencies && pkg.asyncDependencies.length
+							.content.tab-pane
+								table
+									thead
+										tr
+											th FULL NAME
+											th REQUIREMENT
+									each version, dependency in pkg.asyncDependencies
+										tbody
 											tr
 												td 
 													a(href="/package/#{dependency}") #{dependency}
@@ -58,25 +62,29 @@ block content
 													a(href="/package/#{dependency}/#{version}") #{version}
 						.content.tab-pane
 							table
-								tr
-									th FULL NAME
-									th REQUIREMENT
-								each version, dependency in pkg.devDependencies
+								thead
 									tr
-										td 
-											a(href="/package/#{dependency}") #{dependency}
-										td 
-											a(href="/package/#{dependency}/#{version}") #{version}
+										th FULL NAME
+										th REQUIREMENT
+								each version, dependency in pkg.devDependencies
+									tbody
+										tr
+											td 
+												a(href="/package/#{dependency}") #{dependency}
+											td 
+												a(href="/package/#{dependency}/#{version}") #{version}
 						.content.tab-pane
 							table
-								tr
-									th FULL NAME
-									th DESCRIPTION
-								each dependency in pkg.dependents
+								thead
 									tr
-										td 
-											a(href="/package/#{dependency.name}") #{dependency.name}
-										td.ellipsis #{dependency.description}
+										th(style="width:30%") FULL NAME
+										th DESCRIPTION
+								each dependency in pkg.dependents
+									tbody
+										tr
+											td 
+												a(href="/package/#{dependency.name}") #{dependency.name}
+											td.ellipsis #{dependency.description}
 
 			.row
 				section.readme.card
