@@ -17,12 +17,12 @@ Auth:
   callbackUrl: "http://localhost:8010/auth/github/callback"
 
 Redis:
-  address: '127.0.0.1'
+  address: '192.168.9.49'
   port: 6379
   session: 2
 
 Couch:
-  address: "http://localhost:15984"
+  address: "http://couch.ctx.io"
   rewrite: "/registry/_design/app/_rewrite"
 
 Elasticsearch:

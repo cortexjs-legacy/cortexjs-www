@@ -39,7 +39,7 @@ tagInput.on('keydown', function(event) {
 			console.log('error')
 		},
 		complete:function(){
-			tagInput.text('')
+			tagInput.val('')
 			tagInput.addClass('hide');
 			addTagBtn.removeClass('hide');
 		}
