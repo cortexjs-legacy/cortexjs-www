@@ -1,0 +1,23 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+block head  
+	title cortex
+	+css("/css/getstarted.css")
+	+css("/css/lib/readme.css")
+
+block content  
+	+nav(user)
+	section.container
+		.main
+			.markdown !{content}
+		.aside
+			.anchor installation
+			.anchor build a module
+	script.
+		facade({
+			mod: 'cortexjs-www/entries/collections'
+		});
+
+

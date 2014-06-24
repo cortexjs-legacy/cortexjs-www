@@ -9,7 +9,7 @@ mixin nav(user)
 					i.icon-close
 			.util-panel
 				a.doc
-				a.get-started GET STARTED
+				a.get-started(href="/get-started") GET STARTED
 				if user
 					a.user(href="/~#{user.name}")
 						img.avatar(src="#{user.avatarMedium}")
@@ -20,7 +20,7 @@ mixin nav(user)
 				a(href="/collections") COLLECTIONS
 			
 			li
-				a MY BIA CARD
+				a(href="/~") MY BIA CARD
 			li
 				a SETTINGS
 			li
