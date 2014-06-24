@@ -12,3 +12,8 @@ block content
   section.container
       .status-code #{statusCode}
       .message #{error}
+      
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/index'
+    });
