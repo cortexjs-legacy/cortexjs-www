@@ -7,8 +7,8 @@ block head
   title cortex
   +css('/css/error.css')
 
-block content  
-  +nav()
+block content
+  +nav(user)
   section.container
       .status-code #{statusCode}
       .message #{error}
