@@ -15,7 +15,7 @@ $panel
 		padding:0px 20px
 		color:grey
 		border-bottom:1px solid #d0d7dd
-	.bodyf
+	.body
 		background-color:#ffffff
 		
 user()
@@ -28,20 +28,33 @@ user()
 	img.avatar
 		cycle(150px)
 	.username
-		margin-top:25px
+		margin-top:20px
 		width:100%
 		font-size:24px
 		center()
-	.user-packages
+	.info-area
+		margin-top:30px
+		width:100%
+		clearfix()
+		.item
+			width:33.33%
+			float:left
+			.content
+				font-size:26px
+			.title
+				color:light_grey
+				margin-top:10px
+				font-size:12px
+	.btn-follow
 		position:absolute
-		right:0px
-		bottom:30px
-		height:30px
-		padding:0px 20px
-		line-height:30px
-		font-size:12px
-		background-color:#e98065
+		left:0px
+		top:40px
+		background-color:red
 		color:#ffffff
+		height:36px
+		line-height:36px
+		padding:0px 15px
+		font-size:14px
 
 user-info()
 	@extends $panel

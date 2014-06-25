@@ -65,6 +65,8 @@
     "sanitizer": "^0.1.1",
     "redis": "~0.10.3",
     "taggie": "^0.2.0",
-    "connect-redis": "^2.0.0"
+    "connect-redis": "^2.0.0",
+    "user-graph": "^0.2.4",
+    "feedie": "^0.2.1"
   }
 }

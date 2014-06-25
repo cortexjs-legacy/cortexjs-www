@@ -26,12 +26,27 @@ mixin nav(user)
 			li
 				a(href="/logout") LOG OUT
 
-mixin user(user,pkgs)
+mixin user(user,pkgs,showFollowBtn)
 	section.user.card
 		img.avatar(src="#{user.avatarMedium}")
 		.username #{user.name}
-		if pkgs
-			.user-packages #{pkgs.length} packages
+		.info-area
+			.item
+				.content.followers #{user.followersCount||0}
+				.title FOLLOWERS
+			.item
+				.content #{pkgs.length}
+				.title PACKAGES
+			.item
+				.content.following #{user.followingCount||0}
+				.title FOLLOWING
+		if showFollowBtn
+			a.btn-follow(href="javascript:;" data-user="#{user.name}" data-followed="#{user.isFollowed}")
+				if user.isFollowed==0
+					span FOLLOW
+				else
+					span UNFOLLOW
+	
 
 mixin user-info(user)
 	section.user-info.card

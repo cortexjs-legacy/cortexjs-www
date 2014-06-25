@@ -17,6 +17,7 @@ addTagBtn.on('click', function() {
 	tagInput.removeClass('hide');
 	addTagBtn.addClass('hide');
 	addTagBtn.removeClass('animated');
+	tagInput.focus()
 });
 
 tagInput.on('keydown', function(event) {
