@@ -5,6 +5,7 @@ extends layout/default.jade
 block head  
 	title cortex
 	+css("/css/index.css")
+	+css("/css/lib/animate.css")
 
 block content  
 	+nav(user)
@@ -12,7 +13,7 @@ block content
 		img.logo-large(src="./img/logo-large.png")
 		.slogan The package cloud for browsers, connecting creative people
 	.main-content
-		.info-panel
+		.info-panel.animated.fadeInDown
 			.head RECENTLY UPDATED
 			.body
 				table
@@ -21,7 +22,7 @@ block content
 							td 
 								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
 							td #{pkg.updated}
-		.info-panel
+		.info-panel.animated.fadeInDown
 			.head MOST DEPENDED UPON
 			.body
 				table
@@ -30,7 +31,7 @@ block content
 							td 
 								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
 							td #{pkg.count} packages
-		.info-panel
+		.info-panel.animated.fadeInDown
 			.head PROLIFIC USERS RECENTLY
 			.body
 				table

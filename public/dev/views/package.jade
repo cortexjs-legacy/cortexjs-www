@@ -6,6 +6,7 @@ block head
 	title cortex
 	+css("/css/package.css")
 	+css("/css/lib/readme.css")
+	+css("/css/lib/animate.css")
 
 block content  
 	+nav(user)
@@ -25,10 +26,10 @@ block content
 				.tags
 					if tags && tags.length>0
 						each tag in tags
-							a.tag #{tag}
+							a.tag(class="animated flipInY") #{tag}
 				
-				a.add-tag `
-				input.tag-input(type="text" class="hide")
+				a.add-tag(class="animated flipInY") `
+				input.tag-input(type="text" class="hide animated fadeIn")
 		.detail
 			.main-col
 				+package-stat(pkg)
@@ -42,7 +43,7 @@ block content
 						a.tab DEV
 						a.tab DEPENDENTS
 					.tab-panes
-						.content.tab-pane.active
+						.content.tab-pane.active.animated.fadeIn
 							table
 								thead
 									tr
@@ -56,7 +57,7 @@ block content
 											td 
 												a(href="/package/#{dependency}/#{version}") #{version}
 						if pkg.asyncDependencies && pkg.asyncDependencies.length
-							.content.tab-pane
+							.content.tab-pane.animated.fadeIn
 								table
 									thead
 										tr
@@ -69,7 +70,7 @@ block content
 													a(href="/package/#{dependency}") #{dependency}
 												td 
 													a(href="/package/#{dependency}/#{version}") #{version}
-						.content.tab-pane
+						.content.tab-pane.animated.fadeIn
 							table
 								thead
 									tr
@@ -82,7 +83,7 @@ block content
 												a(href="/package/#{dependency}") #{dependency}
 											td 
 												a(href="/package/#{dependency}/#{version}") #{version}
-						.content.tab-pane
+						.content.tab-pane.animated.fadeIn
 							table
 								thead
 									tr

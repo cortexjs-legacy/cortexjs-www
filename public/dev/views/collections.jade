@@ -5,6 +5,7 @@ extends layout/default.jade
 block head  
 	title cortex
 	+css("/css/collections.css")
+	+css('/css/lib/animate.css')
 
 block content  
 	+nav(user)
@@ -12,7 +13,7 @@ block content
 		.top-area
 			a.active.all(data-name="all") all
 			each tag in tags
-				a.tag(data-name="#{tag}") #{tag}
+				a.tag(data-name="#{tag}" class="animated flipInY") #{tag}
 		.packages
 			each pkg in pkgs
 				+package-info(pkg)

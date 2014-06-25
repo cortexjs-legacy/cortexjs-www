@@ -16,6 +16,7 @@ var tagInput = $('.tag-input');
 addTagBtn.on('click', function() {
 	tagInput.removeClass('hide');
 	addTagBtn.addClass('hide');
+	addTagBtn.removeClass('animated');
 });
 
 tagInput.on('keydown', function(event) {
@@ -48,5 +49,6 @@ tagInput.on('keydown', function(event) {
 
 function addTagToList(tagName){
 	var tag=$('<a/>').html(tagName).addClass('tag');
-	tag.appendTo($('.tags'))
+	tag.appendTo($('.tags'));
+	tag.addClass('animated flipInY')
 }
