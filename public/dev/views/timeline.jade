@@ -15,7 +15,9 @@ block content
 					img.avatar(src="#{user.avatarMedium}")
 				.action 
 					span update a package 
-					a mbox
+					a mbox 
+					span to version 
+					a 1.2.1
 				.date 1 hour ago
 			.event
 				a.user(href="/~#{user.name}")
@@ -53,6 +55,17 @@ block content
 					span  follows you
 				.date 2 hour ago
 		.aside.area
+			+user(profile, pkgs,user.name!=profile.name)
+			.info-panel.animated.fadeInDown
+				.head MY PACKAGES
+				.body
+					.content
+						table
+							each pkg in pkgs
+								tr
+									td 
+										a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
+									td #{pkg.version}
 	script.
 		facade({
 			mod: 'cortexjs-www/entries/collections'

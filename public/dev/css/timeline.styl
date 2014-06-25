@@ -26,9 +26,29 @@ a
 .aside
 	float:left
 	width:28%
-	background-color:#ffffff
 	.user
 		user()
+		margin-bottom:20px
+		height:200px
+		padding-top:10px
+		img.avatar
+			margin-top:16px
+			cycle(80px)
+		.username
+			display:none
+		.info-area
+			margin-top:20px
+			.item
+				.content
+					font-size:24px
+				.title
+					font-size:10px
+	.info-panel
+		user-info()
+		height:410px
+		.content
+			overflow:scroll
+			height:300px
 
 .event
 	border-bottom:1px solid #efefef
@@ -48,6 +68,8 @@ a
 	.date
 		float:right
 		color:grey
+		margin-top:6px
+		margin-right:6px
 		font-size:14px
 
 
