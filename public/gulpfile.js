@@ -36,7 +36,7 @@ gulp.task('css', function() {
 
 gulp.task('cortex', function() {
 	var path=require('fs').realpathSync('./dev/js/neurons/')
-	gulp.src([path+'/**/*'])
+	return gulp.src([path+'/**/*'])
 		.pipe(gulp.dest("./build/neurons"));
 });
 

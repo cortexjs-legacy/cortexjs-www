@@ -6,11 +6,9 @@ function tabs(selector) {
 	var panes = container.find('.tab-pane');
 
 	tabs.each(function(i, tab) {
-		$(tab).attr('data-tab-index', i);
 		$(tab).on('click', function(e) {
-			var index = $(this).attr('data-tab-index');
-			activate(tabs, index);
-			activate(panes, index);
+			activate(tabs, i);
+			activate(panes, i);
 		});
 	})
 
