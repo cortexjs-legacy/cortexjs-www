@@ -19,9 +19,6 @@
     "url": "http://github.com/cortexjs/cortexjs-www/issues"
   },
   "homepage": "http://github.com/cortexjs/cortexjs-www",
-  "engines": {
-    "neuron": "*"
-  },
   "devDependencies": {
     "assert": "*"
   },

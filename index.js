@@ -54,9 +54,9 @@ module.exports = function() {
 
   require('./lib').entitled(app);
 
-  app.use(require('./lib').routes);
-
   app.use(serveStatic('public/build', {}));
+
+  app.use(require('./lib').routes);
 
   app.use(require('./lib').errorHandler());
 

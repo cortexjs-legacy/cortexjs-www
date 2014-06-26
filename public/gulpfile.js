@@ -34,11 +34,15 @@ gulp.task('css', function() {
 		.pipe(gulp.dest("./build/css/lib"));
 });
 
-gulp.task('cortex', function() {
-	var path=require('fs').realpathSync('./dev/js/neurons/')
-	return gulp.src([path+'/**/*'])
-		.pipe(gulp.dest("./build/neurons"));
+gulp.task('cortex', ['neuron'], function() {
+	return gulp.src(['./dev/js/neurons/**/*'])
+		.pipe(gulp.dest("./build/neurons/"));
 });
+
+gulp.task('neuron',function(){
+	return gulp.src(['./dev/js/neuron.js'])
+		.pipe(gulp.dest("./build/"));
+})
 
 
 gulp.task('watch', function() {

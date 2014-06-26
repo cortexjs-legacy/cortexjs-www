@@ -1,12 +1,13 @@
 include ../mixin/static
 
 html 
-	head
-		block head
-		+js('/neurons/neuron/latest/neuron.js')
-		script.
-			neuron.config({
-				path: '/neurons'
-			});
-	body
-		block content
+  head
+    block head
+    +js('/neuron.js')
+    +js('/neurons/config.js')
+    script.
+      neuron.config({
+        path: '/neurons'
+      });
+  body
+    block content
