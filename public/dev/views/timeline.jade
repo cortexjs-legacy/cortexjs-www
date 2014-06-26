@@ -9,14 +9,16 @@ mixin packageEvent(event)
 			img.avatar(src="#{event.user.avatarMedium}")
 		.content
 			.detail
-				span #{event.detail.action} package 
-				a #{event.detail.name} 
+				a.user(href="/~#{event.user.name}") #{event.user.name}&nbsp;  
+				span  #{event.detail.action}d package 
+				a(href="/#{event.detail.name}") #{event.detail.name} 
 				span  with version 
-				a #{event.detail.version}
+				a(href="/#{event.detail.name}/#{event.detail.version}") #{event.detail.version}
 			.bottom
-				span.tag package
-				span.username #{event.user.name}
-				span.date 1 hour ago
+				if event.detail.tags && event.detail.tags.length>0
+					each tag in event.detail.tags
+						span.tag #{tag}
+				span.date #{moment(new Date(event.date)).fromNow()}
 
 mixin followEvent(event)
 	.event
@@ -28,9 +30,7 @@ mixin followEvent(event)
 				span  #{event.detail.action}
 				a  you
 			.bottom
-				span.tag user
-				span.username #{event.user.name}
-				span.date 1 hour ago
+				span.date #{moment(new Date(event.date)).fromNow()}
 
 block head  
 	title cortex
