@@ -32,7 +32,8 @@
     "gulp": "^3.6.0",
     "gulp-stylus": "~1.0.0",
     "gulp-jade": "^0.4.2",
-    "nib": "~1.0.2"
+    "nib": "~1.0.2",
+    "replicate": "~0.2.0"
   },
   "dependencies": {
     "accepts": "^1.0.3",
