@@ -2,6 +2,36 @@ include ./mixin/component
 
 extends layout/default.jade
 
+
+mixin packageEvent(event)
+	.event
+		a.user(href="/~#{event.user.name}")
+			img.avatar(src="#{event.user.avatarMedium}")
+		.content
+			.detail
+				span #{event.detail.action} package 
+				a #{event.detail.name} 
+				span  with version 
+				a #{event.detail.version}
+			.bottom
+				span.tag package
+				span.username #{event.user.name}
+				span.date 1 hour ago
+
+mixin followEvent(event)
+	.event
+		a.user(href="/~#{event.user.name}")
+			img.avatar(src="#{event.user.avatarMedium}")
+		.content
+			.detail
+				a #{event.user.name} 
+				span  #{event.detail.action}
+				a  you
+			.bottom
+				span.tag user
+				span.username #{event.user.name}
+				span.date 1 hour ago
+
 block head  
 	title cortex
 	+css("/css/timeline.css")
@@ -10,53 +40,15 @@ block content
 	+nav(user)
 	section.container
 		.main.area
-			.event
-				a.user(href="/~#{user.name}")
-					img.avatar(src="#{user.avatarMedium}")
-				.action 
-					span update a package 
-					a mbox 
-					span to version 
-					a 1.2.1
-				.date 1 hour ago
-			.event
-				a.user(href="/~#{user.name}")
-					img.avatar(src="#{user.avatarMedium}")
-				.action 
-					a spud
-					span  follows you
-				.date 2 hour ago
-			.event
-				a.user(href="/~#{user.name}")
-					img.avatar(src="#{user.avatarMedium}")
-				.action 
-					span update a package 
-					a mbox
-				.date 1 hour ago
-			.event
-				a.user(href="/~#{user.name}")
-					img.avatar(src="#{user.avatarMedium}")
-				.action 
-					a spud
-					span  follows you
-				.date 2 hour ago
-			.event
-				a.user(href="/~#{user.name}")
-					img.avatar(src="#{user.avatarMedium}")
-				.action 
-					span update a package 
-					a mbox
-				.date 1 hour ago
-			.event
-				a.user(href="/~#{user.name}")
-					img.avatar(src="#{user.avatarMedium}")
-				.action 
-					a spud
-					span  follows you
-				.date 2 hour ago
+			each event in events
+				if event.type=='package'
+					+packageEvent(event)
+				else if event.type=='follow'
+					+followEvent(event)
+			
 		.aside.area
 			+user(profile, pkgs,user.name!=profile.name)
-			.info-panel.animated.fadeInDown
+			.info-panel.my-packages
 				.head MY PACKAGES
 				.body
 					.content
@@ -66,6 +58,16 @@ block content
 									td 
 										a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
 									td #{pkg.version}
+			.info-panel.recommendation
+				.head PEOPLE YOU MIGHT KNOW
+				.body
+					a(href="/~#{user.name}")
+						img.avatar(src="#{user.avatarMedium}")
+					a(href="/~#{user.name}")
+						img.avatar(src="#{user.avatarMedium}")
+					a(href="/~#{user.name}")
+						img.avatar(src="#{user.avatarMedium}")
+
 	script.
 		facade({
 			mod: 'cortexjs-www/entries/collections'

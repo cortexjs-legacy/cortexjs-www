@@ -5,13 +5,13 @@ global-reset()
 
 nav_short()
 
-a
-	color:blue
+
 
 .container
 	center()
 	clearfix()
 	margin-top:30px
+	margin-bottom:50px
 	width:90%
 	.area
 		margin:1%
@@ -43,34 +43,60 @@ a
 					font-size:24px
 				.title
 					font-size:10px
-	.info-panel
+	.recommendation
+		maintainers()
+	.my-packages
 		user-info()
 		height:410px
 		.content
 			overflow:scroll
 			height:300px
+	.info-panel
+		margin-bottom:20px
+
 
 .event
 	border-bottom:1px solid #efefef
-	padding:16px 0px
+	padding:18px 0px
+	position:relative
 	clearfix()
+	a
+		color:blue
 	&:last-child
 		border-bottom:none
 	.user
 		float:left
 		.avatar
 			cycle(50px)
-	.action
+	.content
 		float:left
-		margin-left:10px
-		line-height:50px
-		font-size:16px
-	.date
-		float:right
-		color:grey
-		margin-top:6px
-		margin-right:6px
-		font-size:14px
+		margin-left:15px
+		.detail
+			line-height:26px
+			font-size:18px
+		.bottom
+			color:grey
+			margin-top:6px
+			font-size:10px
+			.tag
+				vertical-align:bottom
+				display:inline-block
+				background-color:light_grey
+				color:#ffffff
+				font-size:10px
+				height:16px
+				line-height:16px
+				padding:0px 6px
+			.username
+				margin-left:10px
+			.date
+				position:absolute
+				right:10px;
+				top:15px
+				font-size:14px
+				color:light_grey
+				margin-left:10px
+
 
 
 
