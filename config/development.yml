@@ -17,13 +17,19 @@ Auth:
   callbackUrl: "http://localhost:8010/auth/github/callback"
 
 Redis:
-  address: '192.168.9.49'
+  address: '127.0.0.1'
   port: 6379
   session: 2
 
 Couch:
-  address: "http://couch.ctx.io"
+  address: "http://localhost:15984"
   rewrite: "/registry/_design/app/_rewrite"
+
+  Timeline: 
+    auth:
+      user: "timeline"
+      pass: "123456"
+
 
 Elasticsearch:
   address: "localhost:9200"

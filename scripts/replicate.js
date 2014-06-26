@@ -16,7 +16,7 @@ function hash(id) {
 
 function filterPackage(id, rev) {
   return !!(hash(id).match(/^00/) ||
-    id.match(/^(request|underscore|util|async)$/))
+    id.match(/^(request|underscore|util|async|lang)$/))
 }
 
 // add some more once we've got the first batch
