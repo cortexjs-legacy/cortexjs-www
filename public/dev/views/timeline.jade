@@ -40,7 +40,7 @@ block content
 	+nav(user)
 	section.container
 		.main.area
-			if events & events.lenght>0
+			if events && events.length > 0
 				each event in events
 					if event.type=='package'
 						+packageEvent(event)
