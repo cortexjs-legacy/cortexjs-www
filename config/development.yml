@@ -26,8 +26,9 @@ Couch:
   rewrite: "/registry/_design/app/_rewrite"
 
   Timeline: 
+    database: "timeline_dev"
     auth:
-      user: "timeline"
+      user: "timeline_dev"
       pass: "123456"
 
 
