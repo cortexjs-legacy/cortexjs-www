@@ -3,7 +3,7 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-  title cortex
+  title Login
   +css('/css/login.css')
 
 block content  
@@ -20,7 +20,7 @@ block content
         .row
           input.pass(name="password", type="password", placeholder="Password")
         .row
-          button.signin(type="submit") Sigin
+          button.signin(type="submit") Signin
           button.reset(type="reset") Reset
         .row.github
           a(href="/auth/github") Signin/Signup with Github

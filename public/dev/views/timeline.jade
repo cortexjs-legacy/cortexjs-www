@@ -33,18 +33,21 @@ mixin followEvent(event)
 				span.date #{moment(new Date(event.date)).fromNow()}
 
 block head  
-	title cortex
+	title Timeline
 	+css("/css/timeline.css")
 
 block content  
 	+nav(user)
 	section.container
 		.main.area
-			each event in events
-				if event.type=='package'
-					+packageEvent(event)
-				else if event.type=='follow'
-					+followEvent(event)
+			if events & events.lenght>0
+				each event in events
+					if event.type=='package'
+						+packageEvent(event)
+					else if event.type=='follow'
+						+followEvent(event)
+			else
+				.empty follow someone and their acitivities will apprear here
 			
 		.aside.area
 			+user(profile, pkgs,user.name!=profile.name)
@@ -58,15 +61,17 @@ block content
 									td 
 										a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
 									td #{pkg.version}
-			.info-panel.recommendation
-				.head PEOPLE YOU MIGHT KNOW
-				.body
-					a(href="/~#{user.name}")
-						img.avatar(src="#{user.avatarMedium}")
-					a(href="/~#{user.name}")
-						img.avatar(src="#{user.avatarMedium}")
-					a(href="/~#{user.name}")
-						img.avatar(src="#{user.avatarMedium}")
+			if recommendation && recommendation.length>0
+				.info-panel.recommendation
+					.head PEOPLE YOU MIGHT KNOW
+					.body
+						each user in recommendation
+							a(href="/~#{user.name}")
+								img.avatar(src="#{user.avatarMedium}")
+							a(href="/~#{user.name}")
+								img.avatar(src="#{user.avatarMedium}")
+							a(href="/~#{user.name}")
+								img.avatar(src="#{user.avatarMedium}")
 
 	script.
 		facade({
