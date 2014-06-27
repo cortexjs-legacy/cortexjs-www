@@ -26,9 +26,9 @@ mixin followEvent(event)
 			img.avatar(src="#{event.user.avatarMedium}")
 		.content
 			.detail
-				a #{event.user.name} 
+				a(href="/~#{event.user.name}") #{event.user.name} 
 				span  #{event.detail.action}
-				a  you
+				a(href="/~")  you
 			.bottom
 				span.date #{moment(new Date(event.date)).fromNow()}
 

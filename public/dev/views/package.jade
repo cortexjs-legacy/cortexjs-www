@@ -87,12 +87,12 @@ block content
 							table
 								thead
 									tr
-										th NAME
+										th(style="width:30%")  NAME
 										th DESCRIPTION
 								tbody
 									each dependency in pkg.dependents
 										tr
-											td 
+											td
 												a(href="/package/#{dependency.name}") #{dependency.name}
 											td.ellipsis #{dependency.description}
 				+maintainers(pkg.maintainers)
