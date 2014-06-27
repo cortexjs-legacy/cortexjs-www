@@ -27,7 +27,8 @@ module.exports = function() {
 
   // add logger
   app.use(require('express-bunyan-logger')(_.defaults(config.Logger, {
-    name: config.App.name
+    name: config.App.name,
+    immediate: true
   })));
 
 
