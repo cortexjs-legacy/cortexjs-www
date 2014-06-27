@@ -44,7 +44,7 @@ function searchByQuery(input) {
 	var queryString = toQueryString({
 		q: input
 	});
-	location.href='./search?'+queryString;
+	location.href = '/search?' + queryString;
 }
 
 function searchByCriteria(input) {
@@ -57,7 +57,7 @@ function searchByCriteria(input) {
 		//['keyword':'ajax']
 		queryObject[query[0]] = query[1];
 	};
-	location.href='./search?'+toQueryString(queryObject);
+	location.href = '/search?' + toQueryString(queryObject);
 
 }
 
