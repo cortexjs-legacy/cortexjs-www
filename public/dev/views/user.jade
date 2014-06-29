@@ -18,7 +18,7 @@ block content
 					.title Cli Login
 					.content 
 						.txt cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}
-
+							.copy-button(data-clipboard-text="cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}" title="Click to copy.") 
 		.packages
 			each pkg in pkgs
 				+package-info-no-avatar(pkg)

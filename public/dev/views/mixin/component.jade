@@ -21,8 +21,9 @@ mixin nav(user)
 			
 			li
 				a(href="/~") MY BIA CARD
-			li
-				a SETTINGS
+			if user
+				li
+					a(href="/~#{user.name}") SETTINGS
 			li
 				a(href="/logout") LOG OUT
 
