@@ -24,10 +24,11 @@ cortex init
 
 cortex will ask you a bunch of questions, and using the default will be fine. If everything goes well, you will find the project structure like this:
 
-	hello-world
-	|-test  // where test cases belongs to
-	|-index.js	// you module's entry file
-	|-cortex.json	// package info
+	hello-world/
+	|-test/              // where test cases belongs to
+	|-index.js	      // you module's entry file
+	|-index.html      // runner
+	|-cortex.json	 // package info
 	
 #### Meet our best buddy - jquery
 
@@ -52,7 +53,7 @@ Run 'cortex build' to build the project. In development , you can use 'cortex wa
 #### Run the code
 
 
-In hello-world/test/runner.html, include your module
+In hello-world/index.html, include your module
 
 	facade({
 		mod:'hello-world'

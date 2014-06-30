@@ -8,9 +8,11 @@ global-reset()
 		background-color:#02060e
 
 .banner
+	image:"../img/slogan-bg.png"
 	height:380px
 	position:relative
 	background-color:#02060e
+	background-position:0px -60px
 	.logo-large
 		display:block
 		position:absolute
@@ -36,6 +38,28 @@ global-reset()
 		user-info()
 		height: 430px
 		float:left
+		ul
+			color:#777777
+			font-size:14px
+			line-height:40px
+			li
+				border-bottom:1px solid #d0d7dd
+				height:40px
+				&:nth-child(odd)
+					background-color:#f0f1f5
+				&:nth-child(even)
+					background-color:#e9eaee
+				.title
+					display:inline-block
+					float:left
+					padding-left:30px
+					max-width:60%
+					overflow:hidden
+				.detail
+					display:inline-block
+					float:right
+					padding-right:30px
+					overflow:hidden
 
 @media (min-width: 0px)
 	.main-content

@@ -19,7 +19,7 @@ block content
 						option(selected="true", value="#{version}") #{version}
 					else
 						option(value="#{version}") #{version}
-			if pkg.license
+			if pkg.license && pkg.license.name
 				a(href="#{pkg.license.url}").info-box 
 					span #{pkg.license.name}
 			if user

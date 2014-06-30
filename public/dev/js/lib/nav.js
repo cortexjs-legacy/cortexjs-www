@@ -7,6 +7,10 @@ function init() {
 	var user = nav.find('.user');
 	var dropdown = nav.find('ul.dropdown');
 
+	searchInput.on('click', function(event) {
+		clearBtn.removeClass('hide');
+	});
+
 	searchInput.on('keydown', function(event) {
 		if (event.which != 13) return;
 		var input = searchInput.val().trim();

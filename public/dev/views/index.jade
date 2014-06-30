@@ -17,30 +17,30 @@ block content
 		.info-panel.animated.fadeInDown
 			.head RECENTLY UPDATED
 			.body
-				table
+				ul
 					each pkg in recentlyUpdated
-						tr
-							td 
-								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-							td #{pkg.updated}
+						li
+							.title 
+								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}asdfasdfasdfasdfasd
+							.detail #{pkg.updated}
 		.info-panel.animated.fadeInDown
 			.head MOST DEPENDED UPON
 			.body
-				table
+				ul
 					each pkg in mostDependedUpon
-						tr
-							td 
+						li
+							.title 
 								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-							td #{pkg.count} packages
+							.detail #{pkg.count} packages
 		.info-panel.animated.fadeInDown
 			.head PROLIFIC USERS RECENTLY
 			.body
-				table
+				ul
 					each user in prolifics
-						tr
-							td
+						li
+							.title
 								a(href="/~#{user.name}" target="_blank") #{user.name}
-							td #{user.count} packages
+							.detail #{user.count} packages
 	script.
 		facade({
 			mod: 'cortexjs-www/entries/index'
