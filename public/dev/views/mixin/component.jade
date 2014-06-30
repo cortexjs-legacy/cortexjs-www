@@ -20,10 +20,10 @@ mixin nav(user)
 				a(href="/collections") COLLECTIONS
 			
 			li
-				a(href="/~") MY BIA CARD
+				a(href="/~") TIMELINE
 			if user
 				li
-					a(href="/~#{user.name}") SETTINGS
+					a(href="/~#{user.name}") MY BIO CARD
 			li
 				a(href="/logout") LOG OUT
 
