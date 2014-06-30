@@ -24,8 +24,10 @@ function init() {
 		}
 	});
 
-	clearBtn.on('click', function() {
+	clearBtn.on('click', function(e) {
+    e.stopPropagation();
 		searchInput.val('');
+    clearBtn.addClass('hide');
 	});
 
 	user.on('mouseenter', function() {

@@ -290,11 +290,13 @@ readme()
 			position:absolute
 			right:0px
 			top:0px
-			.doc
+			.doc, .github
 				background-color:nav_bg
 				height:nav_height
 				margin-left:1px
 				width:nav_height
+        text-indent: -200px
+        overflow:hidden
 				float:left
 				&:before
 					content:""
@@ -304,6 +306,9 @@ readme()
 					position:absolute
 					top:18px
 					left:18px
+      .github
+        &:before
+          image:"../img/github.png"
 			.get-started
 				margin-left:1px
 				line-height:nav_height
