@@ -11,7 +11,7 @@ block content
   +nav(user)
   section.container
     .user-area
-      +user(profile, pkgs,user.name!=profile.name)
+      +user(profile, pkgs, !user || user.name!=profile.name)
       +user-info(profile)
       if profile.gPass
         section.command.card
