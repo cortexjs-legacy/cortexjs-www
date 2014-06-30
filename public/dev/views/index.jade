@@ -19,27 +19,27 @@ block content
         ul
           each pkg in recentlyUpdated
             li
-              .title 
-                a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-              .detail #{pkg.updated}
+              a(href="/package/#{pkg.name}" target="_blank")
+                .title #{pkg.name}
+                .detail #{pkg.updated}
     .info-panel.animated.fadeInDown
       .head MOST DEPENDED UPON
       .body
         ul
           each pkg in mostDependedUpon
             li
-              .title 
-                a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-              .detail #{pkg.count} packages
+              a(href="/package/#{pkg.name}" target="_blank")
+                .title  #{pkg.name}
+                .detail #{pkg.count} packages
     .info-panel.animated.fadeInDown
       .head PROLIFIC USERS RECENTLY
       .body
         ul
           each user in prolifics
             li
-              .title
-                a(href="/~#{user.name}" target="_blank") #{user.name}
-              .detail #{user.count} packages
+              a(href="/~#{user.name}" target="_blank")
+                .title #{user.name}
+                .detail #{user.count} packages
   script.
     facade({
       mod: 'cortexjs-www/entries/index'
