@@ -25,12 +25,12 @@ gulp.task('jade', function() {
 });
 
 gulp.task('img', function() {
-  gulp.src(["./dev/img/*"])
+  return gulp.src(["./dev/img/*"])
     .pipe(gulp.dest("./build/img"));
 });
 
 gulp.task('css', function() {
-  gulp.src(["./dev/css/lib/*.css"])
+  return gulp.src(["./dev/css/lib/*.css"])
     .pipe(gulp.dest("./build/css/lib"));
 });
 
