@@ -1,22 +1,25 @@
-## Installation
+## 1. Preparation
 
-Before anything taking its part, you should install [node](http://nodejs.org) and "cortex".
+Before writing the code, there are some prepartion work to do:
 
-#### Install Node
+### Install Node.js
 
-Visit [http://nodejs.org](http://nodejs.org), download and install the proper version of nodejs.
+Just go to http://nodejs.org/, install the latest version of Node.js.
 
-#### Install Cortex
+### Install Cortex
 
-```sh
+run the command:
+
+```bash
 npm install -g cortex
 ```
 
-## Build an awesome module
+when the installation process finishes, run `cortex -v` to verify if cortex is successfully installed.
+
+## 2. Initialize the project 
 
 
-#### Init the project
-First, make a directory called hello-world, in the directory root path, run 'cortext init' to initialize the project:
+Make a directory called 'hello-world', in the directory root path, run `cortext init` to initialize the project:
 
 ```
 cortex init
@@ -30,39 +33,39 @@ cortex will ask you a bunch of questions, and using the default will be fine. If
 	|-index.html      // runner
 	|-cortex.json	 // package info
 	
-#### Meet our best buddy - jquery
 
-Install jquery as the dependency, after the command finishes, you will find jquery appears in the dependencies field in cortex.json
+## 3. Install dependencies
+
+Install jquery as the dependency:
 
 ```
-cortex install jquery --save	
+cortex install jquery --save
 ```	
+
+Cortex will download all the dependencies into a folder called 'neurons', and You will see the console output:
+
+```
+installing jquery@*
+   GET http://r.ctx.io/jquery 200
+   GET http://r.ctx.io/jquery/-/jquery-1.9.1.tgz 200
+write /Users/ltebean/Desktop/hello-world/neurons/jquery/1.9.1/jquery.js
+```
 	
-#### Write the module
-Our task is simple - append some text to the html body, so edit index.js
+## 4. Write code
+Our task is simple - append some text to the html body, so edit index.js:
 
 	var $ = require('jquery');
 	$('body').html('hello world');
 	
+You will find that we write code just the same way as in Node.js.
+
 	
-#### Build the project
-Run 'cortex build' to build the project. In development , you can use 'cortex watch' to watch the changes of files, if any file changes, cortex will rebuild the project
+## 5. Build the project
+Run `cortex build` to build the project. In development , you can use `cortex watch` to watch the changes of files, if any file changes, cortex will rebuild the project
 
 	cortex build
 	
-#### Run the code
-
-
-In hello-world/index.html, include your module
-
-	facade({
-		mod:'hello-world'
-	});
-	
-Then run 'cortex server' to server the infrastructure module
-
-	cortex server
-		
-Finally open the file in browser, done~
+## 6. Run the code
+Open index.html in the browser, done~
 
 
