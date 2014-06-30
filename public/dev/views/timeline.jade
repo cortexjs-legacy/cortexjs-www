@@ -4,74 +4,74 @@ extends layout/default.jade
 
 
 mixin packageEvent(event)
-	.event
-		a.user(href="/~#{event.user.name}")
-			img.avatar(src="#{event.user.avatarMedium}")
-		.content
-			.detail
-				a.user(href="/~#{event.user.name}") #{event.user.name}&nbsp;  
-				span  #{event.detail.action}d package 
-				a(href="/#{event.detail.name}") #{event.detail.name} 
-				span  with version 
-				a(href="/#{event.detail.name}/#{event.detail.version}") #{event.detail.version}
-			.bottom
-				if event.detail.tags && event.detail.tags.length>0
-					each tag in event.detail.tags
-						span.tag #{tag}
-				span.date #{moment(new Date(event.date)).fromNow()}
+  .event
+    a.user(href="/~#{event.user.name}")
+      img.avatar(src="#{event.user.avatarMedium}")
+    .content
+      .detail
+        a.user(href="/~#{event.user.name}") #{event.user.name}&nbsp;  
+        span  #{event.detail.action}d package 
+        a(href="/#{event.detail.name}") #{event.detail.name} 
+        span  with version 
+        a(href="/#{event.detail.name}/#{event.detail.version}") #{event.detail.version}
+      .bottom
+        if event.detail.tags && event.detail.tags.length>0
+          each tag in event.detail.tags
+            span.tag #{tag}
+        span.date #{moment(new Date(event.date)).fromNow()}
 
 mixin followEvent(event)
-	.event
-		a.user(href="/~#{event.user.name}")
-			img.avatar(src="#{event.user.avatarMedium}")
-		.content
-			.detail
-				a(href="/~#{event.user.name}") #{event.user.name} 
-				span  #{event.detail.action}
-				a(href="/~")  you
-			.bottom
-				span.date #{moment(new Date(event.date)).fromNow()}
+  .event
+    a.user(href="/~#{event.user.name}")
+      img.avatar(src="#{event.user.avatarMedium}")
+    .content
+      .detail
+        a(href="/~#{event.user.name}") #{event.user.name} 
+        span  #{event.detail.action}
+        a(href="/~")  you
+      .bottom
+        span.date #{moment(new Date(event.date)).fromNow()}
 
 block head  
-	title Timeline
-	+css("/css/timeline.css")
+  title Timeline
+  +css("/css/timeline.css")
 
 block content  
-	+nav(user)
-	section.container
-		.main.area
-			if events && events.length > 0
-				each event in events
-					if event.type=='package'
-						+packageEvent(event)
-					else if event.type=='follow'
-						+followEvent(event)
-			else
-				.empty follow someone and their acitivities will apprear here
-			
-		.aside.area
-			+user(profile, pkgs,user.name!=profile.name)
-			.info-panel.my-packages
-				.head MY PACKAGES
-				.body
-					.content
-						table
-							each pkg in pkgs
-								tr
-									td 
-										a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-									td #{pkg.version}
-			if recommendation && recommendation.length>0
-				.info-panel.recommendation
-					.head PEOPLE YOU MIGHT KNOW
-					.body
-						each user in recommendation
-							a(href="/~#{user.name}")
-								img.avatar(src="#{user.avatarMedium}")
+  +nav(user)
+  section.container
+    .main.area
+      if events && events.length > 0
+        each event in events
+          if event.type=='package'
+            +packageEvent(event)
+          else if event.type=='follow'
+            +followEvent(event)
+      else
+        .empty follow someone and their acitivities will apprear here
+      
+    .aside.area
+      +user(profile, pkgs,user.name!=profile.name)
+      .info-panel.my-packages
+        .head MY PACKAGES
+        .body
+          .content
+            table
+              each pkg in pkgs
+                tr
+                  td 
+                    a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
+                  td #{pkg.version}
+      if recommendation && recommendation.length>0
+        .info-panel.recommendation
+          .head PEOPLE YOU MIGHT KNOW
+          .body
+            each user in recommendation
+              a(href="/~#{user.name}")
+                img.avatar(src="#{user.avatarMedium}")
 
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/collections'
-		});
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/collections'
+    });
 
 

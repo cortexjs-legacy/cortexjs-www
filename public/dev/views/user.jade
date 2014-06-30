@@ -3,26 +3,26 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-	title ~#{profile.name}
-	+css("/css/user.css")
-	+css("/css/lib/animate.css")
+  title ~#{profile.name}
+  +css("/css/user.css")
+  +css("/css/lib/animate.css")
 
 block content  
-	+nav(user)
-	section.container
-		.user-area
-			+user(profile, pkgs,user.name!=profile.name)
-			+user-info(profile)
-			if profile.gPass
-				section.command.card
-					.title Cli Login
-					.content 
-						.txt cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}
-							.copy-button(data-clipboard-text="cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}" title="Click to copy.") 
-		.packages
-			each pkg in pkgs
-				+package-info-no-avatar(pkg)
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/user'
-		});
+  +nav(user)
+  section.container
+    .user-area
+      +user(profile, pkgs,user.name!=profile.name)
+      +user-info(profile)
+      if profile.gPass
+        section.command.card
+          .title Cli Login
+          .content 
+            .txt cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}
+              .copy-button(data-clipboard-text="cortex adduser --username #{profile.name} --password #{profile.gPass} --email #{profile.email}" title="Click to copy.") 
+    .packages
+      each pkg in pkgs
+        +package-info-no-avatar(pkg)
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/user'
+    });

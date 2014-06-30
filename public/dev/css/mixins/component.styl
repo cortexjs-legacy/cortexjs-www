@@ -1,393 +1,393 @@
 center()
-	margin-left:auto
-	margin-right:auto
+  margin-left:auto
+  margin-right:auto
 
 cycle(n)
-	width: n
-	height: n
-	border-radius: 50%
+  width: n
+  height: n
+  border-radius: 50%
 
 $panel
-	background-color:#ffffff
-	.head
-		height:70px
-		line-height:70px
-		padding:0px 20px
-		color:grey
-		border-bottom:1px solid #d0d7dd
-	.body
-		background-color:#ffffff
-		
+  background-color:#ffffff
+  .head
+    height:70px
+    line-height:70px
+    padding:0px 20px
+    color:grey
+    border-bottom:1px solid #d0d7dd
+  .body
+    background-color:#ffffff
+    
 user()
-	position:relative
-	height:350px
-	background-color:#ffffff
-	text-align:center
-	padding-top:40px
-	box-shadow:card_shadow
-	img.avatar
-		cycle(150px)
-	.username
-		margin-top:20px
-		width:100%
-		font-size:24px
-		center()
-	.info-area
-		margin-top:30px
-		width:100%
-		clearfix()
-		.item
-			width:33.33%
-			float:left
-			.content
-				font-size:26px
-			.title
-				color:light_grey
-				margin-top:10px
-				font-size:12px
-	.btn-follow
-		position:absolute
-		left:0px
-		top:40px
-		background-color:red
-		color:#ffffff
-		height:36px
-		line-height:36px
-		padding:0px 15px
-		font-size:14px
+  position:relative
+  height:350px
+  background-color:#ffffff
+  text-align:center
+  padding-top:40px
+  box-shadow:card_shadow
+  img.avatar
+    cycle(150px)
+  .username
+    margin-top:20px
+    width:100%
+    font-size:24px
+    center()
+  .info-area
+    margin-top:30px
+    width:100%
+    clearfix()
+    .item
+      width:33.33%
+      float:left
+      .content
+        font-size:26px
+      .title
+        color:light_grey
+        margin-top:10px
+        font-size:12px
+  .btn-follow
+    position:absolute
+    left:0px
+    top:40px
+    background-color:red
+    color:#ffffff
+    height:36px
+    line-height:36px
+    padding:0px 15px
+    font-size:14px
 
 user-info()
-	@extends $panel
-	height:350px
-	background-color:#ffffff
-	box-shadow:card_shadow
-	.body 
-		table
-			width:100%
+  @extends $panel
+  height:350px
+  background-color:#ffffff
+  box-shadow:card_shadow
+  .body 
+    table
+      width:100%
 
 package-info(avatar=true)
-	height:100px
-	background-color:#ffffff
-	box-shadow:card_shadow
-	cursor:pointer
-	clearfix()
-	img.avatar
-		float:left
-		width:100px
-		height:100px
-	.content
-		if avatar
-			padding-left:100px
-		.top
-			height:50%
-			clearfix()
-			line-height:50px
-			overflow:hidden
-			.package-name
-				display:inline
-				padding:0px 15px
-				font-size:18px
-				font-weight:300
-				float:left
-				color:#6d6d6d
-				overflow: hidden
-				white-space: nowrap
-			.version
-				font-weight:300
-				float:right
-				text-align:right
-				color:#c6c6c6
-				font-size:17px
-				padding-right:20px
-		.bottom
-			color:#c6c6c6
-			height:50%
-			.description
-				display:block
-				padding-left:15px
-				float:left
-				font-size:15px
-				line-height:20px
-				width:90%
-				height:100%
-				text-overflow: ellipsis
-				white-space: nowrap
-				overflow:hidden
-			.stat
-				float:right
-				width:50px
-				height:100%
+  height:100px
+  background-color:#ffffff
+  box-shadow:card_shadow
+  cursor:pointer
+  clearfix()
+  img.avatar
+    float:left
+    width:100px
+    height:100px
+  .content
+    if avatar
+      padding-left:100px
+    .top
+      height:50%
+      clearfix()
+      line-height:50px
+      overflow:hidden
+      .package-name
+        display:inline
+        padding:0px 15px
+        font-size:18px
+        font-weight:300
+        float:left
+        color:#6d6d6d
+        overflow: hidden
+        white-space: nowrap
+      .version
+        font-weight:300
+        float:right
+        text-align:right
+        color:#c6c6c6
+        font-size:17px
+        padding-right:20px
+    .bottom
+      color:#c6c6c6
+      height:50%
+      .description
+        display:block
+        padding-left:15px
+        float:left
+        font-size:15px
+        line-height:20px
+        width:90%
+        height:100%
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow:hidden
+      .stat
+        float:right
+        width:50px
+        height:100%
 
 
 package-stat()
-	height:150px
-	background-color:#ffffff
-	box-shadow:card_shadow
-	.top
-		position:relative
-		width:100%
-		height:100px
-		.aside
-			width:100px
-			height:100px
-			position:absolute
-			img
-				cycle(55px)
-				margin:22.5px
-		.txt
-			padding-left:100px
-			height:100%
-			color:#919bad
-			padding-right:10px
-			.description
-				font-size:18px
-				margin-top:28px
-				overflow:ellipsis
-			.lastupdate
-				margin-top:14px
-				font-size:12px
-	.bottom
-		color:#a6a6a6
-		background-color:#f0f1f5
-		height:50px	
-		.item
-			position:relative
-			float:left
-			font-size:14px
-			line-height:50px
-			padding:0px 20px
-			border-right:1px solid #d1d8de		
-			&:last-child
-				border-right:none	
-			i
-				position:absolute
-				top:12px
-			span
-				padding-left:30px
+  height:150px
+  background-color:#ffffff
+  box-shadow:card_shadow
+  .top
+    position:relative
+    width:100%
+    height:100px
+    .aside
+      width:100px
+      height:100px
+      position:absolute
+      img
+        cycle(55px)
+        margin:22.5px
+    .txt
+      padding-left:100px
+      height:100%
+      color:#919bad
+      padding-right:10px
+      .description
+        font-size:18px
+        margin-top:28px
+        overflow:ellipsis
+      .lastupdate
+        margin-top:14px
+        font-size:12px
+  .bottom
+    color:#a6a6a6
+    background-color:#f0f1f5
+    height:50px  
+    .item
+      position:relative
+      float:left
+      font-size:14px
+      line-height:50px
+      padding:0px 20px
+      border-right:1px solid #d1d8de    
+      &:last-child
+        border-right:none  
+      i
+        position:absolute
+        top:12px
+      span
+        padding-left:30px
 
 
 maintainers()
-	@extends $panel
-	box-shadow:card_shadow
-	.body
-		padding:10px
-		background-color:#f0f1f5
-		.avatar
-			cursor:pointer
-			cycle(50px)
-			margin:10px
+  @extends $panel
+  box-shadow:card_shadow
+  .body
+    padding:10px
+    background-color:#f0f1f5
+    .avatar
+      cursor:pointer
+      cycle(50px)
+      margin:10px
 
 command()
-	background-color:#ffffff
-	height:50px
-	line-height:50px
-	font-size:14px
-	box-shadow:card_shadow
-	.title
-		float:left
-		text-align:center
-		color:#a7afbe
-		background-color:#ffffff
-		width:100px
-	.content
-		padding-left:100px
-		background-color:#1f1f20
-		.txt
-			color:#828a9a
-			padding-left:20px
+  background-color:#ffffff
+  height:50px
+  line-height:50px
+  font-size:14px
+  box-shadow:card_shadow
+  .title
+    float:left
+    text-align:center
+    color:#a7afbe
+    background-color:#ffffff
+    width:100px
+  .content
+    padding-left:100px
+    background-color:#1f1f20
+    .txt
+      color:#828a9a
+      padding-left:20px
 
 badge(bg)
-	display:inline-block
-	height:50px
-	line-height:50px
-	background-color:bg
-	color:#ffffff
-	font-size:16px
-	padding:0px 20px
+  display:inline-block
+  height:50px
+  line-height:50px
+  background-color:bg
+  color:#ffffff
+  font-size:16px
+  padding:0px 20px
 
 readme()
-	background-color:#ffffff
-	position:relative
-	box-shadow:card_shadow
-	&:before
-		content:""
-		position:absolute
-		background-color: #e98065
-		width:6px
-		height:24px
-		top:7px
-		left:-6px
-	.title
-		height:40px
-		line-height:40px
-		padding-left:20px
-		color:#d8d8d8
-	.content
-		clearfix()
-		padding:0px 40px 30px 40px
+  background-color:#ffffff
+  position:relative
+  box-shadow:card_shadow
+  &:before
+    content:""
+    position:absolute
+    background-color: #e98065
+    width:6px
+    height:24px
+    top:7px
+    left:-6px
+  .title
+    height:40px
+    line-height:40px
+    padding-left:20px
+    color:#d8d8d8
+  .content
+    clearfix()
+    padding:0px 40px 30px 40px
 
 .nav
-	width:100%
-	height:nav_height
-	box-shadow:nav_shadow 
-	position:relative
-	z-index:100
-	.bg
-		position:absolute
-		width:100%
-		height:nav_height
-		z-index:10
-	.overlay
-		position:absolute
-		width:100%
-		height:nav_height
-		z-index:20
-		padding-right:283px
-		.main-panel
-			background-color:nav_bg
-			height:nav_height
-			.home
-				margin-left:5px
-				float:left
-				width:nav_height
-				height:nav_height
-				position:relative
-				cursor:pointer
-				image:'../img/logo.png'
-				background-position:0px 0px
-				&:hover
-					background-position:62px 0px
-			.search-box
-				position:relative
-				float:right
-				padding:10px 20px 10px 0px
-				input[type=text] 
-					height:40px
-					background-color:#ffffff
-					border:none
-					border-radius:20px
-					width:300px
-					padding:0px 36px 0px 36px
-					font-size:18px
-					color:#a8a8a8
+  width:100%
+  height:nav_height
+  box-shadow:nav_shadow 
+  position:relative
+  z-index:100
+  .bg
+    position:absolute
+    width:100%
+    height:nav_height
+    z-index:10
+  .overlay
+    position:absolute
+    width:100%
+    height:nav_height
+    z-index:20
+    padding-right:283px
+    .main-panel
+      background-color:nav_bg
+      height:nav_height
+      .home
+        margin-left:5px
+        float:left
+        width:nav_height
+        height:nav_height
+        position:relative
+        cursor:pointer
+        image:'../img/logo.png'
+        background-position:0px 0px
+        &:hover
+          background-position:62px 0px
+      .search-box
+        position:relative
+        float:right
+        padding:10px 20px 10px 0px
+        input[type=text] 
+          height:40px
+          background-color:#ffffff
+          border:none
+          border-radius:20px
+          width:300px
+          padding:0px 36px 0px 36px
+          font-size:18px
+          color:#a8a8a8
 
-				&:before
-					content:""
-					position: absolute
-					image:'../img/icon-search.png'
-					width:26px
-					height:26px
-					top:17px
-					left:8px
-				.icon-close
-					position: absolute
-					image:'../img/icon-close.png'
-					width:26px
-					height:26px
-					top:17px
-					right:28px
-		.util-panel
-			position:absolute
-			right:0px
-			top:0px
-			.doc, .github
-				background-color:nav_bg
-				height:nav_height
-				margin-left:1px
-				width:nav_height
+        &:before
+          content:""
+          position: absolute
+          image:'../img/icon-search.png'
+          width:26px
+          height:26px
+          top:17px
+          left:8px
+        .icon-close
+          position: absolute
+          image:'../img/icon-close.png'
+          width:26px
+          height:26px
+          top:17px
+          right:28px
+    .util-panel
+      position:absolute
+      right:0px
+      top:0px
+      .doc, .github
+        background-color:nav_bg
+        height:nav_height
+        margin-left:1px
+        width:nav_height
         text-indent: -200px
         overflow:hidden
-				float:left
-				&:before
-					content:""
-					image:"../img/doc.png"
-					width:26px
-					height:26px
-					position:absolute
-					top:18px
-					left:18px
+        float:left
+        &:before
+          content:""
+          image:"../img/doc.png"
+          width:26px
+          height:26px
+          position:absolute
+          top:18px
+          left:18px
       .github
         &:before
           image:"../img/github.png"
-			.get-started
-				margin-left:1px
-				line-height:nav_height
-				text-align:center
-				width:160px
-				font-size:16px
-				color:#ffffff
-				float:left
-				background-color:green
-			.user
-				margin-left:1px
-				float:right
-				height:nav_height
-				width:nav_height
-				img.avatar
-					width:100%
-					height:100%
-			.login
-				margin-left:1px
-				float:right
-				height:nav_height
-				width:nav_height
-				background-color:#222222
-				image:"../img/icon-login.png"
-				background-repeat:no-repeat
-				background-position:11px 12px
-	.dropdown
-		position:absolute
-		right:0px
-		top:nav_height
-		color:#646464
-		padding:5px
-		a
-			float:right
-			position:relative
-			display:block
-			box-sizing:content-box
-			font-size:13px
-			font-weight:300
-			width:150px
-			line-height:40px
-			padding:0px 20px
-			margin-bottom:5px
-			background-color:#313131
-			height:40px
-			&:hover
-				border-left:5px solid green 
-				background-color:#232323
+      .get-started
+        margin-left:1px
+        line-height:nav_height
+        text-align:center
+        width:160px
+        font-size:16px
+        color:#ffffff
+        float:left
+        background-color:green
+      .user
+        margin-left:1px
+        float:right
+        height:nav_height
+        width:nav_height
+        img.avatar
+          width:100%
+          height:100%
+      .login
+        margin-left:1px
+        float:right
+        height:nav_height
+        width:nav_height
+        background-color:#222222
+        image:"../img/icon-login.png"
+        background-repeat:no-repeat
+        background-position:11px 12px
+  .dropdown
+    position:absolute
+    right:0px
+    top:nav_height
+    color:#646464
+    padding:5px
+    a
+      float:right
+      position:relative
+      display:block
+      box-sizing:content-box
+      font-size:13px
+      font-weight:300
+      width:150px
+      line-height:40px
+      padding:0px 20px
+      margin-bottom:5px
+      background-color:#313131
+      height:40px
+      &:hover
+        border-left:5px solid green 
+        background-color:#232323
 
 nav_short()
-	.nav
-		.get-started
-			display:none
-	@media (min-width: 0px)
-		.nav
-			.overlay
-				padding-right:0px
-				.util-panel
-					display:none
-	@media (min-width: 700px)
-		.nav
-			.overlay
-				padding-right:122
-				.util-panel
-					display:block
+  .nav
+    .get-started
+      display:none
+  @media (min-width: 0px)
+    .nav
+      .overlay
+        padding-right:0px
+        .util-panel
+          display:none
+  @media (min-width: 700px)
+    .nav
+      .overlay
+        padding-right:122
+        .util-panel
+          display:block
 
 @media (min-width: 0px)
-	.nav
-		.overlay
-			padding-right:0px
-			.util-panel
-				display:none
-		
+  .nav
+    .overlay
+      padding-right:0px
+      .util-panel
+        display:none
+    
 @media (min-width: 700px)
-	.nav
-		.overlay
-			padding-right:283px
-			.util-panel
-				display:block
+  .nav
+    .overlay
+      padding-right:283px
+      .util-panel
+        display:block
 
 
 

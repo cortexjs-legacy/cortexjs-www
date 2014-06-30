@@ -3,104 +3,104 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-	title package/#{pkg.name}
-	+css("/css/package.css")
-	+css("/css/lib/readme.css")
-	+css("/css/lib/animate.css")
+  title package/#{pkg.name}
+  +css("/css/package.css")
+  +css("/css/lib/readme.css")
+  +css("/css/lib/animate.css")
 
 block content  
-	+nav(user)
-	section.container
-		.top-area
-			span.info #{pkg.name}
-			select.versions(onchange="window.location = '/package/#{pkg.name}/'+this.options[this.selectedIndex].value")
-				each version in pkg.allVersions
-					if version.indexOf('-')==-1
-						if version == pkg.version
-							option(selected="true", value="#{version}") #{version}
-						else
-							option(value="#{version}") #{version}
-			if pkg.license && pkg.license.name
-				a(href="#{pkg.license.url}").info-box 
-					span #{pkg.license.name}
-			if user
-				.tags
-					if tags && tags.length>0
-						each tag in tags
-							a.tag(class="animated flipInY") #{tag}
-				
-				a.add-tag(class="animated flipInY") `
-				input.tag-input(type="text" class="hide animated fadeIn")
-		.detail
-			.main-col
-				+package-stat(pkg)
-				section.readme.card
-					.title README
-					.content.markdown !{pkg.readme}
-			.aside-col
-				.dependency-info.card
-					.tabs
-						a.tab.active DEPS
-						a.tab DEV
-						a.tab DEPENDENTS
-					.tab-panes
-						.content.tab-pane.active.animated.fadeIn
-							table
-								thead
-									tr
-										th NAME
-										th REQUIREMENT
-								tbody
-									each version, dependency in pkg.dependencies
-										tr
-											td
-												a(href="/package/#{dependency}") #{dependency}
-											td 
-												a(href="/package/#{dependency}/#{version}") #{version}
-						if pkg.asyncDependencies && pkg.asyncDependencies.length
-							.content.tab-pane.animated.fadeIn
-								table
-									thead
-										tr
-											th NAME
-											th REQUIREMENT
-									tbody
-										each version, dependency in pkg.asyncDependencies
-											tr
-												td 
-													a(href="/package/#{dependency}") #{dependency}
-												td 
-													a(href="/package/#{dependency}/#{version}") #{version}
-						.content.tab-pane.animated.fadeIn
-							table
-								thead
-									tr
-										th NAME
-										th REQUIREMENT
-								tbody
-									each version, dependency in pkg.devDependencies
-										tr
-											td 
-												a(href="/package/#{dependency}") #{dependency}
-											td 
-												a(href="/package/#{dependency}/#{version}") #{version}
-						.content.tab-pane.animated.fadeIn
-							table
-								thead
-									tr
-										th(style="width:30%")  NAME
-										th DESCRIPTION
-								tbody
-									each dependency in pkg.dependents
-										tr
-											td
-												a(href="/package/#{dependency.name}") #{dependency.name}
-											td.ellipsis #{dependency.description}
-				+maintainers(pkg.maintainers)
+  +nav(user)
+  section.container
+    .top-area
+      span.info #{pkg.name}
+      select.versions(onchange="window.location = '/package/#{pkg.name}/'+this.options[this.selectedIndex].value")
+        each version in pkg.allVersions
+          if version.indexOf('-')==-1
+            if version == pkg.version
+              option(selected="true", value="#{version}") #{version}
+            else
+              option(value="#{version}") #{version}
+      if pkg.license && pkg.license.name
+        a(href="#{pkg.license.url}").info-box 
+          span #{pkg.license.name}
+      if user
+        .tags
+          if tags && tags.length>0
+            each tag in tags
+              a.tag(class="animated flipInY") #{tag}
+        
+        a.add-tag(class="animated flipInY") `
+        input.tag-input(type="text" class="hide animated fadeIn")
+    .detail
+      .main-col
+        +package-stat(pkg)
+        section.readme.card
+          .title README
+          .content.markdown !{pkg.readme}
+      .aside-col
+        .dependency-info.card
+          .tabs
+            a.tab.active DEPS
+            a.tab DEV
+            a.tab DEPENDENTS
+          .tab-panes
+            .content.tab-pane.active.animated.fadeIn
+              table
+                thead
+                  tr
+                    th NAME
+                    th REQUIREMENT
+                tbody
+                  each version, dependency in pkg.dependencies
+                    tr
+                      td
+                        a(href="/package/#{dependency}") #{dependency}
+                      td 
+                        a(href="/package/#{dependency}/#{version}") #{version}
+            if pkg.asyncDependencies && pkg.asyncDependencies.length
+              .content.tab-pane.animated.fadeIn
+                table
+                  thead
+                    tr
+                      th NAME
+                      th REQUIREMENT
+                  tbody
+                    each version, dependency in pkg.asyncDependencies
+                      tr
+                        td 
+                          a(href="/package/#{dependency}") #{dependency}
+                        td 
+                          a(href="/package/#{dependency}/#{version}") #{version}
+            .content.tab-pane.animated.fadeIn
+              table
+                thead
+                  tr
+                    th NAME
+                    th REQUIREMENT
+                tbody
+                  each version, dependency in pkg.devDependencies
+                    tr
+                      td 
+                        a(href="/package/#{dependency}") #{dependency}
+                      td 
+                        a(href="/package/#{dependency}/#{version}") #{version}
+            .content.tab-pane.animated.fadeIn
+              table
+                thead
+                  tr
+                    th(style="width:30%")  NAME
+                    th DESCRIPTION
+                tbody
+                  each dependency in pkg.dependents
+                    tr
+                      td
+                        a(href="/package/#{dependency.name}") #{dependency.name}
+                      td.ellipsis #{dependency.description}
+        +maintainers(pkg.maintainers)
 
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/package'
-		});
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/package'
+    });
 
 

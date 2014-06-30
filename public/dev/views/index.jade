@@ -3,46 +3,46 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-	title Cortex
-	+css("/css/index.css")
-	+css("/css/lib/animate.css")
+  title Cortex
+  +css("/css/index.css")
+  +css("/css/lib/animate.css")
 
 block content  
-	+nav(user)
-	.banner
-		img.logo-large(src="./img/logo-large.png")
-		.slogan The package cloud for browsers, connecting creative people
-	.main-content
-		.info-panel.animated.fadeInDown
-			.head RECENTLY UPDATED
-			.body
-				ul
-					each pkg in recentlyUpdated
-						li
-							.title 
-								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-							.detail #{pkg.updated}
-		.info-panel.animated.fadeInDown
-			.head MOST DEPENDED UPON
-			.body
-				ul
-					each pkg in mostDependedUpon
-						li
-							.title 
-								a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
-							.detail #{pkg.count} packages
-		.info-panel.animated.fadeInDown
-			.head PROLIFIC USERS RECENTLY
-			.body
-				ul
-					each user in prolifics
-						li
-							.title
-								a(href="/~#{user.name}" target="_blank") #{user.name}
-							.detail #{user.count} packages
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/index'
-		});
-					
+  +nav(user)
+  .banner
+    img.logo-large(src="./img/logo-large.png")
+    .slogan The package cloud for browsers, connecting creative people
+  .main-content
+    .info-panel.animated.fadeInDown
+      .head RECENTLY UPDATED
+      .body
+        ul
+          each pkg in recentlyUpdated
+            li
+              .title 
+                a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
+              .detail #{pkg.updated}
+    .info-panel.animated.fadeInDown
+      .head MOST DEPENDED UPON
+      .body
+        ul
+          each pkg in mostDependedUpon
+            li
+              .title 
+                a(href="/package/#{pkg.name}" target="_blank") #{pkg.name}
+              .detail #{pkg.count} packages
+    .info-panel.animated.fadeInDown
+      .head PROLIFIC USERS RECENTLY
+      .body
+        ul
+          each user in prolifics
+            li
+              .title
+                a(href="/~#{user.name}" target="_blank") #{user.name}
+              .detail #{user.count} packages
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/index'
+    });
+          
 

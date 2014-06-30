@@ -3,25 +3,25 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-	title Get Started
-	+css("/css/getstarted.css")
-	+css("/css/lib/readme.css")
+  title Get Started
+  +css("/css/getstarted.css")
+  +css("/css/lib/readme.css")
 
 block content  
-	+nav(user)
-	section.container
-		.main
-			.markdown !{content}
-		.aside
-			.anchor Preparation
-			.anchor Initialize the project
-			.anchor Install dependencies
-			.anchor Write code
-			.anchor Build project
-			.anchor Run the code
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/getstarted'
-		});
+  +nav(user)
+  section.container
+    .main
+      .markdown !{content}
+    .aside
+      .anchor Preparation
+      .anchor Initialize the project
+      .anchor Install dependencies
+      .anchor Write code
+      .anchor Build project
+      .anchor Run the code
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/getstarted'
+    });
 
 

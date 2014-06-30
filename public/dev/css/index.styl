@@ -4,81 +4,81 @@ global-reset()
 @import "mixins/*"
 
 .nav
-	.bg
-		background-color:#02060e
+  .bg
+    background-color:#02060e
 
 .banner
-	image:"../img/slogan-bg.png"
-	height:380px
-	position:relative
-	background-color:#02060e
-	background-position:0px -60px
-	.logo-large
-		display:block
-		position:absolute
-		top:60px
-		left:50%
-		margin-left:-113px
-	.slogan
-		font-size:24px
-		line-height:1.2
-		font-weight:100
-		color:#ffffff
-		width:90%
-		text-align:center
-		position:absolute
-		top:254px
-		left:5%
+  image:"../img/slogan-bg.png"
+  height:380px
+  position:relative
+  background-color:#02060e
+  background-position:0px -60px
+  .logo-large
+    display:block
+    position:absolute
+    top:60px
+    left:50%
+    margin-left:-113px
+  .slogan
+    font-size:24px
+    line-height:1.2
+    font-weight:100
+    color:#ffffff
+    width:90%
+    text-align:center
+    position:absolute
+    top:254px
+    left:5%
 
 .main-content
-	center()
-	padding:25px 0px
-	clearfix()
-	.info-panel
-		user-info()
-		height: 430px
-		float:left
-		ul
-			color:#777777
-			font-size:14px
-			line-height:40px
-			li
-				border-bottom:1px solid #d0d7dd
-				height:40px
-				&:nth-child(odd)
-					background-color:#f0f1f5
-				&:nth-child(even)
-					background-color:#e9eaee
-				.title
-					display:inline-block
-					float:left
-					padding-left:30px
-					max-width:60%
-					overflow:hidden
-				.detail
-					display:inline-block
-					float:right
-					padding-right:30px
-					overflow:hidden
+  center()
+  padding:25px 0px
+  clearfix()
+  .info-panel
+    user-info()
+    height: 430px
+    float:left
+    ul
+      color:#777777
+      font-size:14px
+      line-height:40px
+      li
+        border-bottom:1px solid #d0d7dd
+        height:40px
+        &:nth-child(odd)
+          background-color:#f0f1f5
+        &:nth-child(even)
+          background-color:#e9eaee
+        .title
+          display:inline-block
+          float:left
+          padding-left:30px
+          max-width:60%
+          overflow:hidden
+        .detail
+          display:inline-block
+          float:right
+          padding-right:30px
+          overflow:hidden
 
 @media (min-width: 0px)
-	.main-content
-		width:100%
-		.info-panel
-			width:100%
-			margin:4% 0% 
-		
+  .main-content
+    width:100%
+    .info-panel
+      width:100%
+      margin:4% 0% 
+    
 @media (min-width: 600px)
-	.main-content
-		width:95%
-		.info-panel
-			width:47%
-			margin:1.5%
+  .main-content
+    width:95%
+    .info-panel
+      width:47%
+      margin:1.5%
 
 @media (min-width: 1000px)
-	.main-content
-		width:95%
-		.info-panel
-			width:30.3%
-			margin:1.5%
+  .main-content
+    width:95%
+    .info-panel
+      width:30.3%
+      margin:1.5%
 

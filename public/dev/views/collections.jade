@@ -3,23 +3,23 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-	title Collections
-	+css("/css/collections.css")
-	+css('/css/lib/animate.css')
+  title Collections
+  +css("/css/collections.css")
+  +css('/css/lib/animate.css')
 
 block content  
-	+nav(user)
-	section.container
-		.top-area
-			a.active.all(data-name="all") all
-			each tag in tags
-				a.tag(data-name="#{tag}" class="animated flipInY") #{tag}
-		.packages
-			each pkg in pkgs
-				+package-info(pkg)
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/collections'
-		});
+  +nav(user)
+  section.container
+    .top-area
+      a.active.all(data-name="all") all
+      each tag in tags
+        a.tag(data-name="#{tag}" class="animated flipInY") #{tag}
+    .packages
+      each pkg in pkgs
+        +package-info(pkg)
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/collections'
+    });
 
 

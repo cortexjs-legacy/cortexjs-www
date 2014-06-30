@@ -7,151 +7,151 @@ global-reset()
 nav_short()
 
 .container
-	.top-area
-		clearfix()
-		height:90px
-		padding: 30px 0px
-		.info
-			min-width 100px
-			text-align center
-			user-select: none
-			badge(green)
-		select.versions
-			margin-left:20px
-		a.info-box
-			margin-left:16px
-		.tags
-			margin-left:16px
-			display:inline-block
-			clearfix()
-			.tag, .add-tag
-				font-size:14px
-				margin-right:10px
-				background-color:red
-				height:30px
-				color:white
-				line-height:30px
-				display:inline-block
-				padding:0px 10px
-				position:relative
-				transition: padding .2s linear
-				.close
-					position: absolute
-					width: 20px
-					height: 100%
-					z-index: 99
-					text-align: center
-		.add-tag
-			margin-right:10px
-			background-color:red
-			height:30px
-			line-height:30px
-			display:inline-block
-			image:"../img/icon-tag.png"
-			background-repeat: no-repeat
-			background-position: 8px 8px
-			color:red
-			width:30px
-		.tag-input
-			border:1px solid red
-			height:30px
-			width:150px
-			font-size:17px
-			color:grey
-			font-weight:100
-		.hide
-			display:none
-	.detail
-		clearfix()
-		margin-bottom:50px
-		padding-top:10px
-		center()
-		.card
-			margin-bottom:26px
-		.package-stat
-			package-stat()
-			.txt
-				text-overflow: ellipsis
-				overflow: hidden
-				white-space: nowrap
-		.command
-			command()
-		.maintainers
-			maintainers()
-			.body
-				height:90px
-		.dependency-info
-			width:100%
-			.ellipsis
-				text-overflow: ellipsis
-				overflow: hidden
-				white-space: nowrap
-			.tabs
-				height:70px
-				clearfix()
-				.tab
-					font-size:14px
-					float:left
-					background-color:#eae9e9
-					color:#acb3bf
-					line-height:70px
-					padding:0px 25px	
-					border-right:1px solid #e5e4e4
-					&:last-child
-						border-right:none
-					&:hover
-						background-color:#ffffff
-				.active
-					background-color:#ffffff
-			.tab-panes
-				height:320px;
-				background-color:#ffffff
-				box-shadow:card_shadow
-				.content
-					display:none
-					overflow-x:hidden
-					overflow-y: auto
-					height:280px
-					background-color:#ffffff
-					table
-						table-layout: fixed
-						width:100%
-						td
-							a
-								color: #777
-				.active
-					display:block
-		.readme
-			center()
-			readme()
+  .top-area
+    clearfix()
+    height:90px
+    padding: 30px 0px
+    .info
+      min-width 100px
+      text-align center
+      user-select: none
+      badge(green)
+    select.versions
+      margin-left:20px
+    a.info-box
+      margin-left:16px
+    .tags
+      margin-left:16px
+      display:inline-block
+      clearfix()
+      .tag, .add-tag
+        font-size:14px
+        margin-right:10px
+        background-color:red
+        height:30px
+        color:white
+        line-height:30px
+        display:inline-block
+        padding:0px 10px
+        position:relative
+        transition: padding .2s linear
+        .close
+          position: absolute
+          width: 20px
+          height: 100%
+          z-index: 99
+          text-align: center
+    .add-tag
+      margin-right:10px
+      background-color:red
+      height:30px
+      line-height:30px
+      display:inline-block
+      image:"../img/icon-tag.png"
+      background-repeat: no-repeat
+      background-position: 8px 8px
+      color:red
+      width:30px
+    .tag-input
+      border:1px solid red
+      height:30px
+      width:150px
+      font-size:17px
+      color:grey
+      font-weight:100
+    .hide
+      display:none
+  .detail
+    clearfix()
+    margin-bottom:50px
+    padding-top:10px
+    center()
+    .card
+      margin-bottom:26px
+    .package-stat
+      package-stat()
+      .txt
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap
+    .command
+      command()
+    .maintainers
+      maintainers()
+      .body
+        height:90px
+    .dependency-info
+      width:100%
+      .ellipsis
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap
+      .tabs
+        height:70px
+        clearfix()
+        .tab
+          font-size:14px
+          float:left
+          background-color:#eae9e9
+          color:#acb3bf
+          line-height:70px
+          padding:0px 25px  
+          border-right:1px solid #e5e4e4
+          &:last-child
+            border-right:none
+          &:hover
+            background-color:#ffffff
+        .active
+          background-color:#ffffff
+      .tab-panes
+        height:320px;
+        background-color:#ffffff
+        box-shadow:card_shadow
+        .content
+          display:none
+          overflow-x:hidden
+          overflow-y: auto
+          height:280px
+          background-color:#ffffff
+          table
+            table-layout: fixed
+            width:100%
+            td
+              a
+                color: #777
+        .active
+          display:block
+    .readme
+      center()
+      readme()
 
 
 @media (min-width: 0px)
-	.container
-		.detail
-			width:100%
-	.main-col
-		width:100%
-		margin:0%
-	.aside-col
-		width:100%
-		margin:0%
+  .container
+    .detail
+      width:100%
+  .main-col
+    width:100%
+    margin:0%
+  .aside-col
+    width:100%
+    margin:0%
 
 @media (min-width: 860px)
-	.container
-		.detail
-			width:95%
-	.main-col
-		float:left
-		width:66%
-		margin:0% 1%
-	.aside-col
-		float:left
-		width:30%
-		margin:0% 1%
-	
-			
+  .container
+    .detail
+      width:95%
+  .main-col
+    float:left
+    width:66%
+    margin:0% 1%
+  .aside-col
+    float:left
+    width:30%
+    margin:0% 1%
+  
+      
 
 
 
-	
+  

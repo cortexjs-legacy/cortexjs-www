@@ -3,21 +3,21 @@ include ./mixin/component
 extends layout/default.jade
 
 block head  
-	title Cortex Search
-	+css("/css/search.css")
+  title Cortex Search
+  +css("/css/search.css")
 
 block content  
-	+nav(user)
-	section.container
-		.top-area
-			span.info #{pkgs.length} pacakges about
-				b  #{keyword}
-		.packages
-			each pkg in pkgs
-				+package-info(pkg)
-	script.
-		facade({
-			mod: 'cortexjs-www/entries/search'
-		});
+  +nav(user)
+  section.container
+    .top-area
+      span.info #{pkgs.length} pacakges about
+        b  #{keyword}
+    .packages
+      each pkg in pkgs
+        +package-info(pkg)
+  script.
+    facade({
+      mod: 'cortexjs-www/entries/search'
+    });
 
 
