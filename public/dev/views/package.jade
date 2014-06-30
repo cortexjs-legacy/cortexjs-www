@@ -15,10 +15,11 @@ block content
 			span.info #{pkg.name}
 			select.versions(onchange="window.location = '/package/#{pkg.name}/'+this.options[this.selectedIndex].value")
 				each version in pkg.allVersions
-					if version == pkg.version
-						option(selected="true", value="#{version}") #{version}
-					else
-						option(value="#{version}") #{version}
+					if version.indexOf('-')==-1
+						if version == pkg.version
+							option(selected="true", value="#{version}") #{version}
+						else
+							option(value="#{version}") #{version}
 			if pkg.license && pkg.license.name
 				a(href="#{pkg.license.url}").info-box 
 					span #{pkg.license.name}
