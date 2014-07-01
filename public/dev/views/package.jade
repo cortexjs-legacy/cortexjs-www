@@ -12,7 +12,7 @@ block content
   +nav(user)
   section.container
     .top-area
-      span.info #{pkg.name}
+      h1.info #{pkg.name}
       select.versions(onchange="window.location = '/package/#{pkg.name}/'+this.options[this.selectedIndex].value")
         each version in pkg.allVersions
           if version.indexOf('-')==-1

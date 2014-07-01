@@ -10,8 +10,8 @@ block content
   +nav(user)
   section.container
     .top-area
-      span.info #{pkgs.length} pacakges about
-        b  #{keyword}
+      span.info #{pkgs.length} packages about
+        b.keyword  #{keyword}
     .packages
       each pkg in pkgs
         +package-info(pkg)

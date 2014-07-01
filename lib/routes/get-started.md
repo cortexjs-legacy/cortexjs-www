@@ -1,6 +1,6 @@
 ## 1. Preparation
 
-Before writing the code, there are some prepartion work to do:
+Before writing the code, there are some preparation work to do:
 
 ### Install Node.js
 
@@ -61,11 +61,17 @@ You will find that we write code just the same way as in Node.js.
 
 	
 ## 5. Build the project
-Run `cortex build` to build the project. In development , you can use `cortex watch` to watch the changes of files, if any file changes, cortex will rebuild the project
+Run `cortex build` to build the project. 
 
 	cortex build
 	
+
+In development , you can use `cortex watch` to watch the changes of files, if any file changes, cortex will rebuild the project
+
 ## 6. Run the code
-Open index.html in the browser, done~
+Open index.html in the browser, and you will find 'hello-world' is printed on the screen.
+
+## 7. Detailed guidence
+Visit http://book.ctx.io/ for more detailed guidance. 
 
 

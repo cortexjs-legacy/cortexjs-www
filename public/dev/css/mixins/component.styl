@@ -13,7 +13,7 @@ $panel
     height:70px
     line-height:70px
     padding:0px 20px
-    color:grey
+    color:light_grey
     border-bottom:1px solid #d0d7dd
   .body
     background-color:#ffffff
@@ -28,9 +28,10 @@ user()
   img.avatar
     cycle(150px)
   .username
-    margin-top:20px
+    font-family:Titillium Web
+    margin-top:22px
     width:100%
-    font-size:24px
+    font-size:26px
     center()
   .info-area
     margin-top:30px
@@ -66,6 +67,7 @@ user-info()
       width:100%
 
 package-info(avatar=true)
+  font-family:Titillium Web
   height:100px
   background-color:#ffffff
   box-shadow:card_shadow
@@ -85,8 +87,8 @@ package-info(avatar=true)
       overflow:hidden
       .package-name
         display:inline
-        padding:0px 15px
-        font-size:18px
+        padding:0px 18px
+        font-size:23px
         font-weight:300
         float:left
         color:#6d6d6d
@@ -97,22 +99,24 @@ package-info(avatar=true)
         float:right
         text-align:right
         color:#c6c6c6
-        font-size:17px
+        font-size:23px
         padding-right:20px
     .bottom
       color:#c6c6c6
       height:50%
+      padding-bottom:8px
       .description
         display:block
-        padding-left:15px
+        padding-left:18px
         float:left
-        font-size:15px
-        line-height:20px
-        width:90%
+        font-size:16px
+        line-height:22px
+        width:75%
         height:100%
         text-overflow: ellipsis
-        white-space: nowrap
         overflow:hidden
+        margin-top:-5px
+        font-weight:200
       .stat
         float:right
         width:50px
@@ -140,7 +144,8 @@ package-stat()
       color:#919bad
       padding-right:10px
       .description
-        font-size:18px
+        font-family:Titillium Web
+        font-size:20px
         margin-top:28px
         overflow:ellipsis
       .lastupdate
@@ -268,7 +273,7 @@ readme()
           border-radius:20px
           width:300px
           padding:0px 36px 0px 36px
-          font-size:18px
+          font-size:16px
           color:#a8a8a8
 
         &:before
@@ -315,7 +320,8 @@ readme()
         line-height:nav_height
         text-align:center
         width:160px
-        font-size:16px
+        font-family:Titillium Web
+        font-size:17px
         color:#ffffff
         float:left
         background-color:green
@@ -361,8 +367,6 @@ readme()
 
 nav_short()
   .nav
-    .github
-      display:none
     .get-started
       display:none
   @media (min-width: 0px)
@@ -374,7 +378,7 @@ nav_short()
   @media (min-width: 700px)
     .nav
       .overlay
-        padding-right:122
+        padding-right:183
         .util-panel
           display:block
 
