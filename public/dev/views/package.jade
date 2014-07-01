@@ -61,9 +61,9 @@ block content
                           tbody
                             each version, dependency in pkg[deps]
                               tr
-                                td
+                                td.ellipsis
                                   a(href="/package/#{dependency}") #{dependency}
-                                  td 
+                                td 
                                   a(href="/package/#{dependency}/#{version}") #{version}
               if pkg.dependents.length
                 .content.tab-pane.animated.fadeIn(class="#{depTabs.dependents}")
@@ -75,9 +75,9 @@ block content
                         tbody
                           each dependency in pkg.dependents
                             tr
-                              td
+                              td.ellipsis
                                 a(href="/package/#{dependency.name}") #{dependency.name}
-                                td.ellipsis #{dependency.description}
+                              td.ellipsis #{dependency.description}
         +maintainers(pkg.maintainers)
 
   script.
