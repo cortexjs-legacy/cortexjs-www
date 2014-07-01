@@ -71,6 +71,7 @@
     "taggie": "^0.2.0",
     "connect-redis": "^2.0.0",
     "user-graph": "^0.2.4",
-    "feedie": "^0.2.1"
+    "feedie": "^0.2.1",
+    "github-url-from-git": "~1.1.1"
   }
 }
