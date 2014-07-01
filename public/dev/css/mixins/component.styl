@@ -57,6 +57,7 @@ user()
     padding:0px 15px
     font-size:14px
 
+
 user-info()
   @extends $panel
   height:350px
@@ -65,6 +66,8 @@ user-info()
   .body 
     table
       width:100%
+      td:first-child
+        text-transform:uppercase
 
 package-info(avatar=true)
   font-family:Titillium Web
@@ -147,9 +150,10 @@ package-stat()
         font-family:Titillium Web
         font-size:20px
         margin-top:28px
+        height:28px
         overflow:ellipsis
       .lastupdate
-        margin-top:14px
+        margin-top:6px
         font-size:12px
   .bottom
     color:#a6a6a6
