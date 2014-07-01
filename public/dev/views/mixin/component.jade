@@ -100,12 +100,19 @@ mixin package-stat(pkg)
   section.package-stat.card
     .top
       .aside
-        a(href="/~#{pkg.author.name}" target="_blank")
-          img.avatar(src="#{pkg.author.avatarMedium}")
+        if pkg.author.nolink
+          a(href="#}")
+            img.avatar(src="#{pkg.author.avatarMedium}")
+        else
+          a(href="/~#{pkg.author.name}" target="_blank")
+            img.avatar(src="#{pkg.author.avatarMedium}")
       .txt
         .description #{pkg.description}
         .lastupdate Last updated by  
-          a(href="/~#{pkg.author.name}" target="_blank") #{pkg.author.name}
+        if pkg.author.nolink
+          a(href="#") #{pkg.author.name}
+        else
+          a(href="/~#{pkg.author.name}" target="_blank") #{pkg.author.name}          
           span  at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
     .bottom
       a.item(href="#{pkg.homepage}" target="_blank")
