@@ -38,64 +38,46 @@ block content
           .title README
           .content.markdown !{pkg.readme}
       .aside-col
-        .dependency-info.card
-          .tabs
-            a.tab.active DEPS
-            a.tab DEV
-            a.tab DEPENDENTS
-          .tab-panes
-            .content.tab-pane.active.animated.fadeIn
-              table
-                thead
-                  tr
-                    th NAME
-                    th REQUIREMENT
-                tbody
-                  each version, dependency in pkg.dependencies
-                    tr
-                      td
-                        a(href="/package/#{dependency}") #{dependency}
-                      td 
-                        a(href="/package/#{dependency}/#{version}") #{version}
-            if pkg.asyncDependencies && pkg.asyncDependencies.length
-              .content.tab-pane.animated.fadeIn
-                table
-                  thead
-                    tr
-                      th NAME
-                      th REQUIREMENT
-                  tbody
-                    each version, dependency in pkg.asyncDependencies
+        if pkg.dependencies.length || pkg.devDependencies.length || pkg.asyncDependencies.length || pkg.dependents.length
+          .dependency-info.card
+            .tabs
+              if pkg.dependencies.length
+                a.tab(class="#{depTabs.dependencies}") DEPS
+              if pkg.devDependencies.length
+                a.tab(class="#{depTabs.devDependencies}") DEV
+              if pkg.asyncDependencies.length
+                a.tab(class="#{depTabs.asyncDependencies}") ASYNC
+              if pkg.dependents.length
+                a.tab(class="#{depTabs.dependents}") DEPENDENTS
+            .tab-panes
+              each deps in ['dependencies', 'devDependencies', 'asyncDependencies']
+                if pkg[deps].length
+                  .content.tab-pane.animated.fadeIn(class="#{depTabs[deps]}")
+                    table
+                      thead
+                        tr
+                          th NAME
+                          th REQUIREMENT
+                          tbody
+                            each version, dependency in pkg[deps]
+                              tr
+                                td
+                                  a(href="/package/#{dependency}") #{dependency}
+                                  td 
+                                  a(href="/package/#{dependency}/#{version}") #{version}
+              if pkg.dependents.length
+                .content.tab-pane.animated.fadeIn(class="#{depTabs.dependents}")
+                  table
+                    thead
                       tr
-                        td 
-                          a(href="/package/#{dependency}") #{dependency}
-                        td 
-                          a(href="/package/#{dependency}/#{version}") #{version}
-            .content.tab-pane.animated.fadeIn
-              table
-                thead
-                  tr
-                    th NAME
-                    th REQUIREMENT
-                tbody
-                  each version, dependency in pkg.devDependencies
-                    tr
-                      td 
-                        a(href="/package/#{dependency}") #{dependency}
-                      td 
-                        a(href="/package/#{dependency}/#{version}") #{version}
-            .content.tab-pane.animated.fadeIn
-              table
-                thead
-                  tr
-                    th(style="width:30%")  NAME
-                    th DESCRIPTION
-                tbody
-                  each dependency in pkg.dependents
-                    tr
-                      td
-                        a(href="/package/#{dependency.name}") #{dependency.name}
-                      td.ellipsis #{dependency.description}
+                        th(style="width:30%")  NAME
+                        th DESCRIPTION
+                        tbody
+                          each dependency in pkg.dependents
+                            tr
+                              td
+                                a(href="/package/#{dependency.name}") #{dependency.name}
+                                td.ellipsis #{dependency.description}
         +maintainers(pkg.maintainers)
 
   script.

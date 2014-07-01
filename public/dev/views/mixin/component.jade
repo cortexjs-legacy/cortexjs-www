@@ -109,10 +109,10 @@ mixin package-stat(pkg)
       .txt
         .description #{pkg.description}
         .lastupdate Last updated by  
-        if pkg.author.nolink
-          a(href="#") #{pkg.author.name}
-        else
-          a(href="/~#{pkg.author.name}" target="_blank") #{pkg.author.name}          
+          if pkg.author.nolink
+            a(href="#") #{pkg.author.name}
+          else
+            a(href="/~#{pkg.author.name}" target="_blank") #{pkg.author.name}          
           span  at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
     .bottom
       a.item(href="#{pkg.homepage}" target="_blank")
