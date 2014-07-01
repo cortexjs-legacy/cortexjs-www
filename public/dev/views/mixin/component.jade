@@ -96,7 +96,7 @@ mixin package-info-no-avatar(pkg)
       .bottom
         p.description #{pkg.description} 
 
-mixin package-stat(pkg)
+mixin package-stat(pkg, downloads)
   section.package-stat.card
     .top
       .aside
@@ -122,6 +122,11 @@ mixin package-stat(pkg)
         a.item(href="#{pkg.bugs.url}" target="_blank")
           i(class="icon-issue")
           span Issues
+      if downloads
+        a.item
+          i(class="icon-download")
+          span #{downloads} Downloads
+
 
 mixin maintainers(maintainers)
   section.maintainers.card
