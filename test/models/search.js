@@ -4,7 +4,7 @@ describe('model/search', function() {
 
   it.only('empty search', function(done) {
     Search.search(function(err, res) {
-      console.log(res, res.length);
+      console.log(err, res && res.length);
       done(err);
     });
   });
