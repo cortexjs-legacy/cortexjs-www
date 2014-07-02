@@ -1,7 +1,17 @@
 var assert = require('chai').assert;
+var moment = require('moment');
 
 describe('coucdb', function() {
   var db = require('../lib/couchdb').regDB;
+
+  describe('downloads', function() {
+    it('load top', function(done) {
+      db.downloads.top(moment.duration(1, 'day').as('milliseconds'), function(err, data) {
+        assert(data);
+        done(err);
+      });
+    });
+  });
 
   describe('timeline', function() {
     it('save && load', function(done) {
