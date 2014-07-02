@@ -14,9 +14,6 @@ function init() {
   searchInput.on('keydown', function(event) {
     if (event.which != 13) return;
     var input = searchInput.val().trim();
-    if (!input) {
-      return;
-    }
     if (input.indexOf(':') == -1) {
       searchByQuery(input);
     } else {
