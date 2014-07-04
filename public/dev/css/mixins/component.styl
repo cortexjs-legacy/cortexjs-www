@@ -269,7 +269,7 @@ readme()
       .search-box
         position:relative
         float:right
-        padding:10px 20px 10px 0px
+        padding:10px 10px 10px 10px
         input[type=text] 
           height:40px
           background-color:#ffffff
@@ -279,7 +279,6 @@ readme()
           padding:0px 36px 0px 36px
           font-size:16px
           color:#a8a8a8
-
         &:before
           content:""
           position: absolute
@@ -287,7 +286,7 @@ readme()
           width:26px
           height:26px
           top:17px
-          left:8px
+          left:18px
         .icon-close
           position: absolute
           image:'../img/icon-close.png'
@@ -390,13 +389,17 @@ nav_short()
   .nav
     .overlay
       padding-right:0px
+     .home
+        display:none
       .util-panel
         display:none
     
-@media (min-width: 700px)
+@media (min-width: 750px)
   .nav
     .overlay
       padding-right:344px
+      .home
+        display:block
       .util-panel
         display:block
 

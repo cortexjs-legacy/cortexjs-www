@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var jade = require('gulp-jade');
 var nib = require('nib');
+var rename = require("gulp-rename");
 
 process.on("uncaughtException", function(err) {
   console.log(err);
@@ -25,8 +26,16 @@ gulp.task('jade', function() {
 });
 
 gulp.task('img', function() {
+  gulp.src("./dev/img/*")
+    .pipe(rename(function (path) {
+        path.basename += "@2x";
+    }))
+    .pipe(gulp.dest("./build/img")); 
+
   return gulp.src(["./dev/img/*"])
     .pipe(gulp.dest("./build/img"));
+
+
 });
 
 gulp.task('css', function() {
