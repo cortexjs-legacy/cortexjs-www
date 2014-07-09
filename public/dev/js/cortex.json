@@ -2,7 +2,6 @@
   "name": "cortexjs-www",
   "version": "0.1.0",
   "description": "website cortexjs.org ",
-  "main": "index.js",
   "repository": "git://github.com/cortexjs/cortexjs-www.git",
   "keywords": [
     "cortex"
