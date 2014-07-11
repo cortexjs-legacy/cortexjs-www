@@ -51,7 +51,12 @@ gulp.task('cortex', ['neuron'], function() {
 gulp.task('neuron',function(){
   return gulp.src(['./dev/js/neuron.js'])
     .pipe(gulp.dest("./build/"));
-})
+});
+
+gulp.task('static-files', function() {
+  return gulp.src(['./dev/robots.txt'])
+    .pipe(gulp.dest("./build"));
+});
 
 
 gulp.task('watch', function() {
@@ -61,5 +66,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['stylus', 'img', 'cortex', 'css','watch']);
-gulp.task('build', ['stylus', 'img', 'cortex','css']);
+gulp.task('default', ['static-files', 'stylus', 'img', 'cortex', 'css','watch']);
+gulp.task('build', ['static-files', 'stylus', 'img', 'cortex','css']);
