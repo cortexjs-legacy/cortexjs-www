@@ -17,7 +17,7 @@ $panel
     border-bottom:1px solid #d0d7dd
   .body
     background-color:#ffffff
-    
+
 user()
   position:relative
   height:350px
@@ -63,7 +63,7 @@ user-info()
   height:350px
   background-color:#ffffff
   box-shadow:card_shadow
-  .body 
+  .body
     table
       width:100%
       td:first-child
@@ -158,16 +158,16 @@ package-stat()
   .bottom
     color:#a6a6a6
     background-color:#f0f1f5
-    height:50px  
+    height:50px
     .item
       position:relative
       float:left
       font-size:14px
       line-height:50px
       padding:0px 20px
-      border-right:1px solid #d1d8de    
+      border-right:1px solid #d1d8de
       &:last-child
-        border-right:none  
+        border-right:none
       i
         position:absolute
         top:12px
@@ -238,7 +238,7 @@ readme()
 .nav
   width:100%
   height:nav_height
-  box-shadow:nav_shadow 
+  box-shadow:nav_shadow
   position:relative
   z-index:100
   .bg
@@ -251,7 +251,6 @@ readme()
     width:100%
     height:nav_height
     z-index:20
-    padding-right:283px
     .main-panel
       background-color:nav_bg
       height:nav_height
@@ -270,15 +269,18 @@ readme()
         position:relative
         float:right
         padding:10px 10px 10px 10px
-        input[type=text] 
+        input[type=text]
           height:40px
           background-color:#ffffff
           border:none
           border-radius:20px
-          width:300px
+          width:265px
           padding:0px 36px 0px 36px
           font-size:16px
           color:#a8a8a8
+          transition:width .25s linear
+          &:focus
+            width: 450px
         &:before
           content:""
           position: absolute
@@ -289,15 +291,14 @@ readme()
           left:18px
         .icon-close
           position: absolute
+          cursor: pointer
           image:'../img/icon-close.png'
           width:26px
           height:26px
           top:17px
           right:28px
     .util-panel
-      position:absolute
-      right:0px
-      top:0px
+      float: right
       .doc, .github
         background-color:nav_bg
         height:nav_height
@@ -309,9 +310,10 @@ readme()
         position:relative
         &:before
           content:""
-          image:"../img/doc.png"
+          image:"../img/icon-gitbook.png"
           width:26px
           height:26px
+          background-size: 26px 26px
           position:absolute
           top:18px
           left:18px
@@ -365,7 +367,7 @@ readme()
       background-color:#313131
       height:40px
       &:hover
-        border-left:5px solid green 
+        border-left:5px solid green
         background-color:#232323
 
 nav_short()
@@ -374,34 +376,26 @@ nav_short()
       display:none
   @media (min-width: 0px)
     .nav
-      .overlay
-        padding-right:0px
-        .util-panel
-          display:none
+      .util-panel
+        display:none
   @media (min-width: 700px)
     .nav
-      .overlay
-        padding-right:183
-        .util-panel
-          display:block
+      .util-panel
+        display:block
 
 @media (min-width: 0px)
   .nav
-    .overlay
-      padding-right:0px
      .home
         display:none
       .util-panel
         display:none
-    
+
 @media (min-width: 750px)
   .nav
-    .overlay
-      padding-right:344px
-      .home
-        display:block
-      .util-panel
-        display:block
+    .home
+      display:block
+    .util-panel
+      display:block
 
 
 

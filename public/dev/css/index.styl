@@ -5,30 +5,63 @@ global-reset()
 
 .nav
   .bg
-    background-color:#02060e
+    background-position: 0 -60px
 
 .banner
   image:"../img/slogan-bg.png"
-  height:380px
+  height:420px
   position:relative
   background-color:#02060e
   background-position:center -60px
-  .logo-large
-    display:block
-    position:absolute
-    top:60px
-    left:50%
-    margin-left:-113px
-  .slogan
-    font-size:24px
-    line-height:1.2
-    font-weight:100
-    color:#ffffff
-    width:90%
-    text-align:center
-    position:absolute
-    top:254px
-    left:5%
+  .brands
+    float: left
+    width: 400px
+    position: relative
+    clearfix()
+    .logo-large
+      display:block
+      margin: 40px auto 30px auto
+    .slogan
+      margin-top: 30px
+      font-size:24px
+      line-height:1.2
+      font-weight:100
+      color:#ffffff
+      text-align:center
+  .form
+    width: 300px
+    float: right
+    padding-top: 50px
+    .form-control
+      display: block
+      margin-bottom: 10px
+      padding: 12px 10px
+      zoom: 1
+      border-radius: 5px
+      border: 1px solid #ccc
+      width: 100%
+      box-sizing: border-box
+      font-size: 16px
+      font-weight: 100
+    .signin
+      background-image: linear-gradient(#39d, #369)
+      color: #fff
+      border: 1px solid #369
+      cursor: pointer
+      font-weight: 200
+      &:hover
+        background-image: linear-gradient(#4ae, #369)
+    .signin-github
+      font-weight: 200
+      background-image: linear-gradient(#79d858, #569e3d)
+      color: #fff
+      border: 1px solid #4a993e
+      text-align: center
+      letter-spacing: 1px
+      &:hover
+        background-image: linear-gradient(#8e6, #569e3d)
+      .socicon-github
+        margin-right: 10px
 
 .main-content
   center()
@@ -74,8 +107,8 @@ global-reset()
     width:100%
     .info-panel
       width:100%
-      margin:4% 0% 
-    
+      margin:4% 0%
+
 @media (min-width: 600px)
   .main-content
     width:95%

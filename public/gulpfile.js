@@ -30,7 +30,7 @@ gulp.task('img', function() {
     .pipe(rename(function (path) {
         path.basename += "@2x";
     }))
-    .pipe(gulp.dest("./build/img")); 
+    .pipe(gulp.dest("./build/img"));
 
   return gulp.src(["./dev/img/*"])
     .pipe(gulp.dest("./build/img"));
@@ -39,7 +39,7 @@ gulp.task('img', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src(["./dev/css/lib/*.css"])
+  return gulp.src(["./dev/css/lib/**/*"])
     .pipe(gulp.dest("./build/css/lib"));
 });
 

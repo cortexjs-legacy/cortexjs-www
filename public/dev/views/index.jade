@@ -2,16 +2,28 @@ include ./mixin/component
 
 extends layout/default.jade
 
-block head  
+block head
   title Cortex
   +css("/css/index.css")
   +css("/css/lib/animate.css")
+  +css("/css/lib/socicon.css")
 
-block content  
-  +nav(user)
+block content
   .banner
-    img.logo-large(src="./img/logo-large.png")
-    .slogan The package cloud for browsers, connecting creative people
+    +nav(user)
+    .container
+      .brands.fadeInDown.animated
+        img.logo-large(src="./img/logo-large.png")
+        .slogan The package cloud for browsers, connecting creative people
+      form.form(action="/signup",method="post")
+        input.form-control(type="text",name="username",placeholder="Pick a username")
+        input.form-control(type="email",name="email",placeholder="Your email")
+        input.form-control(type="password",name="password",placeholder="Create a password")
+        input.form-control.signin(type="submit",value="Sign up for Cortex")
+        a.form-control.signin-github(href="/auth/github")
+          i.socicon.socicon-github
+          | Sign in width Github
+
   .main-content
     .info-panel.animated.fadeInDown
       .head RECENTLY UPDATED
@@ -53,5 +65,5 @@ block content
     facade({
       entry: 'cortexjs-www/entries/index.js'
     });
-          
+
 

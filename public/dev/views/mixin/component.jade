@@ -4,29 +4,29 @@ mixin nav(user)
     .overlay
       .main-panel
         a.home(href="/")
+        .util-panel
+          a.github(href="https://github.com/cortexjs/cortex") Github Repo
+          a.doc(href="http://book.ctx.io/")
+          a.get-started(href="/get-started") GET STARTED
+          if user
+            a.user(href="/~#{user.name}")
+              img.avatar(src="#{user.avatarMedium}")
+          else
+            a.login(href="/login")
         .search-box
           input(type="text" placeholder="moment...")
           i.icon-close.hide
-      .util-panel
-        a.github(href="https://github.com/cortexjs/cortex") Github Repo
-        a.doc(href="http://book.ctx.io/")
-        a.get-started(href="/get-started") GET STARTED
-        if user
-          a.user(href="/~#{user.name}")
-            img.avatar(src="#{user.avatarMedium}")
-        else  
-          a.login(href="/login")
-    ul.dropdown.hide
-      li 
-        a(href="/collections") COLLECTIONS
-      
-      li
-        a(href="/~") TIMELINE
-      if user
+
+    if user
+      ul.dropdown.hide
+        li
+          a(href="/collections") COLLECTIONS
+        li
+          a(href="/~") TIMELINE
         li
           a(href="/~#{user.name}") MY BIO CARD
-      li
-        a(href="/logout") LOG OUT
+        li
+          a(href="/logout") LOG OUT
 
 mixin user(user,pkgs,showFollowBtn)
   section.user.card
@@ -48,7 +48,7 @@ mixin user(user,pkgs,showFollowBtn)
           span FOLLOW
         else
           span UNFOLLOW
-  
+
 
 mixin user-info(user)
   section.user-info.card
@@ -60,7 +60,7 @@ mixin user-info(user)
             td Full Name
             td #{user.displayName}
         else
-          tr 
+          tr
             td Name
             td #{user.name}
         tr
@@ -85,7 +85,7 @@ mixin package-info(pkg)
         .package-name #{pkg.name}
         .version #{pkg.version}
       .bottom
-        p.description #{pkg.description} 
+        p.description #{pkg.description}
 
 mixin package-info-no-avatar(pkg)
   a.package-info.card(href="/package/#{pkg.name}" target="_blank" data-name="#{pkg.name}")
@@ -94,7 +94,7 @@ mixin package-info-no-avatar(pkg)
         .package-name #{pkg.name}
         .version #{pkg.version}
       .bottom
-        p.description #{pkg.description} 
+        p.description #{pkg.description}
 
 mixin package-stat(pkg, downloads)
   section.package-stat.card
@@ -108,15 +108,15 @@ mixin package-stat(pkg, downloads)
             img.avatar(src="#{pkg.author.avatarMedium}")
       .txt
         .description #{pkg.description}
-        .lastupdate Last updated by  
+        .lastupdate Last updated by
           if pkg.author.nolink
             a(href="#") #{pkg.author.name}
           else
-            a(href="/~#{pkg.author.name}" target="_blank") #{pkg.author.name}          
+            a(href="/~#{pkg.author.name}" target="_blank") #{pkg.author.name}
           span  at #{moment(new Date(pkg.time.modified)).format('MM/DD YYYY')}
     .bottom
       a.item(href="#{pkg.homepage}" target="_blank")
-        i(class="icon-home") 
+        i(class="icon-home")
         span Repo
       if pkg.bugs
         a.item(href="#{pkg.bugs.url}" target="_blank")
@@ -135,10 +135,10 @@ mixin maintainers(maintainers)
       each maintainer in maintainers
         a(href="/~#{maintainer.name}" target="_blank")
           img.avatar(src="#{maintainer.avatarMedium}")
-        
+
 mixin command(title,content)
   section.command.card
     .title #{title}
-    .content 
+    .content
       .txt #{content}
 
