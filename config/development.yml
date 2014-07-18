@@ -3,7 +3,7 @@ App:
 
 Server:
   cluster: false
-  port: 8080
+  port: 8010
   secret: "secret-cortexjs-www"
   pretty: true
 
