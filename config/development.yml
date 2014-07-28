@@ -24,6 +24,7 @@ Redis:
 Couch:
   address: "http://localhost:15984"
   rewrite: "/registry/_design/app/_rewrite"
+  proxySecret: "cafebad0000deadbeef0000019790701"
 
   Timeline: 
     database: "timeline_dev"
