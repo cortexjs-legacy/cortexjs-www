@@ -9,21 +9,22 @@ block head
   +css("/css/lib/socicon.css")
 
 block content
-  .banner
-    +nav(user)
-    .container
-      .brands.fadeInDown.animated
-        img.logo-large(src="./img/logo-large.png")
-        .slogan The package cloud for browsers, connecting creative people
-      form.form(action="/signup",method="post")
-        input.form-control(type="text",name="username",placeholder="Pick a username")
-        input.form-control(type="email",name="email",placeholder="Your email")
-        input.form-control(type="password",name="password",placeholder="Create a password")
-        input.form-control.signin(type="submit",value="Sign up for Cortex")
-        a.form-control.signin-github(href="/auth/github")
-          i.socicon.socicon-github
-          | Sign in width Github
-
+  +nav(user)
+  if (!user) 
+    .banner
+      .container
+        .brands.fadeInDown.animated
+          img.logo-large(src="./img/logo-large.png")
+          .slogan The package cloud for browsers, connecting creative people
+          form.form(action="/signup",method="post")
+            input.form-control(type="text",name="username",placeholder="Pick a username")
+            input.form-control(type="email",name="email",placeholder="Your email")
+            input.form-control(type="password",name="password",placeholder="Create a password")
+            input.form-control.signin(type="submit",value="Sign up for Cortex")
+            a.form-control.signin-github(href="/auth/github")
+              i.socicon.socicon-github
+              | Sign in width Github
+  
   .main-content
     .info-panel.animated.fadeInDown
       .head RECENTLY UPDATED
@@ -52,15 +53,16 @@ block content
               a(href="/package/#{down.name}" target="_blank")
                 .title #{down.name}
                 .detail #{down.count} downloads
-    //- .info-panel.animated.fadeInDown
-    //-   .head PROLIFIC USERS
-    //-   .body
-    //-     ul
-    //-       each user in prolifics
-    //-         li
-    //-           a(href="/~#{user.name}" target="_blank")
-    //-             .title #{user.name}
-    //-             .detail #{user.count} packages
+    if (user)
+      .info-panel.animated.fadeInDown
+        .head PROLIFIC USERS
+        .body
+          ul
+            each user in prolifics
+              li
+                a(href="/~#{user.name}" target="_blank")
+                  .title #{user.name}
+                  .detail #{user.count} packages
   script.
     facade({
       entry: 'cortexjs-www/entries/index.js'
