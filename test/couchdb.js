@@ -4,6 +4,14 @@ var moment = require('moment');
 describe('coucdb', function() {
   var db = require('../lib/couchdb').regDB;
 
+  it.only('loginGithub', function(done) {
+    var client = require('../lib/couchdb').createPrivate('villadora');
+    client.database('_users').doc('org.couchdb.user:villadora').open(function(err, doc) {
+      console.log(err, doc);
+      done(err);
+    });
+  });
+
   describe('downloads', function() {
     it('load top', function(done) {
       db.downloads.top(moment.duration(1, 'day').as('milliseconds'), function(err, data) {
