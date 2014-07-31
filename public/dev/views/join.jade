@@ -1,0 +1,46 @@
+include ./mixin/component
+
+extends layout/default.jade
+
+block head  
+  title Login
+  +css("/css/lib/animate.css")
+  +css("/css/lib/socicon.css")
+  +css("/css/lib/www-icon-embedded.css")
+  +css('/css/join.css')
+
+block content  
+  +nav()
+  section.container.fadeIn.animated
+    .login(class=signup ? "hide": "")
+      .title LOGIN
+      if message
+        .message  #{message}
+      form.form(method="POST", action="/login-directly")
+        input.form-control.name(name="username", placeholder="Username", required)
+        input.form-control.pass(name="password", type="password", placeholder="Password", required, pattern=".{6,}", title="Password must contain at least 6 charaters")
+        input.form-control.signin(type="submit", value="Sign in")
+        a.form-control.github(href="/auth/github")
+          i.socicon.socicon-github
+          | Sign in with Github
+        input.form-control.tosignup(type='button', value="Register New Account")
+
+    .signup(class=signup ? "": "hide")
+      .title SIGN UP
+      if message
+        .message  #{message}
+      form.form(method="post", action="/signup")
+        input.form-control(type="text",name="username",placeholder="Pick a username", required, pattern="[a-z0-9-~\.]+", title="Username must only contains alphanumeric and -,.")
+        input.form-control(type="email",name="email",placeholder="Your email", required)
+        input.form-control(type="password",name="password",placeholder="Create a password", required, pattern=".{6,}", title="Password must contain at least 6 charaters")
+        input.form-control.signup-bt(type="submit",value="Sign up for Cortex")
+        a.form-control.github(href="/auth/github")
+          i.socicon.socicon-github
+          | Sign up width Github
+      .note Already has an account? 
+        a.tologin Try login
+
+  script.
+    facade({
+      entry: 'cortexjs-www/entries/join.js'
+    });

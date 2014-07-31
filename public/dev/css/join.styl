@@ -1,0 +1,58 @@
+global-reset()
+
+@import "common/*"
+@import "mixins/*"
+
+nav_short()
+
+.container
+  .animated
+    -webkit-animation-duration:0.2s
+    animation-duration:0.2s
+    -webkit-animation-fill-mode:both
+    animation-fill-mode:both
+
+.container
+  center()
+  width:400px
+  margin:30px auto
+  box-shadow:card_shadow 
+  background-color:#ffffff
+  text-align:center
+  .title
+    font-size:22px
+    height:80px
+    line-height:100px
+  .message
+    color: #f1714f
+    line-height:1.5em
+  .note
+    padding-bottom: 1em
+  form.form
+    clearfix()
+    padding:10px 30px
+    input.signin, input.signup-bt
+      form-button(#fff, #2aacd0, #3dc7ec, #3dc7ec)
+    .toSignup
+      form-button(#000, #d7dce3, #eeeaea, #dee0e3)
+    .github
+      form-button(#fff, #07c2af, #08e4ce, #08e4ce)
+      .socicon-github
+        margin-right: 10px
+
+
+.maxHeightTransition
+  transition: max-height 0.8s;
+
+@media (min-width: 0px) and (max-width: 700px)
+  .container
+    width:100%
+    min-width:300px
+
+@media (min-width: 700px)
+  .container
+    width:400px
+
+@media (min-width: 1000px)
+  .container
+    width: 400px

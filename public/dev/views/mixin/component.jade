@@ -29,7 +29,7 @@ mixin nav(user)
           a(href="/logout") LOG OUT
 
 mixin user(user,pkgs,showFollowBtn)
-  section.user.card
+  section.user.card.unselectable(style="cursor:default")
     img.avatar(src="#{user.avatarLarge}")
     .username #{user.name}
     .info-area

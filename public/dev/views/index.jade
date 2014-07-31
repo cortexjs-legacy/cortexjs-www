@@ -7,24 +7,25 @@ block head
   +css("/css/index.css")
   +css("/css/lib/animate.css")
   +css("/css/lib/socicon.css")
+  +css("/css/lib/www-icon-embedded.css")
 
 block content
   +nav(user)
   if (!user) 
     .banner
-      .container
+      .container(style="max-width:960px")
         .brands.fadeInDown.animated
           img.logo-large(src="./img/logo-large.png")
           .slogan The package cloud for browsers, connecting creative people
-          form.form(action="/signup",method="post")
-            input.form-control(type="text",name="username",placeholder="Pick a username")
-            input.form-control(type="email",name="email",placeholder="Your email")
-            input.form-control(type="password",name="password",placeholder="Create a password")
-            input.form-control.signin(type="submit",value="Sign up for Cortex")
-            a.form-control.signin-github(href="/auth/github")
-              i.socicon.socicon-github
-              | Sign in width Github
-  
+        form.sign.form(action="/signup",method="post").fadeInRight.animated
+          input.form-control(type="text",name="username",placeholder="Pick a username", required, pattern="[a-z0-9-~\.]+", title="Username must only contains alphanumeric and -,.")
+          input.form-control(type="email",name="email",placeholder="Your email", required)
+          input.form-control(type="password",name="password",placeholder="Create a password", required, pattern=".{6,}")
+          input.form-control.signup(type="submit",value="Sign up for Cortex")
+          a.form-control.signup-github(href="/auth/github")
+            i.socicon.socicon-github
+            | Sign up width Github
+
   .main-content
     .info-panel.animated.fadeInDown
       .head RECENTLY UPDATED
