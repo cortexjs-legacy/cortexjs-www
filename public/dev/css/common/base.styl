@@ -52,7 +52,7 @@ select
   box-shadow:card_shadow
 
 .container
-  max-width: 960px
+  // max-width: 960px // why?
   margin: 0 auto
 
 .info-box
@@ -108,6 +108,14 @@ table
 
 .hide
   display:none
+
+.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
 
 $icon
   position:absolute

@@ -32,34 +32,10 @@ global-reset()
     width: 300px
     float: right
     padding-top: 50px
-    .form-control
-      display: block
-      margin-bottom: 10px
-      padding: 12px 10px
-      zoom: 1
-      border-radius: 5px
-      border: 1px solid #ccc
-      width: 100%
-      box-sizing: border-box
-      font-size: 16px
-      font-weight: 100
-    .signin
-      background-image: linear-gradient(#39d, #369)
-      color: #fff
-      border: 1px solid #369
-      cursor: pointer
-      font-weight: 200
-      &:hover
-        background-image: linear-gradient(#4ae, #369)
-    .signin-github
-      font-weight: 200
-      background-image: linear-gradient(#79d858, #569e3d)
-      color: #fff
-      border: 1px solid #4a993e
-      text-align: center
-      letter-spacing: 1px
-      &:hover
-        background-image: linear-gradient(#8e6, #569e3d)
+    .signup
+      form-button(#fff, #39d, #4ae, #369)
+    .signup-github
+      form-button(#fff, #79d858, #8e6, #4a993e)
       .socicon-github
         margin-right: 10px
 
