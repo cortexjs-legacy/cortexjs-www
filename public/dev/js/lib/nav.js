@@ -1,4 +1,4 @@
-var $ = require('zepto')
+var $ = require('zepto');
 
 function init() {
   var nav = $('.nav');
@@ -7,8 +7,12 @@ function init() {
   var user = nav.find('.user');
   var dropdown = nav.find('ul.dropdown');
 
-  searchInput.on('click', function(event) {
-    clearBtn.removeClass('hide');
+
+  searchInput.on('keyup', function(event) {
+    if (searchInput.val().length)
+      clearBtn.removeClass('hide');
+    else
+      clearBtn.addClass('hide');
   });
 
   searchInput.on('keydown', function(event) {
@@ -19,6 +23,7 @@ function init() {
     } else {
       searchByCriteria(input);
     }
+
   });
 
   clearBtn.on('click', function(e) {
@@ -27,14 +32,14 @@ function init() {
     clearBtn.addClass('hide');
   });
 
+
   user.on('mouseenter', function() {
     dropdown.removeClass('hide');
   });
 
   user.on('mouseleave', function(event) {
-    console.log(event)
     if (event.y < 60) {
-      dropdown.addClass('hide')
+      dropdown.addClass('hide');
     }
   });
 
@@ -59,7 +64,8 @@ function searchByCriteria(input) {
     });
     //['keyword':'ajax']
     queryObject[query[0]] = query[1];
-  };
+  }
+
   location.href = '/search?' + toQueryString(queryObject);
 
 }

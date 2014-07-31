@@ -6,7 +6,6 @@ var ZeroClipboard = require('zeroclipboard');
 var client = new ZeroClipboard($(".copy-button"));
 
 client.on('ready', function(event) {
-
   client.on('aftercopy', function(event) {
     alert('Copied to clipboard');
   });
@@ -20,12 +19,12 @@ var followed = followBtn.data('followed');
 var followers = $('.followers');
 
 followBtn.on('click', function() {
-  if (followBtn.data('followed') == 0) {
-    follow()
+  if (followBtn.data('followed') === 0) {
+    follow();
   } else {
     unfollow();
   }
-})
+});
 
 function follow() {
   $.ajax({
@@ -36,12 +35,12 @@ function follow() {
     }),
     contentType: 'application/json',
     success: function() {
-      followBtn.html('UNFOLLOW')
+      followBtn.html('UNFOLLOW');
       followBtn.data('followed', '1');
       followers.html(Number.parseInt(followers.html()) + 1);
     },
     error: function(xhr, type) {
-      console.log('error')
+      console.log('error');
     },
     complete: function() {
 
@@ -59,16 +58,15 @@ function unfollow() {
     }),
     contentType: 'application/json',
     success: function() {
-      followBtn.html('FOLLOW')
-      followBtn.data('followed', '0')
+      followBtn.html('FOLLOW');
+      followBtn.data('followed', '0');
       followers.html(Number.parseInt(followers.html()) - 1);
     },
     error: function(xhr, type) {
-      console.log('error')
+      console.log('error');
     },
     complete: function() {
 
     }
   });
-
 }
