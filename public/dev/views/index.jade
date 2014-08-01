@@ -11,12 +11,12 @@ block head
 
 block content
   +nav(user)
-  if (!user) 
-    .banner
-      .container(style="max-width:960px")
-        .brands.fadeInDown.animated
-          img.logo-large(src="./img/logo-large.png")
-          .slogan The package cloud for browsers, connecting creative people
+  .banner
+    .container(style="max-width:960px")
+      .brands.fadeInDown.animated(style= user ? "float:none;width:100%" : "")
+        img.logo-large(src="./img/logo-large.png")
+        .slogan The package cloud for browsers, connecting creative people
+      if (!user) 
         form.sign.form(action="/signup",method="post").fadeInRight.animated
           input.form-control(type="text",name="username",placeholder="Pick a username", required, pattern="[a-z0-9-~\.]+", title="Username must only contains alphanumeric and -,.")
           input.form-control(type="email",name="email",placeholder="Your email", required)
@@ -54,7 +54,7 @@ block content
               a(href="/package/#{down.name}" target="_blank")
                 .title #{down.name}
                 .detail #{down.count} downloads
-    if (user)
+    if (false)
       .info-panel.animated.fadeInDown
         .head PROLIFIC USERS
         .body
