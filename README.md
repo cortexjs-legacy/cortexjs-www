@@ -11,7 +11,7 @@ First, clone the repository from github:
 git clone git@github.com/cortexjs/cortexjs-www
 ```
 
-Before staart the server, you should make should that you have service following:
+Before start the server, you should make should that you have service following:
 
 * couchdb see [cortex-registry-server](http://github.com/cortexjs/cortex-registry-server) to start and init the registry server, you can use [replicate](http://npmjs.org/package/replicate)
 * redis used for session and events sever
