@@ -16,6 +16,7 @@ global-reset()
   .brands
     float: left
     width: 400px
+    margin-left: 15%
     position: relative
     clearfix()
     .logo-large
@@ -31,6 +32,7 @@ global-reset()
   .form
     width: 300px
     float: right
+    margin-right: 15%
     padding: 50px 10px 0px 0px
     .signup
       form-button(#fff, #2aacd0, #3dc7ec, #026e63)
@@ -38,6 +40,14 @@ global-reset()
       form-button(#fff, #07c2af, #08e4ce, #026e63)
       .socicon-github
         margin-right: 10px
+
+.logged
+  .brands
+    float:none
+    margin:0
+    width: 100%
+  .form
+    display:none
 
 .main-content
   center()

@@ -55,8 +55,23 @@ nav_short()
     user-info()
     height:410px
     .content
-      overflow:scroll
+      overflow-y: scroll
+      overflow-x: hidden
       height:300px
+      width:100%
+      table
+        width: 100%
+        table-layout: fixed
+        tr
+          width: 100%
+          td
+            overflow: hidden
+            &:nth-child(1)
+              width:70%
+              white-space: nowrap
+              text-overflow: ellipsis
+              overflow:hidden
+
   .info-panel
     margin-bottom:20px
 

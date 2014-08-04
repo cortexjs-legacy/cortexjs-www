@@ -12,19 +12,19 @@ block head
 block content
   +nav(user)
   .banner
-    .container(style="max-width:960px")
-      .brands.fadeInDown.animated(style= user ? "float:none;width:100%" : "")
+    .container(class=user ? "logged" : "")
+      .brands.fadeInDown.animated
         img.logo-large(src="./img/logo-large.png")
         .slogan The package cloud for browsers, connecting creative people
       if (!user) 
-        form.sign.form(action="/signup",method="post").fadeInRight.animated
-          input.form-control(type="text",name="signusername",placeholder="Pick a username", required, pattern="[a-z0-9-~\.]+", title="Username must only contains alphanumeric and -,.")
-          input.form-control(type="email",name="signemail",placeholder="Your email", required)
-          input.form-control(type="password",name="signpassword",placeholder="Create a password", required, pattern=".{6,}")
+        form.sign.form(action="/signup",method="post", autocomplete="off").fadeInRight.animated
+          input.form-control(type="text", value="", name="signusername",placeholder="Pick a username", required, pattern="[a-z0-9-~\.]+", title="Username must only contains alphanumeric and -,.")
+          input.form-control(type="email",value="", name="signemail",placeholder="Your email", required)
+          input.form-control(type="password",value="", name="signpassword",placeholder="Create a password", required, pattern=".{6,}")
           input.form-control.signup(type="submit",value="Sign up for Cortex")
           a.form-control.signup-github(href="/auth/github")
             i.socicon.socicon-github
-            | Sign up width Github
+            | Sign up with Github
 
   .main-content
     .info-panel.animated.fadeInDown
