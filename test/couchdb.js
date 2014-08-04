@@ -4,7 +4,15 @@ var moment = require('moment');
 describe('coucdb', function() {
   var db = require('../lib/couchdb').regDB;
 
-  it.only('loginGithub', function(done) {
+  it.only('updateGithub', function(done) {
+    var client = require('../lib/couchdb').createPrivate('villadora');
+    client.users.updateGithub('villadora', 'http://github.com/villa', function(err, doc) {
+      console.log(err, doc);
+      done(err);
+    });
+  });
+
+  it('loginGithub', function(done) {
     var client = require('../lib/couchdb').createPrivate('villadora');
     client.database('_users').doc('org.couchdb.user:villadora').open(function(err, doc) {
       console.log(err, doc);

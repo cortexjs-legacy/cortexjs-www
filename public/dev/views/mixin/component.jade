@@ -67,15 +67,20 @@ mixin user-info(user)
           td Email
           td
             a #{user.email}
-        if user.github
-          tr
-            td Github
-            td
-              a(href="#{user.github}") #{user.github}
         if user.location
           tr
             td Location
             td #{user.location}
+        if user.github
+          tr
+            td Github
+            td
+              a(href="#{user.github}" target="_blank") #{user.github}
+        else
+          tr 
+            td Github
+            td
+              a(href="/auth/github", style="text-decoration: underline") Binding Github Account
 
 mixin package-info(pkg)
   a.package-info.card(href="/package/#{pkg.name}" target="_blank" data-name="#{pkg.name}")
